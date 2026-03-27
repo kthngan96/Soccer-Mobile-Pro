@@ -2,7 +2,7 @@
 
 **GAME DESIGN DOCUMENT (GDD)**
 
-Version 1.0  |  Unreal Engine 4  |  Mobile Platform
+Version 1.0  |  Unreal Engine 5.6.1  |  Mobile Platform
 
 *Classification: Internal Development Reference*
 
@@ -13,7 +13,7 @@ Version 1.0  |  Unreal Engine 4  |  Mobile Platform
 
 ## **1.1 Game Summary**
 
-Soccer Mobile Pro is a AAA-quality football simulation game built on Unreal Engine 4 for iOS and Android platforms. It combines the best elements of the world's leading football mobile games: the deep simulation gameplay of eFootball Mobile, the rich player card upgrade system of FIFA Online 3, and the intuitive skill mechanics of FIFA Mobile.
+Soccer Mobile Pro is a AAA-quality football simulation game built on Unreal Engine 5.6.1 for iOS and Android platforms. It combines the best elements of the world's leading football mobile games: the deep simulation gameplay of eFootball Mobile, the rich player card upgrade system of FIFA Online 3, and the intuitive skill mechanics of FIFA Mobile.
 
 The game features photorealistic 3D player faces generated from real-world reference data, a comprehensive team-building meta-game, live match simulation, and a full suite of competitive and cooperative modes.
 
@@ -26,7 +26,7 @@ The game features photorealistic 3D player faces generated from real-world refer
 | Title | Soccer Mobile Pro |
 | Genre | Football Simulation / Sports / Card Collecting |
 | Platform | iOS 14+ and Android 10+ (Mobile First) |
-| Engine | Unreal Engine 4.27 (UE4) |
+| Engine | Unreal Engine 5.6.1.27 (UE4) |
 | Target Rating | E (Everyone) / PEGI 3 |
 | Business Model | Free-to-Play with optional IAP |
 | Multiplayer | Real-time PvP, Asynchronous, Co-op |
@@ -637,11 +637,11 @@ The player's overall account progresses through ranks, unlocking new features, m
 
 # **9\. Technical Specifications (UE4)**
 
-## **9.1 Unreal Engine 4 Architecture**
+## **9.1 Unreal Engine 5.6.1 Architecture**
 
 | System | Implementation |
 | :---- | :---- |
-| Engine | Unreal Engine 4.27.2 (final stable release) |
+| Engine | Unreal Engine 5.6.1.27.2 (final stable release) |
 | Physics | Chaos Physics for ball, PhysX for player body collisions |
 | Rendering | Mobile Deferred Renderer \+ PBR Materials |
 | Animation | Control Rig \+ AnimGraph for full-body IK and motion blending |
@@ -891,9 +891,9 @@ The following folder structure is recommended for the UE4 project:
 
 ## **13.3 Key C++ Classes to Generate**
 
-18. AStrikerPlayerCharacter — extends ACharacter, handles input, IK, skill system
+18. MSoccerPlayerCharacter — extends ACharacter, handles input, IK, skill system
 
-19. AStrikerBall — extends AActor, PhysX ball with drag/spin calculations
+19. MSoccerBall — extends AActor, PhysX ball with drag/spin calculations
 
 20. UCardDatabase — UDataAsset managing all player card definitions
 

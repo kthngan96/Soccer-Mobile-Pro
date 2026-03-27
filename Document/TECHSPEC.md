@@ -3,7 +3,7 @@
 
 **Version:** 1.1  
 **Date:** March 2026  
-**Engine:** Unreal Engine 4.27+  
+**Engine:** Unreal Engine 5.6.1
 **Language:** C++ & Blueprint  
 **Audience:** AI Developers & Development Teams
 
@@ -531,11 +531,11 @@ void AFootballGameMode::Tick(float DeltaSeconds)
 
 ### 3.4 Ball Physics
 
-**AStrikerBall class:**
+**MSoccerBall class:**
 
 ```cpp
 UCLASS()
-class AStrikerBall : public APawn
+class MSoccerBall : public APawn
 {
     GENERATED_BODY()
 
@@ -552,10 +552,10 @@ public:
     UPROPERTY(BlueprintReadWrite, Category="Ball")
     float SpinFactor;
     
-    DECLARE_MULTICAST_DELEGATE_TwoParams(FOnBallContact, AStrikerPlayerCharacter*, EContactType);
+    DECLARE_MULTICAST_DELEGATE_TwoParams(FOnBallContact, MSoccerPlayerCharacter*, EContactType);
     FOnBallContact BallContactDelegate;
     
-    DECLARE_MULTICAST_DELEGATE_TwoParams(FOnGoalScored, ETeamId, AStrikerPlayerCharacter*);
+    DECLARE_MULTICAST_DELEGATE_TwoParams(FOnGoalScored, ETeamId, MSoccerPlayerCharacter*);
     FOnGoalScored GoalScoredDelegate;
     
     virtual void BeginPlay() override;
@@ -581,7 +581,7 @@ public:
     ETeamId CurrentPossessionTeam;
     
     UPROPERTY()
-    AStrikerPlayerCharacter* CurrentBallCarrier;
+    MSoccerPlayerCharacter* CurrentBallCarrier;
     
     UPROPERTY()
     float PossessionTimeHome;  // seconds
@@ -589,7 +589,7 @@ public:
     UPROPERTY()
     float PossessionTimeAway;  // seconds
     
-    void UpdatePossession(AStrikerPlayerCharacter* NewCarrier);
+    void UpdatePossession(MSoccerPlayerCharacter* NewCarrier);
     void ResetPossession();
 };
 ```
@@ -704,19 +704,19 @@ public:
     class UGestureRecognizer* GestureRecognizer;
     
     UPROPERTY()
-    TMap<AStrikerPlayerCharacter*, float> SkillCooldowns;
+    TMap<MSoccerPlayerCharacter*, float> SkillCooldowns;
     
     UFUNCTION(BlueprintCallable)
-    bool TryExecuteSkill(AStrikerPlayerCharacter* Player, const FString& SkillId);
+    bool TryExecuteSkill(MSoccerPlayerCharacter* Player, const FString& SkillId);
     
     UFUNCTION(BlueprintCallable)
-    bool CanExecuteSkill(AStrikerPlayerCharacter* Player, const FString& SkillId);
+    bool CanExecuteSkill(MSoccerPlayerCharacter* Player, const FString& SkillId);
     
 private:
-    void StartSkillAnimation(AStrikerPlayerCharacter* Player, const FString& SkillId);
-    void ApplySkillMovement(AStrikerPlayerCharacter* Player, const FString& SkillId);
-    void ApplySkillEffect(AStrikerPlayerCharacter* Player, const FString& SkillId);
-    void SetSkillCooldown(AStrikerPlayerCharacter* Player, const FString& SkillId, float Duration);
+    void StartSkillAnimation(MSoccerPlayerCharacter* Player, const FString& SkillId);
+    void ApplySkillMovement(MSoccerPlayerCharacter* Player, const FString& SkillId);
+    void ApplySkillEffect(MSoccerPlayerCharacter* Player, const FString& SkillId);
+    void SetSkillCooldown(MSoccerPlayerCharacter* Player, const FString& SkillId, float Duration);
 };
 ```
 
@@ -832,7 +832,7 @@ struct FClientInputFrame
 ```cpp
 void AFootballGameMode::OnReceiveClientInput(const FString& UserId, const FClientInputFrame& InputFrame)
 {
-    AStrikerPlayerCharacter* PlayerPawn = GetPlayerPawnForUser(UserId);
+    MSoccerPlayerCharacter* PlayerPawn = GetPlayerPawnForUser(UserId);
     if (!PlayerPawn) return;
     
     // Movement input
@@ -1337,7 +1337,7 @@ Implement the Match Engine State Machine for a football game in UE4 C++.
 Requirements:
 1. Create AFootballGameMode class with 11 match states (PreMatch, InPlay, HalfTime, FullTime, etc.)
 2. Implement state transitions based on match clock (0..90+ minutes)
-3. Handle ball physics via AStrikerBall (uses Chaos Physics)
+3. Handle ball physics via MSoccerBall (uses Chaos Physics)
 4. Process client inputs server-side (movement, pass, shoot, skill)
 5. Replicate match state to clients every 50ms (20 Hz)
 6. Apply player fatigue after 60 real-time minutes
