@@ -1,244 +1,212 @@
-// Copyright (c) 2026 Soccer Mobile Pro. All Rights Reserved.
-#include "MTeamFormationData.h"
-#include "Misc/AssertionMacros.h"
+// Copyright 2026 Soccer Mobile Pro. All Rights Reserved.
+// MTeamFormationData.cpp
+// Formation preset data — GDD Section 2.1.3 normalized pitch coordinates.
+
+#include "AI/MTeamFormationData.h"
 
 // ---------------------------------------------------------------------------
-// Helper macro: quickly build a slot
+// Helper macro — reduces verbosity when building slot arrays
+// Args: Index, Role, X (depth), Y (lateral), Label string
 // ---------------------------------------------------------------------------
-#define MAKE_SLOT(InRole, InX, InY, InDepth, InLabel) \
-    [&]() { \
-        FFormationSlot S; \
-        S.Role               = EPlayerRole::InRole; \
-        S.NormalizedX        = InX; \
-        S.NormalizedY        = InY; \
-        S.TacticalDepthOffset = InDepth; \
-        S.DisplayLabel       = FText::FromString(TEXT(InLabel)); \
-        return S; \
-    }()
+#define SLOT(Idx, RoleEnum, Xf, Yf, Lbl) \
+    FFormationSlot(Idx, EFormationRole::RoleEnum, Xf, Yf, \
+                   FText::FromString(TEXT(Lbl)))
 
+// ===========================================================================
+// 4-3-3
 // ---------------------------------------------------------------------------
-// Constructor
-// ---------------------------------------------------------------------------
-
-UFormationDefinition::UFormationDefinition()
+// Backline    : LB-CB-CB-RB at X≈0.20
+// Midfield    : CM-CM-CM at X≈0.50  (wide CMs at Y=0.25/0.75)
+// Forward line: LW-ST-RW  at X≈0.80
+// ===========================================================================
+FFormationDefinition UFormationLibrary::Build_4_3_3()
 {
-    // Trigger default population only in CDO context to avoid editor churn.
-    // Individual DataAsset instances override Slots via the Details panel.
-    if (HasAnyFlags(RF_ClassDefaultObject))
+    FFormationDefinition D;
+    D.FormationType = EFormationType::Formation_4_3_3;
+    D.DisplayName   = FText::FromString(TEXT("4-3-3"));
+    D.Slots =
     {
-        PopulateDefaultSlots();
-    }
+        SLOT( 0, GK,  0.05f, 0.50f, "GK"),
+        // Defenders
+        SLOT( 1, LB,  0.20f, 0.15f, "LB"),
+        SLOT( 2, CB,  0.20f, 0.37f, "CB"),
+        SLOT( 3, CB,  0.20f, 0.63f, "CB"),
+        SLOT( 4, RB,  0.20f, 0.85f, "RB"),
+        // Midfielders
+        SLOT( 5, CM,  0.50f, 0.25f, "CM"),
+        SLOT( 6, CM,  0.50f, 0.50f, "CM"),
+        SLOT( 7, CM,  0.50f, 0.75f, "CM"),
+        // Forwards
+        SLOT( 8, LW,  0.80f, 0.18f, "LW"),
+        SLOT( 9, ST,  0.82f, 0.50f, "ST"),
+        SLOT(10, RW,  0.80f, 0.82f, "RW")
+    };
+    return D;
 }
 
+// ===========================================================================
+// 4-2-3-1
 // ---------------------------------------------------------------------------
-// UObject::PostLoad
-// ---------------------------------------------------------------------------
-
-void UFormationDefinition::PostLoad()
+// Backline    : LB-CB-CB-RB at X≈0.20
+// Double pivot: CDM-CDM     at X≈0.40
+// Attacking 3 : LW-CAM-RW   at X≈0.63
+// Striker     : ST           at X≈0.82
+// ===========================================================================
+FFormationDefinition UFormationLibrary::Build_4_2_3_1()
 {
-    Super::PostLoad();
-    ValidateFormation();
+    FFormationDefinition D;
+    D.FormationType = EFormationType::Formation_4_2_3_1;
+    D.DisplayName   = FText::FromString(TEXT("4-2-3-1"));
+    D.Slots =
+    {
+        SLOT( 0, GK,  0.05f, 0.50f, "GK"),
+        // Defenders
+        SLOT( 1, LB,  0.20f, 0.15f, "LB"),
+        SLOT( 2, CB,  0.20f, 0.37f, "CB"),
+        SLOT( 3, CB,  0.20f, 0.63f, "CB"),
+        SLOT( 4, RB,  0.20f, 0.85f, "RB"),
+        // Double pivot
+        SLOT( 5, CDM, 0.40f, 0.37f, "CDM"),
+        SLOT( 6, CDM, 0.40f, 0.63f, "CDM"),
+        // Attacking three
+        SLOT( 7, LW,  0.63f, 0.18f, "LW"),
+        SLOT( 8, CAM, 0.63f, 0.50f, "CAM"),
+        SLOT( 9, RW,  0.63f, 0.82f, "RW"),
+        // Striker
+        SLOT(10, ST,  0.82f, 0.50f, "ST")
+    };
+    return D;
 }
 
+// ===========================================================================
+// 3-5-2
 // ---------------------------------------------------------------------------
-// GetSlotForRole
-// ---------------------------------------------------------------------------
-
-const FFormationSlot* UFormationDefinition::GetSlotForRole(EPlayerRole Role) const
+// Three CBs    at X≈0.20
+// Wingbacks    : LWB-RWB at X≈0.45  (Y=0.10 / 0.90)
+// Three CMs    at X≈0.50  centre channel
+// Two strikers at X≈0.80
+// ===========================================================================
+FFormationDefinition UFormationLibrary::Build_3_5_2()
 {
-    for (const FFormationSlot& Slot : Slots)
+    FFormationDefinition D;
+    D.FormationType = EFormationType::Formation_3_5_2;
+    D.DisplayName   = FText::FromString(TEXT("3-5-2"));
+    D.Slots =
     {
-        if (Slot.Role == Role)
-        {
-            return &Slot;
-        }
-    }
-    return nullptr;
+        SLOT( 0, GK,  0.05f, 0.50f, "GK"),
+        // Three centre-backs
+        SLOT( 1, CB,  0.20f, 0.27f, "CB"),
+        SLOT( 2, CB,  0.20f, 0.50f, "CB"),
+        SLOT( 3, CB,  0.20f, 0.73f, "CB"),
+        // Wing-backs (high and wide)
+        SLOT( 4, LWB, 0.45f, 0.10f, "LWB"),
+        SLOT( 5, RWB, 0.45f, 0.90f, "RWB"),
+        // Three midfielders
+        SLOT( 6, CM,  0.50f, 0.30f, "CM"),
+        SLOT( 7, CM,  0.50f, 0.50f, "CM"),
+        SLOT( 8, CM,  0.50f, 0.70f, "CM"),
+        // Two strikers
+        SLOT( 9, ST,  0.80f, 0.38f, "ST"),
+        SLOT(10, ST,  0.80f, 0.62f, "ST")
+    };
+    return D;
 }
 
+// ===========================================================================
+// 5-4-1
 // ---------------------------------------------------------------------------
-// ValidateFormation
-// ---------------------------------------------------------------------------
-
-bool UFormationDefinition::ValidateFormation() const
+// Five-back    : LWB-CB-CB-CB-RWB at X≈0.18
+// Four midfield: LM-CM-CM-RM       at X≈0.48
+// Lone striker  at X≈0.80
+// ===========================================================================
+FFormationDefinition UFormationLibrary::Build_5_4_1()
 {
-    if (Slots.Num() != 11)
+    FFormationDefinition D;
+    D.FormationType = EFormationType::Formation_5_4_1;
+    D.DisplayName   = FText::FromString(TEXT("5-4-1"));
+    D.Slots =
     {
-        UE_LOG(LogTemp, Warning,
-               TEXT("UFormationDefinition::ValidateFormation — '%s' has %d slots (expected 11)."),
-               *GetName(), Slots.Num());
-        return false;
-    }
-
-    const bool bHasGK = Slots.ContainsByPredicate(
-        [](const FFormationSlot& S){ return S.Role == EPlayerRole::GK; });
-
-    if (!bHasGK)
-    {
-        UE_LOG(LogTemp, Warning,
-               TEXT("UFormationDefinition::ValidateFormation — '%s' has no GK slot."),
-               *GetName());
-        return false;
-    }
-    return true;
+        SLOT( 0, GK,  0.05f, 0.50f, "GK"),
+        // Five defenders
+        SLOT( 1, LWB, 0.18f, 0.08f, "LWB"),
+        SLOT( 2, CB,  0.18f, 0.28f, "CB"),
+        SLOT( 3, CB,  0.18f, 0.50f, "CB"),
+        SLOT( 4, CB,  0.18f, 0.72f, "CB"),
+        SLOT( 5, RWB, 0.18f, 0.92f, "RWB"),
+        // Four midfielders
+        SLOT( 6, LM,  0.48f, 0.15f, "LM"),
+        SLOT( 7, CM,  0.48f, 0.37f, "CM"),
+        SLOT( 8, CM,  0.48f, 0.63f, "CM"),
+        SLOT( 9, RM,  0.48f, 0.85f, "RM"),
+        // Lone striker
+        SLOT(10, ST,  0.80f, 0.50f, "ST")
+    };
+    return D;
 }
 
+// ===========================================================================
+// 4-4-2
 // ---------------------------------------------------------------------------
-// PopulateDefaultSlots  (dispatch to per-formation builders)
-// ---------------------------------------------------------------------------
+// Backline   : LB-CB-CB-RB at X≈0.20
+// Midfield 4 : LM-CM-CM-RM  at X≈0.50
+// Two strikers at X≈0.80
+// ===========================================================================
+FFormationDefinition UFormationLibrary::Build_4_4_2()
+{
+    FFormationDefinition D;
+    D.FormationType = EFormationType::Formation_4_4_2;
+    D.DisplayName   = FText::FromString(TEXT("4-4-2"));
+    D.Slots =
+    {
+        SLOT( 0, GK,  0.05f, 0.50f, "GK"),
+        // Defenders
+        SLOT( 1, LB,  0.20f, 0.15f, "LB"),
+        SLOT( 2, CB,  0.20f, 0.37f, "CB"),
+        SLOT( 3, CB,  0.20f, 0.63f, "CB"),
+        SLOT( 4, RB,  0.20f, 0.85f, "RB"),
+        // Midfielders
+        SLOT( 5, LM,  0.50f, 0.15f, "LM"),
+        SLOT( 6, CM,  0.50f, 0.37f, "CM"),
+        SLOT( 7, CM,  0.50f, 0.63f, "CM"),
+        SLOT( 8, RM,  0.50f, 0.85f, "RM"),
+        // Two strikers
+        SLOT( 9, ST,  0.80f, 0.38f, "ST"),
+        SLOT(10, ST,  0.80f, 0.62f, "ST")
+    };
+    return D;
+}
 
-void UFormationDefinition::PopulateDefaultSlots()
+#undef SLOT
+
+// ---------------------------------------------------------------------------
+// UFormationLibrary — static dispatch
+// ---------------------------------------------------------------------------
+bool UFormationLibrary::GetFormationDefinition(EFormationType FormationType,
+                                                FFormationDefinition& OutDefinition)
 {
     switch (FormationType)
     {
-        case EFormationType::F_4_3_3:   Build_4_3_3();   break;
-        case EFormationType::F_4_2_3_1: Build_4_2_3_1(); break;
-        case EFormationType::F_3_5_2:   Build_3_5_2();   break;
-        case EFormationType::F_5_4_1:   Build_5_4_1();   break;
-        case EFormationType::F_4_4_2:   Build_4_4_2();   break;
-        default: Build_4_3_3(); break;
+    case EFormationType::Formation_4_3_3:   OutDefinition = Build_4_3_3();   return true;
+    case EFormationType::Formation_4_2_3_1: OutDefinition = Build_4_2_3_1(); return true;
+    case EFormationType::Formation_3_5_2:   OutDefinition = Build_3_5_2();   return true;
+    case EFormationType::Formation_5_4_1:   OutDefinition = Build_5_4_1();   return true;
+    case EFormationType::Formation_4_4_2:   OutDefinition = Build_4_4_2();   return true;
+    default:
+        UE_LOG(LogTemp, Warning,
+               TEXT("UFormationLibrary::GetFormationDefinition — unknown EFormationType %d"),
+               static_cast<int32>(FormationType));
+        return false;
     }
 }
 
-// ===========================================================================
-// Formation coordinate tables
-//
-// Convention:
-//   NormalizedX  0.0=own-goal  1.0=opponent-goal   (pitch length)
-//   NormalizedY  0.0=left      1.0=right            (pitch width)
-//   TacticalDepthOffset  applied when Attacking(+) / Defending(-)
-//
-// Reference: GDD §2.1.3 — standard UEFA pitch 105×68 m mapped 0-1.
-// ===========================================================================
-
-// ---------------------------------------------------------------------------
-// 4-3-3  (TECHSPEC §9.1.7 formation table)
-// ---------------------------------------------------------------------------
-void UFormationDefinition::Build_4_3_3()
+TArray<FFormationDefinition> UFormationLibrary::GetAllFormationDefinitions()
 {
-    FormationType = EFormationType::F_4_3_3;
-    DisplayName   = FText::FromString(TEXT("4-3-3"));
-    Slots =
+    return
     {
-        // ---- Goalkeeper ----
-        MAKE_SLOT(GK,  0.05f, 0.50f,  0.00f, "GK"),
-        // ---- Defenders ----
-        MAKE_SLOT(LB,  0.25f, 0.12f,  0.05f, "LB"),
-        MAKE_SLOT(CB,  0.22f, 0.36f,  0.04f, "CB-L"),
-        MAKE_SLOT(CB,  0.22f, 0.64f,  0.04f, "CB-R"),
-        MAKE_SLOT(RB,  0.25f, 0.88f,  0.05f, "RB"),
-        // ---- Midfielders ----
-        MAKE_SLOT(CM,  0.45f, 0.25f,  0.08f, "CM-L"),
-        MAKE_SLOT(CM,  0.48f, 0.50f,  0.08f, "CM-C"),
-        MAKE_SLOT(CM,  0.45f, 0.75f,  0.08f, "CM-R"),
-        // ---- Forwards ----
-        MAKE_SLOT(LW,  0.72f, 0.12f,  0.10f, "LW"),
-        MAKE_SLOT(ST,  0.78f, 0.50f,  0.12f, "ST"),
-        MAKE_SLOT(RW,  0.72f, 0.88f,  0.10f, "RW"),
+        Build_4_3_3(),
+        Build_4_2_3_1(),
+        Build_3_5_2(),
+        Build_5_4_1(),
+        Build_4_4_2()
     };
 }
-
-// ---------------------------------------------------------------------------
-// 4-2-3-1
-// ---------------------------------------------------------------------------
-void UFormationDefinition::Build_4_2_3_1()
-{
-    FormationType = EFormationType::F_4_2_3_1;
-    DisplayName   = FText::FromString(TEXT("4-2-3-1"));
-    Slots =
-    {
-        MAKE_SLOT(GK,  0.05f, 0.50f,  0.00f, "GK"),
-        MAKE_SLOT(LB,  0.25f, 0.12f,  0.05f, "LB"),
-        MAKE_SLOT(CB,  0.22f, 0.36f,  0.04f, "CB-L"),
-        MAKE_SLOT(CB,  0.22f, 0.64f,  0.04f, "CB-R"),
-        MAKE_SLOT(RB,  0.25f, 0.88f,  0.05f, "RB"),
-        // Double pivot
-        MAKE_SLOT(CDM, 0.38f, 0.38f,  0.06f, "CDM-L"),
-        MAKE_SLOT(CDM, 0.38f, 0.62f,  0.06f, "CDM-R"),
-        // Attacking trio
-        MAKE_SLOT(LW,  0.60f, 0.14f,  0.10f, "LW"),
-        MAKE_SLOT(CAM, 0.63f, 0.50f,  0.10f, "CAM"),
-        MAKE_SLOT(RW,  0.60f, 0.86f,  0.10f, "RW"),
-        MAKE_SLOT(ST,  0.78f, 0.50f,  0.12f, "ST"),
-    };
-}
-
-// ---------------------------------------------------------------------------
-// 3-5-2
-// ---------------------------------------------------------------------------
-void UFormationDefinition::Build_3_5_2()
-{
-    FormationType = EFormationType::F_3_5_2;
-    DisplayName   = FText::FromString(TEXT("3-5-2"));
-    Slots =
-    {
-        MAKE_SLOT(GK,  0.05f, 0.50f,  0.00f, "GK"),
-        // Three CBs
-        MAKE_SLOT(CB,  0.22f, 0.25f,  0.04f, "CB-L"),
-        MAKE_SLOT(CB,  0.20f, 0.50f,  0.04f, "CB-C"),
-        MAKE_SLOT(CB,  0.22f, 0.75f,  0.04f, "CB-R"),
-        // Wing backs
-        MAKE_SLOT(LB,  0.42f, 0.08f,  0.10f, "LWB"),
-        MAKE_SLOT(RB,  0.42f, 0.92f,  0.10f, "RWB"),
-        // Midfield three
-        MAKE_SLOT(CDM, 0.40f, 0.30f,  0.07f, "CM-L"),
-        MAKE_SLOT(CM,  0.43f, 0.50f,  0.08f, "CM-C"),
-        MAKE_SLOT(CDM, 0.40f, 0.70f,  0.07f, "CM-R"),
-        // Two strikers
-        MAKE_SLOT(ST,  0.76f, 0.38f,  0.12f, "ST-L"),
-        MAKE_SLOT(ST,  0.76f, 0.62f,  0.12f, "ST-R"),
-    };
-}
-
-// ---------------------------------------------------------------------------
-// 5-4-1
-// ---------------------------------------------------------------------------
-void UFormationDefinition::Build_5_4_1()
-{
-    FormationType = EFormationType::F_5_4_1;
-    DisplayName   = FText::FromString(TEXT("5-4-1"));
-    Slots =
-    {
-        MAKE_SLOT(GK,  0.05f, 0.50f,  0.00f, "GK"),
-        // Five-man defence
-        MAKE_SLOT(LB,  0.22f, 0.08f,  0.04f, "LWB"),
-        MAKE_SLOT(CB,  0.20f, 0.26f,  0.03f, "CB-L"),
-        MAKE_SLOT(CB,  0.18f, 0.50f,  0.03f, "CB-C"),
-        MAKE_SLOT(CB,  0.20f, 0.74f,  0.03f, "CB-R"),
-        MAKE_SLOT(RB,  0.22f, 0.92f,  0.04f, "RWB"),
-        // Four midfielders
-        MAKE_SLOT(LM,  0.42f, 0.14f,  0.07f, "LM"),
-        MAKE_SLOT(CM,  0.44f, 0.38f,  0.07f, "CM-L"),
-        MAKE_SLOT(CM,  0.44f, 0.62f,  0.07f, "CM-R"),
-        MAKE_SLOT(RM,  0.42f, 0.86f,  0.07f, "RM"),
-        // Single striker
-        MAKE_SLOT(ST,  0.78f, 0.50f,  0.12f, "ST"),
-    };
-}
-
-// ---------------------------------------------------------------------------
-// 4-4-2
-// ---------------------------------------------------------------------------
-void UFormationDefinition::Build_4_4_2()
-{
-    FormationType = EFormationType::F_4_4_2;
-    DisplayName   = FText::FromString(TEXT("4-4-2"));
-    Slots =
-    {
-        MAKE_SLOT(GK,  0.05f, 0.50f,  0.00f, "GK"),
-        MAKE_SLOT(LB,  0.25f, 0.10f,  0.05f, "LB"),
-        MAKE_SLOT(CB,  0.22f, 0.35f,  0.04f, "CB-L"),
-        MAKE_SLOT(CB,  0.22f, 0.65f,  0.04f, "CB-R"),
-        MAKE_SLOT(RB,  0.25f, 0.90f,  0.05f, "RB"),
-        // Flat four midfield
-        MAKE_SLOT(LM,  0.45f, 0.12f,  0.08f, "LM"),
-        MAKE_SLOT(CM,  0.46f, 0.37f,  0.08f, "CM-L"),
-        MAKE_SLOT(CM,  0.46f, 0.63f,  0.08f, "CM-R"),
-        MAKE_SLOT(RM,  0.45f, 0.88f,  0.08f, "RM"),
-        // Two strikers
-        MAKE_SLOT(ST,  0.76f, 0.38f,  0.12f, "ST-L"),
-        MAKE_SLOT(ST,  0.76f, 0.62f,  0.12f, "ST-R"),
-    };
-}
-
-#undef MAKE_SLOT
