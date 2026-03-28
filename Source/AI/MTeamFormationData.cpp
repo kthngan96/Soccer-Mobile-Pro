@@ -1,212 +1,145 @@
-// Copyright 2026 Soccer Mobile Pro. All Rights Reserved.
-// MTeamFormationData.cpp
-// Formation preset data — GDD Section 2.1.3 normalized pitch coordinates.
+// Copyright (c) Soccer Mobile Pro. All Rights Reserved.
+// GDD Section 2.1.3 | TECHSPEC Section 9.1 — AI: Behavior Trees + EQS
 
-#include "AI/MTeamFormationData.h"
+#include "MTeamFormationData.h"
 
-// ---------------------------------------------------------------------------
-// Helper macro — reduces verbosity when building slot arrays
-// Args: Index, Role, X (depth), Y (lateral), Label string
-// ---------------------------------------------------------------------------
-#define SLOT(Idx, RoleEnum, Xf, Yf, Lbl) \
-    FFormationSlot(Idx, EFormationRole::RoleEnum, Xf, Yf, \
-                   FText::FromString(TEXT(Lbl)))
+// ─────────────────────────────────────────────────────────────────────────────
+// UMTeamFormationData
+// ─────────────────────────────────────────────────────────────────────────────
 
-// ===========================================================================
+TArray<FFormationData> UMTeamFormationData::GetDefaultFormations()
+{
+    TArray<FFormationData> All;
+    All.Add(Build_4_3_3());
+    All.Add(Build_4_2_3_1());
+    All.Add(Build_3_5_2());
+    All.Add(Build_5_4_1());
+    All.Add(Build_4_4_2());
+    return All;
+}
+
+// ─────────────────────────────────────────────────────────────────────────────
 // 4-3-3
-// ---------------------------------------------------------------------------
-// Backline    : LB-CB-CB-RB at X≈0.20
-// Midfield    : CM-CM-CM at X≈0.50  (wide CMs at Y=0.25/0.75)
-// Forward line: LW-ST-RW  at X≈0.80
-// ===========================================================================
-FFormationDefinition UFormationLibrary::Build_4_3_3()
+// Slots: GK | LB CB-L CB-R RB | LCM CM RCM | LW ST RW
+// ─────────────────────────────────────────────────────────────────────────────
+
+FFormationData UMTeamFormationData::Build_4_3_3()
 {
-    FFormationDefinition D;
-    D.FormationType = EFormationType::Formation_4_3_3;
-    D.DisplayName   = FText::FromString(TEXT("4-3-3"));
-    D.Slots =
-    {
-        SLOT( 0, GK,  0.05f, 0.50f, "GK"),
-        // Defenders
-        SLOT( 1, LB,  0.20f, 0.15f, "LB"),
-        SLOT( 2, CB,  0.20f, 0.37f, "CB"),
-        SLOT( 3, CB,  0.20f, 0.63f, "CB"),
-        SLOT( 4, RB,  0.20f, 0.85f, "RB"),
-        // Midfielders
-        SLOT( 5, CM,  0.50f, 0.25f, "CM"),
-        SLOT( 6, CM,  0.50f, 0.50f, "CM"),
-        SLOT( 7, CM,  0.50f, 0.75f, "CM"),
-        // Forwards
-        SLOT( 8, LW,  0.80f, 0.18f, "LW"),
-        SLOT( 9, ST,  0.82f, 0.50f, "ST"),
-        SLOT(10, RW,  0.80f, 0.82f, "RW")
-    };
-    return D;
+    FFormationData F(EFormationType::Formation_4_3_3);
+    // GK
+    F.Slots.Add(FFormationSlot(0,  EPlayerRole::Goalkeeper,  0.50f, 0.05f, "GK"));
+    // Defensive line
+    F.Slots.Add(FFormationSlot(1,  EPlayerRole::Defender,    0.15f, 0.22f, "LB"));
+    F.Slots.Add(FFormationSlot(2,  EPlayerRole::Defender,    0.38f, 0.20f, "CB-L"));
+    F.Slots.Add(FFormationSlot(3,  EPlayerRole::Defender,    0.62f, 0.20f, "CB-R"));
+    F.Slots.Add(FFormationSlot(4,  EPlayerRole::Defender,    0.85f, 0.22f, "RB"));
+    // Midfield line
+    F.Slots.Add(FFormationSlot(5,  EPlayerRole::Midfielder,  0.25f, 0.45f, "LCM"));
+    F.Slots.Add(FFormationSlot(6,  EPlayerRole::Midfielder,  0.50f, 0.47f, "CM"));
+    F.Slots.Add(FFormationSlot(7,  EPlayerRole::Midfielder,  0.75f, 0.45f, "RCM"));
+    // Attack line
+    F.Slots.Add(FFormationSlot(8,  EPlayerRole::Forward,     0.18f, 0.72f, "LW"));
+    F.Slots.Add(FFormationSlot(9,  EPlayerRole::Forward,     0.50f, 0.78f, "ST"));
+    F.Slots.Add(FFormationSlot(10, EPlayerRole::Forward,     0.82f, 0.72f, "RW"));
+    return F;
 }
 
-// ===========================================================================
+// ─────────────────────────────────────────────────────────────────────────────
 // 4-2-3-1
-// ---------------------------------------------------------------------------
-// Backline    : LB-CB-CB-RB at X≈0.20
-// Double pivot: CDM-CDM     at X≈0.40
-// Attacking 3 : LW-CAM-RW   at X≈0.63
-// Striker     : ST           at X≈0.82
-// ===========================================================================
-FFormationDefinition UFormationLibrary::Build_4_2_3_1()
+// Slots: GK | LB CB-L CB-R RB | DM-L DM-R | LAM CAM RAM | ST
+// ─────────────────────────────────────────────────────────────────────────────
+
+FFormationData UMTeamFormationData::Build_4_2_3_1()
 {
-    FFormationDefinition D;
-    D.FormationType = EFormationType::Formation_4_2_3_1;
-    D.DisplayName   = FText::FromString(TEXT("4-2-3-1"));
-    D.Slots =
-    {
-        SLOT( 0, GK,  0.05f, 0.50f, "GK"),
-        // Defenders
-        SLOT( 1, LB,  0.20f, 0.15f, "LB"),
-        SLOT( 2, CB,  0.20f, 0.37f, "CB"),
-        SLOT( 3, CB,  0.20f, 0.63f, "CB"),
-        SLOT( 4, RB,  0.20f, 0.85f, "RB"),
-        // Double pivot
-        SLOT( 5, CDM, 0.40f, 0.37f, "CDM"),
-        SLOT( 6, CDM, 0.40f, 0.63f, "CDM"),
-        // Attacking three
-        SLOT( 7, LW,  0.63f, 0.18f, "LW"),
-        SLOT( 8, CAM, 0.63f, 0.50f, "CAM"),
-        SLOT( 9, RW,  0.63f, 0.82f, "RW"),
-        // Striker
-        SLOT(10, ST,  0.82f, 0.50f, "ST")
-    };
-    return D;
+    FFormationData F(EFormationType::Formation_4_2_3_1);
+    F.Slots.Add(FFormationSlot(0,  EPlayerRole::Goalkeeper,  0.50f, 0.05f, "GK"));
+    F.Slots.Add(FFormationSlot(1,  EPlayerRole::Defender,    0.15f, 0.22f, "LB"));
+    F.Slots.Add(FFormationSlot(2,  EPlayerRole::Defender,    0.38f, 0.20f, "CB-L"));
+    F.Slots.Add(FFormationSlot(3,  EPlayerRole::Defender,    0.62f, 0.20f, "CB-R"));
+    F.Slots.Add(FFormationSlot(4,  EPlayerRole::Defender,    0.85f, 0.22f, "RB"));
+    // Double pivot
+    F.Slots.Add(FFormationSlot(5,  EPlayerRole::Midfielder,  0.36f, 0.38f, "DM-L"));
+    F.Slots.Add(FFormationSlot(6,  EPlayerRole::Midfielder,  0.64f, 0.38f, "DM-R"));
+    // Attacking mid trio
+    F.Slots.Add(FFormationSlot(7,  EPlayerRole::Midfielder,  0.18f, 0.58f, "LAM"));
+    F.Slots.Add(FFormationSlot(8,  EPlayerRole::Midfielder,  0.50f, 0.60f, "CAM"));
+    F.Slots.Add(FFormationSlot(9,  EPlayerRole::Midfielder,  0.82f, 0.58f, "RAM"));
+    // Lone striker
+    F.Slots.Add(FFormationSlot(10, EPlayerRole::Forward,     0.50f, 0.80f, "ST"));
+    return F;
 }
 
-// ===========================================================================
+// ─────────────────────────────────────────────────────────────────────────────
 // 3-5-2
-// ---------------------------------------------------------------------------
-// Three CBs    at X≈0.20
-// Wingbacks    : LWB-RWB at X≈0.45  (Y=0.10 / 0.90)
-// Three CMs    at X≈0.50  centre channel
-// Two strikers at X≈0.80
-// ===========================================================================
-FFormationDefinition UFormationLibrary::Build_3_5_2()
+// Slots: GK | CB-L CB-C CB-R | LWB LCM CM RCM RWB | ST-L ST-R
+// ─────────────────────────────────────────────────────────────────────────────
+
+FFormationData UMTeamFormationData::Build_3_5_2()
 {
-    FFormationDefinition D;
-    D.FormationType = EFormationType::Formation_3_5_2;
-    D.DisplayName   = FText::FromString(TEXT("3-5-2"));
-    D.Slots =
-    {
-        SLOT( 0, GK,  0.05f, 0.50f, "GK"),
-        // Three centre-backs
-        SLOT( 1, CB,  0.20f, 0.27f, "CB"),
-        SLOT( 2, CB,  0.20f, 0.50f, "CB"),
-        SLOT( 3, CB,  0.20f, 0.73f, "CB"),
-        // Wing-backs (high and wide)
-        SLOT( 4, LWB, 0.45f, 0.10f, "LWB"),
-        SLOT( 5, RWB, 0.45f, 0.90f, "RWB"),
-        // Three midfielders
-        SLOT( 6, CM,  0.50f, 0.30f, "CM"),
-        SLOT( 7, CM,  0.50f, 0.50f, "CM"),
-        SLOT( 8, CM,  0.50f, 0.70f, "CM"),
-        // Two strikers
-        SLOT( 9, ST,  0.80f, 0.38f, "ST"),
-        SLOT(10, ST,  0.80f, 0.62f, "ST")
-    };
-    return D;
+    FFormationData F(EFormationType::Formation_3_5_2);
+    F.Slots.Add(FFormationSlot(0,  EPlayerRole::Goalkeeper,  0.50f, 0.05f, "GK"));
+    // Three-man defence
+    F.Slots.Add(FFormationSlot(1,  EPlayerRole::Defender,    0.25f, 0.20f, "CB-L"));
+    F.Slots.Add(FFormationSlot(2,  EPlayerRole::Defender,    0.50f, 0.18f, "CB-C"));
+    F.Slots.Add(FFormationSlot(3,  EPlayerRole::Defender,    0.75f, 0.20f, "CB-R"));
+    // Five-man midfield (incl. wing-backs)
+    F.Slots.Add(FFormationSlot(4,  EPlayerRole::Midfielder,  0.08f, 0.48f, "LWB"));
+    F.Slots.Add(FFormationSlot(5,  EPlayerRole::Midfielder,  0.30f, 0.45f, "LCM"));
+    F.Slots.Add(FFormationSlot(6,  EPlayerRole::Midfielder,  0.50f, 0.47f, "CM"));
+    F.Slots.Add(FFormationSlot(7,  EPlayerRole::Midfielder,  0.70f, 0.45f, "RCM"));
+    F.Slots.Add(FFormationSlot(8,  EPlayerRole::Midfielder,  0.92f, 0.48f, "RWB"));
+    // Two strikers
+    F.Slots.Add(FFormationSlot(9,  EPlayerRole::Forward,     0.36f, 0.75f, "ST-L"));
+    F.Slots.Add(FFormationSlot(10, EPlayerRole::Forward,     0.64f, 0.75f, "ST-R"));
+    return F;
 }
 
-// ===========================================================================
+// ─────────────────────────────────────────────────────────────────────────────
 // 5-4-1
-// ---------------------------------------------------------------------------
-// Five-back    : LWB-CB-CB-CB-RWB at X≈0.18
-// Four midfield: LM-CM-CM-RM       at X≈0.48
-// Lone striker  at X≈0.80
-// ===========================================================================
-FFormationDefinition UFormationLibrary::Build_5_4_1()
+// Slots: GK | LWB CB-L CB-C CB-R RWB | LM LCM RCM RM | ST
+// ─────────────────────────────────────────────────────────────────────────────
+
+FFormationData UMTeamFormationData::Build_5_4_1()
 {
-    FFormationDefinition D;
-    D.FormationType = EFormationType::Formation_5_4_1;
-    D.DisplayName   = FText::FromString(TEXT("5-4-1"));
-    D.Slots =
-    {
-        SLOT( 0, GK,  0.05f, 0.50f, "GK"),
-        // Five defenders
-        SLOT( 1, LWB, 0.18f, 0.08f, "LWB"),
-        SLOT( 2, CB,  0.18f, 0.28f, "CB"),
-        SLOT( 3, CB,  0.18f, 0.50f, "CB"),
-        SLOT( 4, CB,  0.18f, 0.72f, "CB"),
-        SLOT( 5, RWB, 0.18f, 0.92f, "RWB"),
-        // Four midfielders
-        SLOT( 6, LM,  0.48f, 0.15f, "LM"),
-        SLOT( 7, CM,  0.48f, 0.37f, "CM"),
-        SLOT( 8, CM,  0.48f, 0.63f, "CM"),
-        SLOT( 9, RM,  0.48f, 0.85f, "RM"),
-        // Lone striker
-        SLOT(10, ST,  0.80f, 0.50f, "ST")
-    };
-    return D;
+    FFormationData F(EFormationType::Formation_5_4_1);
+    F.Slots.Add(FFormationSlot(0,  EPlayerRole::Goalkeeper,  0.50f, 0.05f, "GK"));
+    // Five defenders
+    F.Slots.Add(FFormationSlot(1,  EPlayerRole::Defender,    0.08f, 0.25f, "LWB"));
+    F.Slots.Add(FFormationSlot(2,  EPlayerRole::Defender,    0.28f, 0.20f, "CB-L"));
+    F.Slots.Add(FFormationSlot(3,  EPlayerRole::Defender,    0.50f, 0.18f, "CB-C"));
+    F.Slots.Add(FFormationSlot(4,  EPlayerRole::Defender,    0.72f, 0.20f, "CB-R"));
+    F.Slots.Add(FFormationSlot(5,  EPlayerRole::Defender,    0.92f, 0.25f, "RWB"));
+    // Four midfielders
+    F.Slots.Add(FFormationSlot(6,  EPlayerRole::Midfielder,  0.18f, 0.48f, "LM"));
+    F.Slots.Add(FFormationSlot(7,  EPlayerRole::Midfielder,  0.38f, 0.46f, "LCM"));
+    F.Slots.Add(FFormationSlot(8,  EPlayerRole::Midfielder,  0.62f, 0.46f, "RCM"));
+    F.Slots.Add(FFormationSlot(9,  EPlayerRole::Midfielder,  0.82f, 0.48f, "RM"));
+    // Lone striker
+    F.Slots.Add(FFormationSlot(10, EPlayerRole::Forward,     0.50f, 0.78f, "ST"));
+    return F;
 }
 
-// ===========================================================================
+// ─────────────────────────────────────────────────────────────────────────────
 // 4-4-2
-// ---------------------------------------------------------------------------
-// Backline   : LB-CB-CB-RB at X≈0.20
-// Midfield 4 : LM-CM-CM-RM  at X≈0.50
-// Two strikers at X≈0.80
-// ===========================================================================
-FFormationDefinition UFormationLibrary::Build_4_4_2()
-{
-    FFormationDefinition D;
-    D.FormationType = EFormationType::Formation_4_4_2;
-    D.DisplayName   = FText::FromString(TEXT("4-4-2"));
-    D.Slots =
-    {
-        SLOT( 0, GK,  0.05f, 0.50f, "GK"),
-        // Defenders
-        SLOT( 1, LB,  0.20f, 0.15f, "LB"),
-        SLOT( 2, CB,  0.20f, 0.37f, "CB"),
-        SLOT( 3, CB,  0.20f, 0.63f, "CB"),
-        SLOT( 4, RB,  0.20f, 0.85f, "RB"),
-        // Midfielders
-        SLOT( 5, LM,  0.50f, 0.15f, "LM"),
-        SLOT( 6, CM,  0.50f, 0.37f, "CM"),
-        SLOT( 7, CM,  0.50f, 0.63f, "CM"),
-        SLOT( 8, RM,  0.50f, 0.85f, "RM"),
-        // Two strikers
-        SLOT( 9, ST,  0.80f, 0.38f, "ST"),
-        SLOT(10, ST,  0.80f, 0.62f, "ST")
-    };
-    return D;
-}
+// Slots: GK | LB CB-L CB-R RB | LM LCM RCM RM | ST-L ST-R
+// ─────────────────────────────────────────────────────────────────────────────
 
-#undef SLOT
-
-// ---------------------------------------------------------------------------
-// UFormationLibrary — static dispatch
-// ---------------------------------------------------------------------------
-bool UFormationLibrary::GetFormationDefinition(EFormationType FormationType,
-                                                FFormationDefinition& OutDefinition)
+FFormationData UMTeamFormationData::Build_4_4_2()
 {
-    switch (FormationType)
-    {
-    case EFormationType::Formation_4_3_3:   OutDefinition = Build_4_3_3();   return true;
-    case EFormationType::Formation_4_2_3_1: OutDefinition = Build_4_2_3_1(); return true;
-    case EFormationType::Formation_3_5_2:   OutDefinition = Build_3_5_2();   return true;
-    case EFormationType::Formation_5_4_1:   OutDefinition = Build_5_4_1();   return true;
-    case EFormationType::Formation_4_4_2:   OutDefinition = Build_4_4_2();   return true;
-    default:
-        UE_LOG(LogTemp, Warning,
-               TEXT("UFormationLibrary::GetFormationDefinition — unknown EFormationType %d"),
-               static_cast<int32>(FormationType));
-        return false;
-    }
-}
-
-TArray<FFormationDefinition> UFormationLibrary::GetAllFormationDefinitions()
-{
-    return
-    {
-        Build_4_3_3(),
-        Build_4_2_3_1(),
-        Build_3_5_2(),
-        Build_5_4_1(),
-        Build_4_4_2()
-    };
+    FFormationData F(EFormationType::Formation_4_4_2);
+    F.Slots.Add(FFormationSlot(0,  EPlayerRole::Goalkeeper,  0.50f, 0.05f, "GK"));
+    // Four defenders
+    F.Slots.Add(FFormationSlot(1,  EPlayerRole::Defender,    0.15f, 0.22f, "LB"));
+    F.Slots.Add(FFormationSlot(2,  EPlayerRole::Defender,    0.38f, 0.20f, "CB-L"));
+    F.Slots.Add(FFormationSlot(3,  EPlayerRole::Defender,    0.62f, 0.20f, "CB-R"));
+    F.Slots.Add(FFormationSlot(4,  EPlayerRole::Defender,    0.85f, 0.22f, "RB"));
+    // Four midfielders
+    F.Slots.Add(FFormationSlot(5,  EPlayerRole::Midfielder,  0.15f, 0.46f, "LM"));
+    F.Slots.Add(FFormationSlot(6,  EPlayerRole::Midfielder,  0.38f, 0.47f, "LCM"));
+    F.Slots.Add(FFormationSlot(7,  EPlayerRole::Midfielder,  0.62f, 0.47f, "RCM"));
+    F.Slots.Add(FFormationSlot(8,  EPlayerRole::Midfielder,  0.85f, 0.46f, "RM"));
+    // Two strikers
+    F.Slots.Add(FFormationSlot(9,  EPlayerRole::Forward,     0.35f, 0.76f, "ST-L"));
+    F.Slots.Add(FFormationSlot(10, EPlayerRole::Forward,     0.65f, 0.76f, "ST-R"));
+    return F;
 }
