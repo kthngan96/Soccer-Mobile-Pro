@@ -1,200 +1,197 @@
-// Copyright 2026 Soccer Mobile Pro. All Rights Reserved.
-// MSoccerAIController.cpp
-// Stub implementations — TODO tags mark Milestone integration points.
+// Copyright (c) Soccer Mobile Pro. All Rights Reserved.
+// GDD Section 2.1.3 | TECHSPEC Section 9.1 — AI: Behavior Trees + EQS
 
-#include "AI/MSoccerAIController.h"
-#include "MatchEngine/MSoccerPlayerCharacter.h"
-#include "BehaviorTree/BlackboardComponent.h"
+#include "MSoccerAIController.h"
+#include "BehaviorTree/BlackboardData.h"
+#include "BehaviorTree/Blackboard/BlackboardKeyType_Object.h"
+#include "BehaviorTree/Blackboard/BlackboardKeyType_Vector.h"
 #include "EnvironmentQuery/EnvQueryManager.h"
-#include "EnvironmentQuery/EnvQueryTypes.h"
+#include "Kismet/GameplayStatics.h"
 
-// ---------------------------------------------------------------------------
+// ─────────────────────────────────────────────────────────────────────────────
 // Construction
-// ---------------------------------------------------------------------------
+// ─────────────────────────────────────────────────────────────────────────────
+
 AMSoccerAIController::AMSoccerAIController()
-    : FormationSlotIndex(0)
 {
-    PrimaryActorTick.bCanEverTick = true;
-    bWantsPlayerState = false;
+    BehaviorTreeComponent = CreateDefaultSubobject<UBehaviorTreeComponent>(TEXT("BehaviorTreeComponent"));
+    BlackboardComponent   = CreateDefaultSubobject<UBlackboardComponent>(TEXT("BlackboardComponent"));
+
+    // TECHSPEC §9.1.1: Use the shared Blackboard asset; individual controllers
+    // write to per-instance keys so they don't clobber teammates.
 }
 
-// ---------------------------------------------------------------------------
-// UE Overrides
-// ---------------------------------------------------------------------------
+// ─────────────────────────────────────────────────────────────────────────────
+// Lifecycle
+// ─────────────────────────────────────────────────────────────────────────────
+
 void AMSoccerAIController::BeginPlay()
 {
     Super::BeginPlay();
-    // TODO Milestone-2: subscribe to UMatchStateSubsystem::OnMatchPhaseChanged
-    //                   to pause BT during HalfTime / FullTime states.
 }
 
 void AMSoccerAIController::OnPossess(APawn* InPawn)
 {
     Super::OnPossess(InPawn);
 
-    OwnedCharacter = Cast<AMSoccerPlayerCharacter>(InPawn);
-
-    // Start Behavior Tree if asset is assigned
-    if (!BehaviorTreeAsset.IsNull())
+    if (BehaviorTreeAsset)
     {
-        UBehaviorTree* LoadedBT = BehaviorTreeAsset.LoadSynchronous();
-        if (LoadedBT)
+        // Initialize Blackboard before running the tree.
+        if (UBlackboardData* BBAsset = BehaviorTreeAsset->BlackboardAsset)
         {
-            RunBehaviorTree(LoadedBT);
-            BlackboardComp = GetBlackboardComponent();
+            UseBlackboard(BBAsset, BlackboardComponent);
         }
-        else
-        {
-            UE_LOG(LogTemp, Warning,
-                   TEXT("MSoccerAIController: BehaviorTreeAsset failed to load for pawn %s"),
-                   *InPawn->GetName());
-        }
+
+        RunBehaviorTree(BehaviorTreeAsset);
+
+        UE_LOG(LogTemp, Log,
+            TEXT("MSoccerAIController: BehaviorTree '%s' started for pawn '%s'."),
+            *BehaviorTreeAsset->GetName(),
+            *InPawn->GetName());
     }
     else
     {
-        // TODO Milestone-2: replace with proper error telemetry.
         UE_LOG(LogTemp, Warning,
-               TEXT("MSoccerAIController: No BehaviorTreeAsset assigned on %s"),
-               *GetName());
+            TEXT("MSoccerAIController: No BehaviorTree assigned to '%s'."),
+            *GetName());
     }
 }
 
 void AMSoccerAIController::OnUnPossess()
 {
-    StopMovement();
-    OwnedCharacter.Reset();
     Super::OnUnPossess();
+
+    if (BehaviorTreeComponent)
+    {
+        BehaviorTreeComponent->StopTree();
+    }
 }
 
-void AMSoccerAIController::Tick(float DeltaSeconds)
-{
-    Super::Tick(DeltaSeconds);
-    // High-frequency per-frame logic (e.g. look-at ball) goes here.
-    // Keep this lightweight — heavy decisions live in the Behavior Tree.
-    // TODO Milestone-3: update UPerceptionComponent sight stimulus.
-}
+// ─────────────────────────────────────────────────────────────────────────────
+// EQS — FindOpenPosition
+// TECHSPEC §9.1.2
+// ─────────────────────────────────────────────────────────────────────────────
 
-// ---------------------------------------------------------------------------
-// EQS — QueryFindOpenPosition
-// ---------------------------------------------------------------------------
-void AMSoccerAIController::QueryFindOpenPosition(FQueryFinishedSignature QueryFinishedDelegate)
+void AMSoccerAIController::RunQuery_FindOpenPosition()
 {
-    if (EQS_FindOpenPosition.IsNull())
+    if (!EQS_FindOpenPosition)
     {
         UE_LOG(LogTemp, Warning,
-               TEXT("MSoccerAIController::QueryFindOpenPosition — EQS_FindOpenPosition not set on %s"),
-               *GetName());
+            TEXT("MSoccerAIController: EQS_FindOpenPosition asset is not assigned."));
         return;
     }
 
-    RunEQSQuery(EQS_FindOpenPosition, QueryFinishedDelegate);
-    // TODO Milestone-3: cancel any previous ActiveOpenPositionQuery before
-    //                   issuing a new one to avoid stale results.
+    UWorld* World = GetWorld();
+    if (!World) return;
+
+    UEnvQueryManager* EQSManager = UEnvQueryManager::GetCurrent(World);
+    if (!EQSManager) return;
+
+    // Run query and bind result callback.
+    OpenPositionQueryRequest = FEnvQueryRequest(EQS_FindOpenPosition, GetPawn());
+    OpenPositionQueryRequest.Execute(
+        EEnvQueryRunMode::SingleResult,
+        this,
+        &AMSoccerAIController::OnOpenPositionQueryFinished
+    );
 }
 
-// ---------------------------------------------------------------------------
-// EQS — QueryFindPassTarget
-// ---------------------------------------------------------------------------
-void AMSoccerAIController::QueryFindPassTarget(FQueryFinishedSignature QueryFinishedDelegate)
+void AMSoccerAIController::OnOpenPositionQueryFinished(TSharedPtr<FEnvQueryResult> Result)
 {
-    if (EQS_FindPassTarget.IsNull())
+    if (!Result.IsValid() || Result->IsAborted())
     {
-        UE_LOG(LogTemp, Warning,
-               TEXT("MSoccerAIController::QueryFindPassTarget — EQS_FindPassTarget not set on %s"),
-               *GetName());
         return;
     }
 
-    RunEQSQuery(EQS_FindPassTarget, QueryFinishedDelegate);
-    // TODO Milestone-3: feed best result directly into a UPassDecisionComponent
-    //                   that evaluates risk vs reward before committing.
+    if (Result->Items.Num() > 0)
+    {
+        const FVector BestLocation = Result->GetItemAsLocation(0);
+
+        if (BlackboardComponent)
+        {
+            BlackboardComponent->SetValueAsVector(
+                FName("BestOpenPosition"), BestLocation
+            );
+        }
+
+        UE_LOG(LogTemp, Verbose,
+            TEXT("MSoccerAIController [%s]: FindOpenPosition → (%.1f, %.1f, %.1f)"),
+            *GetName(),
+            BestLocation.X, BestLocation.Y, BestLocation.Z);
+    }
 }
 
-// ---------------------------------------------------------------------------
-// Formation — UpdateTeamFormation
-// ---------------------------------------------------------------------------
-void AMSoccerAIController::UpdateTeamFormation_Implementation(
-    const FFormationDefinition& NewFormation)
-{
-    CachedFormation = NewFormation;
-    RefreshFormationSlotBBKey();
-    OnAIFormationUpdated.Broadcast(NewFormation);
+// ─────────────────────────────────────────────────────────────────────────────
+// EQS — FindPassTarget
+// TECHSPEC §9.1.3
+// ─────────────────────────────────────────────────────────────────────────────
 
-    // TODO Milestone-2: implement smooth positional interpolation.
-    //   - read current WorldLocation
-    //   - compute SlotNormalizedToWorld(NewSlot.NormalizedPosition)
-    //   - start a timeline or UE movement task to lerp over 3-5 sec
+void AMSoccerAIController::RunQuery_FindPassTarget()
+{
+    if (!EQS_FindPassTarget)
+    {
+        UE_LOG(LogTemp, Warning,
+            TEXT("MSoccerAIController: EQS_FindPassTarget asset is not assigned."));
+        return;
+    }
+
+    UWorld* World = GetWorld();
+    if (!World) return;
+
+    UEnvQueryManager* EQSManager = UEnvQueryManager::GetCurrent(World);
+    if (!EQSManager) return;
+
+    PassTargetQueryRequest = FEnvQueryRequest(EQS_FindPassTarget, GetPawn());
+    PassTargetQueryRequest.Execute(
+        EEnvQueryRunMode::SingleResult,
+        this,
+        &AMSoccerAIController::OnPassTargetQueryFinished
+    );
+}
+
+void AMSoccerAIController::OnPassTargetQueryFinished(TSharedPtr<FEnvQueryResult> Result)
+{
+    if (!Result.IsValid() || Result->IsAborted())
+    {
+        return;
+    }
+
+    if (Result->Items.Num() > 0)
+    {
+        // The EQS query generates ActorItem results; retrieve the winning actor.
+        UObject* BestActor = Result->GetItemAsActor(0);
+
+        if (BlackboardComponent && BestActor)
+        {
+            BlackboardComponent->SetValueAsObject(
+                FName("BestPassTarget"), BestActor
+            );
+        }
+
+        UE_LOG(LogTemp, Verbose,
+            TEXT("MSoccerAIController [%s]: FindPassTarget → '%s'"),
+            *GetName(),
+            BestActor ? *BestActor->GetName() : TEXT("None"));
+    }
+}
+
+// ─────────────────────────────────────────────────────────────────────────────
+// Formation
+// TECHSPEC §9.1.4 — stub, full logic TBD
+// ─────────────────────────────────────────────────────────────────────────────
+
+void AMSoccerAIController::UpdateTeamFormation(EFormationType NewFormation)
+{
+    // TODO (TECHSPEC §9.1.4): Broadcast formation change to all team members.
+    // Steps when implemented:
+    //   1. Retrieve the team manager via subsystem / game state.
+    //   2. Look up FFormationData for NewFormation in MTeamFormationData.
+    //   3. Assign each AI controller its new FFormationSlot by player index.
+    //   4. Write the new target position to BB key "FormationTargetPosition".
+    //   5. Trigger BT Decorator "Formation Changed" to force re-evaluation.
+
     UE_LOG(LogTemp, Log,
-           TEXT("MSoccerAIController::UpdateTeamFormation — %s slot %d → formation %s [STUB]"),
-           *GetName(),
-           FormationSlotIndex,
-           *NewFormation.DisplayName.ToString());
-}
-
-// ---------------------------------------------------------------------------
-// OnPossessionChanged
-// ---------------------------------------------------------------------------
-void AMSoccerAIController::OnPossessionChanged(bool bNowInPossession)
-{
-    if (BlackboardComp)
-    {
-        BlackboardComp->SetValueAsBool(MSoccerBBKeys::bHasBall, bNowInPossession);
-        BlackboardComp->SetValueAsBool(MSoccerBBKeys::bReturnToFormation, !bNowInPossession);
-    }
-    // TODO Milestone-2: when losing possession, set a "press distance" threshold
-    //                   in the BB so CDM/CM nodes trigger compact shape.
-}
-
-// ---------------------------------------------------------------------------
-// Internal helpers
-// ---------------------------------------------------------------------------
-FVector AMSoccerAIController::SlotNormalizedToWorld(const FVector2D& NormalizedPos) const
-{
-    // TODO Milestone-2: query UPitchSubsystem for actual pitch bounds.
-    // Default pitch: 105m long (X) × 68m wide (Y), origin at centre circle.
-    static const float PitchHalfLengthCm = 5250.0f;  // 105m / 2
-    static const float PitchHalfWidthCm  = 3400.0f;  // 68m  / 2
-
-    const float WorldX = (NormalizedPos.X - 0.5f) * 2.0f * PitchHalfLengthCm;
-    const float WorldY = (NormalizedPos.Y - 0.5f) * 2.0f * PitchHalfWidthCm;
-    return FVector(WorldX, WorldY, 0.0f);
-}
-
-void AMSoccerAIController::RefreshFormationSlotBBKey()
-{
-    if (!BlackboardComp) { return; }
-
-    const FFormationSlot* Slot = CachedFormation.GetSlotByIndex(FormationSlotIndex);
-    if (!Slot)
-    {
-        UE_LOG(LogTemp, Warning,
-               TEXT("MSoccerAIController::RefreshFormationSlotBBKey — SlotIndex %d not found in %s"),
-               FormationSlotIndex,
-               *CachedFormation.DisplayName.ToString());
-        return;
-    }
-
-    const FVector SlotWorld = SlotNormalizedToWorld(Slot->NormalizedPosition);
-    BlackboardComp->SetValueAsVector(MSoccerBBKeys::FormationSlotPosition, SlotWorld);
-}
-
-void AMSoccerAIController::RunEQSQuery(TSoftObjectPtr<UEnvQuery>& QueryAsset,
-                                        FQueryFinishedSignature QueryFinishedDelegate)
-{
-    UEnvQuery* LoadedQuery = QueryAsset.LoadSynchronous();
-    if (!LoadedQuery)
-    {
-        UE_LOG(LogTemp, Warning,
-               TEXT("MSoccerAIController::RunEQSQuery — failed to load EQS asset on %s"),
-               *GetName());
-        return;
-    }
-
-    UEnvQueryManager* EQSManager = UEnvQueryManager::GetCurrent(GetWorld());
-    if (!EQSManager) { return; }
-
-    FEnvQueryRequest Request(LoadedQuery, GetPawn());
-    Request.Execute(EEnvQueryRunMode::SingleResult, QueryFinishedDelegate);
-    // TODO Milestone-3: store the returned query ID so we can cancel it
-    //                   via EQSManager->AbortQuery(QueryId) on UnPossess.
+        TEXT("MSoccerAIController [%s]: UpdateTeamFormation called (stub). Formation=%d"),
+        *GetName(),
+        static_cast<int32>(NewFormation));
 }
