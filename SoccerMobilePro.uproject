@@ -1,0 +1,57 @@
+{
+	"FileVersion": 3,
+	"EngineAssociation": "5.6.1",
+	"Category": "",
+	"Description": "",
+	"Modules": [
+		{
+			"Name": "SoccerMobilePro",
+			"Type": "Runtime",
+			"LoadingPhase": "Default"
+		}
+	],
+	"TargetPlatforms": [
+		"IOS",
+		"Android"
+	],
+	"Plugins": [
+		{ "Name": "MobileSupport", "Enabled": true },
+		{ "Name": "AndroidPermission", "Enabled": true },
+		{ "Name": "IOSAudio", "Enabled": true },
+		{ "Name": "MobilePatchingUtils", "Enabled": true },
+		{ "Name": "MobileFileServer", "Enabled": true },
+		{ "Name": "OnlineSubsystem", "Enabled": true },
+		{ "Name": "OnlineSubsystemEOS", "Enabled": true },
+		{ "Name": "OnlineSubsystemUtils", "Enabled": true },
+		{ "Name": "EOSSDK", "Enabled": true },
+		{ "Name": "WebSockets", "Enabled": true },
+		{ "Name": "HTTP", "Enabled": true },
+		{ "Name": "Json", "Enabled": true },
+		{ "Name": "JsonUtilities", "Enabled": true },
+		{ "Name": "GeometryScript", "Enabled": true },
+		{ "Name": "ControlRig", "Enabled": true },
+		{ "Name": "IKRig", "Enabled": true },
+		{ "Name": "AnimationWarping", "Enabled": true },
+		{ "Name": "MotionTrajectory", "Enabled": true },
+		{ "Name": "LiveLink", "Enabled": true },
+		{ "Name": "MetaHuman", "Enabled": true },
+		{ "Name": "AIModule", "Enabled": true },
+		{ "Name": "NavigationSystem", "Enabled": true },
+		{ "Name": "StateTree", "Enabled": true },
+		{ "Name": "UMG", "Enabled": true },
+		{ "Name": "Slate", "Enabled": true },
+		{ "Name": "SlateCore", "Enabled": true },
+		{ "Name": "CommonUI", "Enabled": true },
+		{ "Name": "CommonGame", "Enabled": true },
+		{ "Name": "EnhancedInput", "Enabled": true },
+		{ "Name": "Metasound", "Enabled": true },
+		{ "Name": "AudioMixer", "Enabled": true },
+		{ "Name": "Synthesis", "Enabled": true },
+		{ "Name": "InAppPurchase", "Enabled": true },
+		{ "Name": "Advertisement", "Enabled": true },
+		{ "Name": "EasyAntiCheatSDK", "Enabled": true },
+		{ "Name": "Analytics", "Enabled": true },
+		{ "Name": "AnalyticsET", "Enabled": true },
+		{ "Name": "Localization", "Enabled": true }
+	]
+}
