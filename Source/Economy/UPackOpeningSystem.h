@@ -20,7 +20,7 @@
  * (representing 100.00%) so integer arithmetic avoids float rounding.
  */
 USTRUCT(BlueprintType)
-struct MSOCCER_API FTierDropRow
+struct SOCCERMOBILEPRO_API FTierDropRow
 {
     GENERATED_BODY()
 
@@ -51,7 +51,7 @@ struct MSOCCER_API FTierDropRow
  *  - Transcendence pity: every 200 pulls → exactly Transcendence.
  */
 USTRUCT(BlueprintType)
-struct MSOCCER_API FPityCounter
+struct SOCCERMOBILEPRO_API FPityCounter
 {
     GENERATED_BODY()
 
@@ -93,7 +93,7 @@ struct MSOCCER_API FPityCounter
  * variants without code changes.
  */
 USTRUCT(BlueprintType)
-struct MSOCCER_API FPackDefinition
+struct SOCCERMOBILEPRO_API FPackDefinition
 {
     GENERATED_BODY()
 
@@ -143,7 +143,7 @@ struct MSOCCER_API FPackDefinition
  * The UI layer reads this to run the reveal animation sequence.
  */
 USTRUCT(BlueprintType)
-struct MSOCCER_API FPackOpenResult
+struct SOCCERMOBILEPRO_API FPackOpenResult
 {
     GENERATED_BODY()
 
@@ -177,7 +177,7 @@ struct MSOCCER_API FPackOpenResult
  * TODO Milestone-3: serialise and POST to backend analytics endpoint.
  */
 USTRUCT(BlueprintType)
-struct MSOCCER_API FPullEventPayload
+struct SOCCERMOBILEPRO_API FPullEventPayload
 {
     GENERATED_BODY()
 
@@ -246,7 +246,7 @@ DECLARE_DYNAMIC_MULTICAST_DELEGATE_TwoParams(
  * TODO Milestone-3: persist pity counters to save-game slot.
  */
 UCLASS()
-class MSOCCER_API UPackOpeningSystem : public UGameInstanceSubsystem
+class SOCCERMOBILEPRO_API UPackOpeningSystem : public UGameInstanceSubsystem
 {
     GENERATED_BODY()
 

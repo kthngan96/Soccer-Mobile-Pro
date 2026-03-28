@@ -229,4 +229,7 @@ private:
 
     void InitDefaultSkillData();
     TMap<ESkillID, FSkillDefinition> FallbackSkillDefs; // used if DataTable not set
+
+    UFUNCTION()
+    void HandleGestureRecognized_Internal(EGestureType Gesture);
 };

@@ -62,7 +62,7 @@ enum class ETransactionSource : uint8
  * Serialisation to backend is handled in Milestone-3.
  */
 USTRUCT(BlueprintType)
-struct MSOCCER_API FTransactionRecord
+struct SOCCERMOBILEPRO_API FTransactionRecord
 {
     GENERATED_BODY()
 
@@ -140,7 +140,7 @@ DECLARE_DYNAMIC_MULTICAST_DELEGATE_TwoParams(
  * TODO Milestone-3: sync balance deltas to backend ledger API.
  */
 UCLASS()
-class MSOCCER_API UEconomyManager : public UGameInstanceSubsystem
+class SOCCERMOBILEPRO_API UEconomyManager : public UGameInstanceSubsystem
 {
     GENERATED_BODY()
 
