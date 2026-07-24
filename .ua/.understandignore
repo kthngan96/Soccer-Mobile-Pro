@@ -95,3 +95,6 @@
 # **/spec_helper.rb
 # **/test_helper.rb
 # **/rails_helper.rb
+
+# Understand scratch artifacts
+.ua/tmp/

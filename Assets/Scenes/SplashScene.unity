@@ -335,7 +335,7 @@ MonoBehaviour:
   - {fileID: 32900000, guid: d3f690a2da1a4594faacb148c33fe8c0, type: 3}
   - {fileID: 32900000, guid: 61745005c981e6646b30cf86c73771f7, type: 3}
   clipAudioOverrides:
-  - {fileID: 8300000, guid: 8f98f0e5b8e84d8ba9976cb47e5f964f, type: 3}
+  - {fileID: 0}
   - {fileID: 0}
   targetImage: {fileID: 157356278}
   videoPlayer: {fileID: 676219747}

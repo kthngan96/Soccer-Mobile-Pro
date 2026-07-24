@@ -1,7 +1,7 @@
 {
   "version": "1.0.0",
-  "gitCommitHash": "eb3108fd5e833ed0278b477801190a590e8a6888",
-  "generatedAt": "2026-07-24T14:27:35.555Z",
+  "gitCommitHash": "624c07bcd90ee68eea402c9f30c055b960d268e1",
+  "generatedAt": "2026-07-24T15:38:37.714Z",
   "files": {
     ".agents/skills/animation-create/SKILL.md": {
       "filePath": ".agents/skills/animation-create/SKILL.md",
@@ -233,6 +233,146 @@
       "totalLines": 85,
       "hasStructuralAnalysis": true
     },
+    ".agents/skills/cinemachine-add-extension/SKILL.md": {
+      "filePath": ".agents/skills/cinemachine-add-extension/SKILL.md",
+      "contentHash": "4c3f22cb70483076e36d59f12fe04108c22081d0dfe203de78b6764b941ec376",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 217,
+      "hasStructuralAnalysis": true
+    },
+    ".agents/skills/cinemachine-brain-ensure/SKILL.md": {
+      "filePath": ".agents/skills/cinemachine-brain-ensure/SKILL.md",
+      "contentHash": "d5d006162fec7165640d4962c8d93763869b1c144da6f6c0be9c9be53be8f1cc",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 212,
+      "hasStructuralAnalysis": true
+    },
+    ".agents/skills/cinemachine-camera-create/SKILL.md": {
+      "filePath": ".agents/skills/cinemachine-camera-create/SKILL.md",
+      "contentHash": "476141b9208160369af627b3a12f4c63c4d161a7bf86a92a2bf6effcdc4adba2",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 266,
+      "hasStructuralAnalysis": true
+    },
+    ".agents/skills/cinemachine-camera-get/SKILL.md": {
+      "filePath": ".agents/skills/cinemachine-camera-get/SKILL.md",
+      "contentHash": "7d527fa6ccaf5835c021b3fd91c7ed6b7a2573ca1d2384d156ab2eda9ead07e9",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 276,
+      "hasStructuralAnalysis": true
+    },
+    ".agents/skills/cinemachine-camera-list/SKILL.md": {
+      "filePath": ".agents/skills/cinemachine-camera-list/SKILL.md",
+      "contentHash": "6a9fc6c64f887f758b117fcc433caa258a2e945f3f93c42d113538a512ee5dbc",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 192,
+      "hasStructuralAnalysis": true
+    },
+    ".agents/skills/cinemachine-get/SKILL.md": {
+      "filePath": ".agents/skills/cinemachine-get/SKILL.md",
+      "contentHash": "23c69a5935c0cb28c0dfc68ea34da6f968cbe00ecb4700d3f416b596945b020d",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 286,
+      "hasStructuralAnalysis": true
+    },
+    ".agents/skills/cinemachine-modify/SKILL.md": {
+      "filePath": ".agents/skills/cinemachine-modify/SKILL.md",
+      "contentHash": "5b5e55114472eee4aebfcb9dbf0d8b8f1cc0f297adc70d1fea3a3ef5899f610b",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 298,
+      "hasStructuralAnalysis": true
+    },
+    ".agents/skills/cinemachine-set-aim/SKILL.md": {
+      "filePath": ".agents/skills/cinemachine-set-aim/SKILL.md",
+      "contentHash": "cb958e8b66394e0b7c59bfe54ca84ad088129f609df724872ad5afcc702a8af2",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 243,
+      "hasStructuralAnalysis": true
+    },
+    ".agents/skills/cinemachine-set-body/SKILL.md": {
+      "filePath": ".agents/skills/cinemachine-set-body/SKILL.md",
+      "contentHash": "c1f752ac0c90fed7ba9219b8bfe1e515e2b8a14ef82c0387c8e611a8768fafb0",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 266,
+      "hasStructuralAnalysis": true
+    },
+    ".agents/skills/cinemachine-set-default-blend/SKILL.md": {
+      "filePath": ".agents/skills/cinemachine-set-default-blend/SKILL.md",
+      "contentHash": "11ceb1b81ca9359563543ca32eee4701cd849bab51b41459dcbc55d1e0007de3",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 233,
+      "hasStructuralAnalysis": true
+    },
+    ".agents/skills/cinemachine-set-lens/SKILL.md": {
+      "filePath": ".agents/skills/cinemachine-set-lens/SKILL.md",
+      "contentHash": "772e89a7a67d3b354fbae668f42150dfc8491234b941d986c3b5085ca19c76e1",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 259,
+      "hasStructuralAnalysis": true
+    },
+    ".agents/skills/cinemachine-set-noise/SKILL.md": {
+      "filePath": ".agents/skills/cinemachine-set-noise/SKILL.md",
+      "contentHash": "fbf1c70ecd00e2b76a6403b9b2569d45ba4e8d369ae399e3defe0ae7b8710a21",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 232,
+      "hasStructuralAnalysis": true
+    },
+    ".agents/skills/cinemachine-set-priority/SKILL.md": {
+      "filePath": ".agents/skills/cinemachine-set-priority/SKILL.md",
+      "contentHash": "bd1f399e11a2fb1f5ccb0f2c7b4351433d53b40767fc402f78c7823acc2a3c05",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 214,
+      "hasStructuralAnalysis": true
+    },
+    ".agents/skills/cinemachine-set-targets/SKILL.md": {
+      "filePath": ".agents/skills/cinemachine-set-targets/SKILL.md",
+      "contentHash": "cbd6310889356dfe9a4eb82f6d9b57da40671ecf533333a7e64c7d1ca7e2edf6",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 234,
+      "hasStructuralAnalysis": true
+    },
     ".agents/skills/console-clear-logs/SKILL.md": {
       "filePath": ".agents/skills/console-clear-logs/SKILL.md",
       "contentHash": "3a3a3b475bc95d21b13a020b8a8189a8e40a912b71c9455ec23305401b09ea64",
@@ -401,6 +541,246 @@
       "imports": [],
       "exports": [],
       "totalLines": 143,
+      "hasStructuralAnalysis": true
+    },
+    ".agents/skills/inputsystem-action-add/SKILL.md": {
+      "filePath": ".agents/skills/inputsystem-action-add/SKILL.md",
+      "contentHash": "34084d18bee84d83b556ca42928d2a5ddb7e176822810351f5c9d0507ab755d3",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 176,
+      "hasStructuralAnalysis": true
+    },
+    ".agents/skills/inputsystem-action-remove/SKILL.md": {
+      "filePath": ".agents/skills/inputsystem-action-remove/SKILL.md",
+      "contentHash": "327ed13f007879f8c7e1ba1fa43564ae17c0e9aea555864062cd7a7c55c0c7d7",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 129,
+      "hasStructuralAnalysis": true
+    },
+    ".agents/skills/inputsystem-actionmap-add/SKILL.md": {
+      "filePath": ".agents/skills/inputsystem-actionmap-add/SKILL.md",
+      "contentHash": "29c3c8fe7352dc932b397b328e844120da653e503284395987aa34b0c105e3cb",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 118,
+      "hasStructuralAnalysis": true
+    },
+    ".agents/skills/inputsystem-actionmap-remove/SKILL.md": {
+      "filePath": ".agents/skills/inputsystem-actionmap-remove/SKILL.md",
+      "contentHash": "5998ecc241f9fada4fcebc33f1c38c7ee76ae60ba35bfbb2cd3b7c29d75b12f4",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 118,
+      "hasStructuralAnalysis": true
+    },
+    ".agents/skills/inputsystem-asset-create/SKILL.md": {
+      "filePath": ".agents/skills/inputsystem-asset-create/SKILL.md",
+      "contentHash": "85c6c9f41f84ec984738c6e9b7cf662e8929f79cf1fa46168f328208cb030860",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 112,
+      "hasStructuralAnalysis": true
+    },
+    ".agents/skills/inputsystem-binding-add/SKILL.md": {
+      "filePath": ".agents/skills/inputsystem-binding-add/SKILL.md",
+      "contentHash": "3515b75f447b1bdf4760c08d6f58c3dc30ba40036fd742b2c6eeb98aafa706f9",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 163,
+      "hasStructuralAnalysis": true
+    },
+    ".agents/skills/inputsystem-binding-composite-add/SKILL.md": {
+      "filePath": ".agents/skills/inputsystem-binding-composite-add/SKILL.md",
+      "contentHash": "f3bc29e19ccdd14f4d4fe2c20cc30c251578d30590cd606bc2a055cbc3d2d759",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 186,
+      "hasStructuralAnalysis": true
+    },
+    ".agents/skills/inputsystem-binding-remove/SKILL.md": {
+      "filePath": ".agents/skills/inputsystem-binding-remove/SKILL.md",
+      "contentHash": "6da713c50046cbefe2291898f91b929e8975ce10e0031c4885e5b9ece9fe28e1",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 140,
+      "hasStructuralAnalysis": true
+    },
+    ".agents/skills/inputsystem-binding-set/SKILL.md": {
+      "filePath": ".agents/skills/inputsystem-binding-set/SKILL.md",
+      "contentHash": "239f0d730d22b81d808a7bacc073a97062877c7dc9e6b01dd11c82a9e9ff6ce8",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 175,
+      "hasStructuralAnalysis": true
+    },
+    ".agents/skills/inputsystem-controlscheme-add/SKILL.md": {
+      "filePath": ".agents/skills/inputsystem-controlscheme-add/SKILL.md",
+      "contentHash": "8ab92bf9ff177e867401cdf73d09ee026166826699e5196af09ba1c24c484670",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 148,
+      "hasStructuralAnalysis": true
+    },
+    ".agents/skills/inputsystem-get/SKILL.md": {
+      "filePath": ".agents/skills/inputsystem-get/SKILL.md",
+      "contentHash": "d416fceb3fde95a8e3b1dc8cd2d87c8abc521f3083127333d60886f5dc6c5368",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 226,
+      "hasStructuralAnalysis": true
+    },
+    ".agents/skills/inputsystem-modify/SKILL.md": {
+      "filePath": ".agents/skills/inputsystem-modify/SKILL.md",
+      "contentHash": "d9e044a3d76360a9929a7d457bbdd6ec84d8904290ad26be6351d84c54c7902d",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 167,
+      "hasStructuralAnalysis": true
+    },
+    ".agents/skills/inputsystem-save/SKILL.md": {
+      "filePath": ".agents/skills/inputsystem-save/SKILL.md",
+      "contentHash": "b1e385ed7b968b5def2abec8e384641059caf7b56ef374f0392ba662ef3b0583",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 112,
+      "hasStructuralAnalysis": true
+    },
+    ".agents/skills/navigation-agent-add/SKILL.md": {
+      "filePath": ".agents/skills/navigation-agent-add/SKILL.md",
+      "contentHash": "1940eac50cdeafcfc693c3df89a1d03312c40838b43204ba745c83ed2b2a0d2b",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 275,
+      "hasStructuralAnalysis": true
+    },
+    ".agents/skills/navigation-agent-set-destination/SKILL.md": {
+      "filePath": ".agents/skills/navigation-agent-set-destination/SKILL.md",
+      "contentHash": "7072339cd2d18bc525ed226c8cd54f0d4edcbf23bb5a3fca05629043424db014",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 279,
+      "hasStructuralAnalysis": true
+    },
+    ".agents/skills/navigation-get/SKILL.md": {
+      "filePath": ".agents/skills/navigation-get/SKILL.md",
+      "contentHash": "8a805bdfadce8c1378bf071f6358538b2ca1d88dcfd27f17f140793b1ca09bf5",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 286,
+      "hasStructuralAnalysis": true
+    },
+    ".agents/skills/navigation-link-add/SKILL.md": {
+      "filePath": ".agents/skills/navigation-link-add/SKILL.md",
+      "contentHash": "03ed344a393d7bd3721fe4cf9f249b6f682dc12e423d5605995584feafeffc27",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 303,
+      "hasStructuralAnalysis": true
+    },
+    ".agents/skills/navigation-list/SKILL.md": {
+      "filePath": ".agents/skills/navigation-list/SKILL.md",
+      "contentHash": "2a0810e0d1c27dd08e5aa07645d5cec6023a253c23eb91d8027b8763ca682e03",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 241,
+      "hasStructuralAnalysis": true
+    },
+    ".agents/skills/navigation-modifier-add/SKILL.md": {
+      "filePath": ".agents/skills/navigation-modifier-add/SKILL.md",
+      "contentHash": "7b4d3597752f00bc1c38a7692b8f80f0f5b16e0c7f3d91a4bd3b496c1532d029",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 246,
+      "hasStructuralAnalysis": true
+    },
+    ".agents/skills/navigation-modifier-volume-add/SKILL.md": {
+      "filePath": ".agents/skills/navigation-modifier-volume-add/SKILL.md",
+      "contentHash": "f7f38672e3cf411afbd0b1ea77591cc90544561deb745338e34acf61b7dfc68e",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 275,
+      "hasStructuralAnalysis": true
+    },
+    ".agents/skills/navigation-modify/SKILL.md": {
+      "filePath": ".agents/skills/navigation-modify/SKILL.md",
+      "contentHash": "05578378467ac6883313f95c3cf4e7fd9f62584c55752ddbe69d452fafc8da29",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 298,
+      "hasStructuralAnalysis": true
+    },
+    ".agents/skills/navigation-set-bake-settings/SKILL.md": {
+      "filePath": ".agents/skills/navigation-set-bake-settings/SKILL.md",
+      "contentHash": "36a48733aee54c0f526e28c93d4639fa4cba5fc52ef9096a0587d99e9d0a7ffc",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 240,
+      "hasStructuralAnalysis": true
+    },
+    ".agents/skills/navigation-surface-add/SKILL.md": {
+      "filePath": ".agents/skills/navigation-surface-add/SKILL.md",
+      "contentHash": "2d941e1fb7823f9169c5b043f5d60faeb1b083fe23bc49037f91bf9e2b76c5b8",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 285,
+      "hasStructuralAnalysis": true
+    },
+    ".agents/skills/navigation-surface-bake/SKILL.md": {
+      "filePath": ".agents/skills/navigation-surface-bake/SKILL.md",
+      "contentHash": "dadc6991a2748d4bf9b6ff45c483719d5eb967b1f4a364dc510a2c0e636881df",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 218,
       "hasStructuralAnalysis": true
     },
     ".agents/skills/object-get-data/SKILL.md": {
@@ -623,6 +1003,126 @@
       "totalLines": 216,
       "hasStructuralAnalysis": true
     },
+    ".agents/skills/profiler-capture-frame/SKILL.md": {
+      "filePath": ".agents/skills/profiler-capture-frame/SKILL.md",
+      "contentHash": "e26412afbd2e4db269a12c3bf1acfc23609db656748beb4a7ec96d6930655806",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 121,
+      "hasStructuralAnalysis": true
+    },
+    ".agents/skills/profiler-clear-data/SKILL.md": {
+      "filePath": ".agents/skills/profiler-clear-data/SKILL.md",
+      "contentHash": "8e9e676720561fb98fc5926c7448caaf021b26b07d3034547efcbe13ed63a7db",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 77,
+      "hasStructuralAnalysis": true
+    },
+    ".agents/skills/profiler-enable-module/SKILL.md": {
+      "filePath": ".agents/skills/profiler-enable-module/SKILL.md",
+      "contentHash": "6baee3e0dd33ca32312a90e245252c40d05f9cdf6ff6c3b690138bbc1d804ec5",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 90,
+      "hasStructuralAnalysis": true
+    },
+    ".agents/skills/profiler-get-memory-stats/SKILL.md": {
+      "filePath": ".agents/skills/profiler-get-memory-stats/SKILL.md",
+      "contentHash": "8ccf12360e8d101d35d5dbf0841d740017839710c9eafe381d9a134eaf86dba2",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 145,
+      "hasStructuralAnalysis": true
+    },
+    ".agents/skills/profiler-get-rendering-stats/SKILL.md": {
+      "filePath": ".agents/skills/profiler-get-rendering-stats/SKILL.md",
+      "contentHash": "2337ad7b865f66c52972b5a38c05a1640f5d51e42a148d53870b4e88b166a726",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 121,
+      "hasStructuralAnalysis": true
+    },
+    ".agents/skills/profiler-get-script-stats/SKILL.md": {
+      "filePath": ".agents/skills/profiler-get-script-stats/SKILL.md",
+      "contentHash": "f35ebced4c469f53437d691365a8df995874d0fd56853a1ade346b473215b952",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 129,
+      "hasStructuralAnalysis": true
+    },
+    ".agents/skills/profiler-get-status/SKILL.md": {
+      "filePath": ".agents/skills/profiler-get-status/SKILL.md",
+      "contentHash": "3a9dc6180f3a72358a6762f07ae9e307d58ce6845c7272b4ff39d0b8202d2f85",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 120,
+      "hasStructuralAnalysis": true
+    },
+    ".agents/skills/profiler-list-modules/SKILL.md": {
+      "filePath": ".agents/skills/profiler-list-modules/SKILL.md",
+      "contentHash": "9b6742d42a008031d7796f115c557eedb8ebf5477384a5bec177751330697d2f",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 114,
+      "hasStructuralAnalysis": true
+    },
+    ".agents/skills/profiler-load-data/SKILL.md": {
+      "filePath": ".agents/skills/profiler-load-data/SKILL.md",
+      "contentHash": "26756fcf5e8614c5e3b3519a446fc0e4ed0683c8606fea98eab76ce70909ac0b",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 88,
+      "hasStructuralAnalysis": true
+    },
+    ".agents/skills/profiler-save-data/SKILL.md": {
+      "filePath": ".agents/skills/profiler-save-data/SKILL.md",
+      "contentHash": "b91031bb64be6220e43c0b9adc3f500dc9aed2c073f49372cbf0ffe42503f85e",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 88,
+      "hasStructuralAnalysis": true
+    },
+    ".agents/skills/profiler-start/SKILL.md": {
+      "filePath": ".agents/skills/profiler-start/SKILL.md",
+      "contentHash": "e7ca50355f4ad9c9c0fcc1466f0495f2fa0cc16df8aea95cd6cf67a1dfe2e3be",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 79,
+      "hasStructuralAnalysis": true
+    },
+    ".agents/skills/profiler-stop/SKILL.md": {
+      "filePath": ".agents/skills/profiler-stop/SKILL.md",
+      "contentHash": "18b4180a92e75971ab4fe8e915e65c9410b1fa26f5d32855a6843199d9ec26a8",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 77,
+      "hasStructuralAnalysis": true
+    },
     ".agents/skills/reflection-method-call/SKILL.md": {
       "filePath": ".agents/skills/reflection-method-call/SKILL.md",
       "contentHash": "656e276944c3a00ec7212b5b02c6ec1fd07bd1f169085b3c7c5a6d9be8218de9",
@@ -793,6 +1293,296 @@
       "totalLines": 78,
       "hasStructuralAnalysis": true
     },
+    ".agents/skills/splines-add-knot/SKILL.md": {
+      "filePath": ".agents/skills/splines-add-knot/SKILL.md",
+      "contentHash": "8824c2384dff0de1a13e853315c2a4fa196f52a4812617631ddde63db5f771d6",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 327,
+      "hasStructuralAnalysis": true
+    },
+    ".agents/skills/splines-add-spline/SKILL.md": {
+      "filePath": ".agents/skills/splines-add-spline/SKILL.md",
+      "contentHash": "8732e4202f9a541a030f2234f55c7b391472f04b9a16a68a2f22effc8fa44723",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 223,
+      "hasStructuralAnalysis": true
+    },
+    ".agents/skills/splines-container-create/SKILL.md": {
+      "filePath": ".agents/skills/splines-container-create/SKILL.md",
+      "contentHash": "2baf677f088c2e32f9bf382360db56ecbd860d2cec92b60223f7b31e4cf4532a",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 215,
+      "hasStructuralAnalysis": true
+    },
+    ".agents/skills/splines-evaluate/SKILL.md": {
+      "filePath": ".agents/skills/splines-evaluate/SKILL.md",
+      "contentHash": "9c35109d96f04ac59c0ddf38f61b81865f1edd5c162a5cf1f995ce8531c5e62d",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 259,
+      "hasStructuralAnalysis": true
+    },
+    ".agents/skills/splines-get-knots/SKILL.md": {
+      "filePath": ".agents/skills/splines-get-knots/SKILL.md",
+      "contentHash": "f7f7201902dfbb460684fbed79308567d19a1bbfc34844d5058bfcc1da29a252",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 284,
+      "hasStructuralAnalysis": true
+    },
+    ".agents/skills/splines-get/SKILL.md": {
+      "filePath": ".agents/skills/splines-get/SKILL.md",
+      "contentHash": "6030f2c5023179a0bd491824c609eb1baa6445efb2b1a647d6874416b0b083d9",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 286,
+      "hasStructuralAnalysis": true
+    },
+    ".agents/skills/splines-insert-knot/SKILL.md": {
+      "filePath": ".agents/skills/splines-insert-knot/SKILL.md",
+      "contentHash": "13f9e4b5d4990addf5be2a737ef5be27d34b7bf6ffe745872905e163abaa9247",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 333,
+      "hasStructuralAnalysis": true
+    },
+    ".agents/skills/splines-list/SKILL.md": {
+      "filePath": ".agents/skills/splines-list/SKILL.md",
+      "contentHash": "6ac62363450f6d37f686c5f0ce36012d0db3f3b993272a5c5cafa0baea1e43d2",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 219,
+      "hasStructuralAnalysis": true
+    },
+    ".agents/skills/splines-modify/SKILL.md": {
+      "filePath": ".agents/skills/splines-modify/SKILL.md",
+      "contentHash": "af59d27f6799039fbeb22fbd45d22109343e1270d08a1dfcf030cac1006bf119",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 298,
+      "hasStructuralAnalysis": true
+    },
+    ".agents/skills/splines-remove-knot/SKILL.md": {
+      "filePath": ".agents/skills/splines-remove-knot/SKILL.md",
+      "contentHash": "4c72b68b2ac8bbb3c4d1155b14f6c1b407292015a7c4259f9077cd941a14651c",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 290,
+      "hasStructuralAnalysis": true
+    },
+    ".agents/skills/splines-set-closed/SKILL.md": {
+      "filePath": ".agents/skills/splines-set-closed/SKILL.md",
+      "contentHash": "9886379f142631103af57e4c4626b3126a2a71fb2f12f769cf161f7447d27c93",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 229,
+      "hasStructuralAnalysis": true
+    },
+    ".agents/skills/splines-set-knot/SKILL.md": {
+      "filePath": ".agents/skills/splines-set-knot/SKILL.md",
+      "contentHash": "bbabd49e997a897c7b314bcc3fe6d3d39dd26988941e177cad7eef4bbcf135a8",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 333,
+      "hasStructuralAnalysis": true
+    },
+    ".agents/skills/splines-set-tangent-mode/SKILL.md": {
+      "filePath": ".agents/skills/splines-set-tangent-mode/SKILL.md",
+      "contentHash": "2bead250dcf13374e89c04a7423152014194ee599dcc2704e1703444c7662f5d",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 297,
+      "hasStructuralAnalysis": true
+    },
+    ".agents/skills/terrain-add-layer/SKILL.md": {
+      "filePath": ".agents/skills/terrain-add-layer/SKILL.md",
+      "contentHash": "72c8af9aa5cfa9d2f5622f89a330c9b09723a98c90b54b646168e92bed75e236",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 235,
+      "hasStructuralAnalysis": true
+    },
+    ".agents/skills/terrain-create/SKILL.md": {
+      "filePath": ".agents/skills/terrain-create/SKILL.md",
+      "contentHash": "6f0e08e396defb62bb3bfdb0a69ebfd475738bb5eec435f54bfff030ea2a7cd5",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 256,
+      "hasStructuralAnalysis": true
+    },
+    ".agents/skills/terrain-get-component/SKILL.md": {
+      "filePath": ".agents/skills/terrain-get-component/SKILL.md",
+      "contentHash": "f81ed9b7a90ca38bc125802cd3ec09c00e1bbc285054d841ccb6e09b0b4167bb",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 286,
+      "hasStructuralAnalysis": true
+    },
+    ".agents/skills/terrain-get/SKILL.md": {
+      "filePath": ".agents/skills/terrain-get/SKILL.md",
+      "contentHash": "561a254b41795743fff0b0da3372a9cc50202eaf0515d8ce47c9be172e8193a0",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 302,
+      "hasStructuralAnalysis": true
+    },
+    ".agents/skills/terrain-list/SKILL.md": {
+      "filePath": ".agents/skills/terrain-list/SKILL.md",
+      "contentHash": "3e9b1a35290bc5834a035c59d9e57eba21f01b16b807a87bfa5747e83be05d57",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 217,
+      "hasStructuralAnalysis": true
+    },
+    ".agents/skills/terrain-modify-component/SKILL.md": {
+      "filePath": ".agents/skills/terrain-modify-component/SKILL.md",
+      "contentHash": "142868e04b849ce02dd4c5b6866472d25aad11be221f0dfbc261f82779a0e2b0",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 298,
+      "hasStructuralAnalysis": true
+    },
+    ".agents/skills/terrain-paint-layer/SKILL.md": {
+      "filePath": ".agents/skills/terrain-paint-layer/SKILL.md",
+      "contentHash": "aabf6e5293fe655d37db04b3b84b281161d53e5f1a741caa3f1e6adc35e8a2ab",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 262,
+      "hasStructuralAnalysis": true
+    },
+    ".agents/skills/terrain-place-trees/SKILL.md": {
+      "filePath": ".agents/skills/terrain-place-trees/SKILL.md",
+      "contentHash": "76af82834d628da1dbe77f9a1226d4dd80c1366c9049b6c0c7f6fff26d85a4b0",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 295,
+      "hasStructuralAnalysis": true
+    },
+    ".agents/skills/terrain-remove-layer/SKILL.md": {
+      "filePath": ".agents/skills/terrain-remove-layer/SKILL.md",
+      "contentHash": "5fd7361aa4ebb22fe2335a58e548f137767461a7dffa54de4b816c34f987d5ad",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 214,
+      "hasStructuralAnalysis": true
+    },
+    ".agents/skills/terrain-sample-heights/SKILL.md": {
+      "filePath": ".agents/skills/terrain-sample-heights/SKILL.md",
+      "contentHash": "bb61ec5638e2ab5ab037648ff20ac6fdffd23d0bd829fd4c1a5cbbf5932b5837",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 276,
+      "hasStructuralAnalysis": true
+    },
+    ".agents/skills/terrain-set-detail-prototypes/SKILL.md": {
+      "filePath": ".agents/skills/terrain-set-detail-prototypes/SKILL.md",
+      "contentHash": "5cbe0e1d144a25b19bb83feec78d1094897bb2ace2ed13944fdf03fbe86f249b",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 227,
+      "hasStructuralAnalysis": true
+    },
+    ".agents/skills/terrain-set-heightmap-resolution/SKILL.md": {
+      "filePath": ".agents/skills/terrain-set-heightmap-resolution/SKILL.md",
+      "contentHash": "ea37ba039f7a20fcb72f1e84613629a912a1dd2c04239991a1ae64f13a5b09fb",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 214,
+      "hasStructuralAnalysis": true
+    },
+    ".agents/skills/terrain-set-heights/SKILL.md": {
+      "filePath": ".agents/skills/terrain-set-heights/SKILL.md",
+      "contentHash": "a9d57f1ba3d276fb51e81878086cf5831a4b8c16be23d5477a03e74f48dbdd31",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 268,
+      "hasStructuralAnalysis": true
+    },
+    ".agents/skills/terrain-set-neighbors/SKILL.md": {
+      "filePath": ".agents/skills/terrain-set-neighbors/SKILL.md",
+      "contentHash": "01a987aee137ff825c4b8e271af0c18a5688d39d2c5528de841bcbb13d03336c",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 239,
+      "hasStructuralAnalysis": true
+    },
+    ".agents/skills/terrain-set-size/SKILL.md": {
+      "filePath": ".agents/skills/terrain-set-size/SKILL.md",
+      "contentHash": "159172fa03fd60071e6934993be9ef806a0a8f195a9b11c932b128ca54132890",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 248,
+      "hasStructuralAnalysis": true
+    },
+    ".agents/skills/terrain-set-tree-prototypes/SKILL.md": {
+      "filePath": ".agents/skills/terrain-set-tree-prototypes/SKILL.md",
+      "contentHash": "5bfb23b8d7e5a042acf1aa83a1eae7b0abab92e60fbed54b268f54e07b5b5cd3",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 220,
+      "hasStructuralAnalysis": true
+    },
     ".agents/skills/tests-run/SKILL.md": {
       "filePath": ".agents/skills/tests-run/SKILL.md",
       "contentHash": "2e8d4564158745d67594a1a2df485df4e9c01c1ca57e851dc5dc7a3e1fb1739e",
@@ -801,6 +1591,266 @@
       "imports": [],
       "exports": [],
       "totalLines": 280,
+      "hasStructuralAnalysis": true
+    },
+    ".agents/skills/tilemap-box-fill/SKILL.md": {
+      "filePath": ".agents/skills/tilemap-box-fill/SKILL.md",
+      "contentHash": "f41a8dbb225fff95b402f016146fdfa3df1f611ba21a8dfd36b933df449583d3",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 275,
+      "hasStructuralAnalysis": true
+    },
+    ".agents/skills/tilemap-clear/SKILL.md": {
+      "filePath": ".agents/skills/tilemap-clear/SKILL.md",
+      "contentHash": "d41168aec7fe406cc20728515da787850d3bdbb323d7274cc3969b1122035068",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 244,
+      "hasStructuralAnalysis": true
+    },
+    ".agents/skills/tilemap-create-rule-tile/SKILL.md": {
+      "filePath": ".agents/skills/tilemap-create-rule-tile/SKILL.md",
+      "contentHash": "61f2237dfeb4d35175dd37b698069f74427a847666c4ade8f4bf6e05b5b549eb",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 117,
+      "hasStructuralAnalysis": true
+    },
+    ".agents/skills/tilemap-create-tile-asset/SKILL.md": {
+      "filePath": ".agents/skills/tilemap-create-tile-asset/SKILL.md",
+      "contentHash": "fdad3caba89f3f160f66901d02f4045d7bc4828e5c05c503314f321458d77253",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 204,
+      "hasStructuralAnalysis": true
+    },
+    ".agents/skills/tilemap-create/SKILL.md": {
+      "filePath": ".agents/skills/tilemap-create/SKILL.md",
+      "contentHash": "39f59ded27817c02c43f8c6beeb1307ee156d3cb4457d0eedeb6907d97002e6f",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 258,
+      "hasStructuralAnalysis": true
+    },
+    ".agents/skills/tilemap-get-tile/SKILL.md": {
+      "filePath": ".agents/skills/tilemap-get-tile/SKILL.md",
+      "contentHash": "1c4ea7174eafa90a2209ad3ea016c4c23f405d5f636e579c9e181f0f7a6e00ef",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 284,
+      "hasStructuralAnalysis": true
+    },
+    ".agents/skills/tilemap-get/SKILL.md": {
+      "filePath": ".agents/skills/tilemap-get/SKILL.md",
+      "contentHash": "41ef5e8dab518204fc570dc343633b336da6bb25c208d398de86107c9ce6ff61",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 286,
+      "hasStructuralAnalysis": true
+    },
+    ".agents/skills/tilemap-list/SKILL.md": {
+      "filePath": ".agents/skills/tilemap-list/SKILL.md",
+      "contentHash": "1a3e63793d34d478055e1169035a287590bc85671cbd407e52dd87cf38b253f3",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 221,
+      "hasStructuralAnalysis": true
+    },
+    ".agents/skills/tilemap-modify/SKILL.md": {
+      "filePath": ".agents/skills/tilemap-modify/SKILL.md",
+      "contentHash": "ff8425dd66fa37631ae9573870150d74728fe5558c49924dc0a464b9ded28906",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 298,
+      "hasStructuralAnalysis": true
+    },
+    ".agents/skills/tilemap-set-collider-type/SKILL.md": {
+      "filePath": ".agents/skills/tilemap-set-collider-type/SKILL.md",
+      "contentHash": "472320b4a7a98bc9f973ef0f031d5a36148312d9b4ccfd7fc061f777dc629e7c",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 251,
+      "hasStructuralAnalysis": true
+    },
+    ".agents/skills/tilemap-set-orientation/SKILL.md": {
+      "filePath": ".agents/skills/tilemap-set-orientation/SKILL.md",
+      "contentHash": "9623c0dd51db078d5ec0297364d42fd20f0f70d221f378f8690e85a1e56769ff",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 285,
+      "hasStructuralAnalysis": true
+    },
+    ".agents/skills/tilemap-set-tile-flags/SKILL.md": {
+      "filePath": ".agents/skills/tilemap-set-tile-flags/SKILL.md",
+      "contentHash": "5600155129be2f7e82bf85b7baf68f08582e3c44078f0aba4206dcec2e70a4bd",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 332,
+      "hasStructuralAnalysis": true
+    },
+    ".agents/skills/tilemap-set-tile/SKILL.md": {
+      "filePath": ".agents/skills/tilemap-set-tile/SKILL.md",
+      "contentHash": "2ea8825aa244a10dabcb285b19e1919120c2f38056b7fac4c3924f7f0b973a74",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 250,
+      "hasStructuralAnalysis": true
+    },
+    ".agents/skills/timeline-clip-add/SKILL.md": {
+      "filePath": ".agents/skills/timeline-clip-add/SKILL.md",
+      "contentHash": "05d7a34892b4f4be9fc7354c2834dd877bef73a569b45af73e4d4e6528e84afd",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 175,
+      "hasStructuralAnalysis": true
+    },
+    ".agents/skills/timeline-clip-move/SKILL.md": {
+      "filePath": ".agents/skills/timeline-clip-move/SKILL.md",
+      "contentHash": "97fd75593aac4c7dd4e21c1c381c2728004d71bb9602d6a955fe8592f2fd0939",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 166,
+      "hasStructuralAnalysis": true
+    },
+    ".agents/skills/timeline-clip-set-timing/SKILL.md": {
+      "filePath": ".agents/skills/timeline-clip-set-timing/SKILL.md",
+      "contentHash": "f613eadf3967b57d938f8b45043c01841ce855a7956a8b51297b4a28e21c91c5",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 219,
+      "hasStructuralAnalysis": true
+    },
+    ".agents/skills/timeline-create/SKILL.md": {
+      "filePath": ".agents/skills/timeline-create/SKILL.md",
+      "contentHash": "d00940dbd034ae2a29b6b8fdbd57ecd5d3d9809f05539907ede742892cd33d3c",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 133,
+      "hasStructuralAnalysis": true
+    },
+    ".agents/skills/timeline-director-bind/SKILL.md": {
+      "filePath": ".agents/skills/timeline-director-bind/SKILL.md",
+      "contentHash": "017c44c7e54443a5d329b4838021a77a068326980335766d206170c2db258b10",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 232,
+      "hasStructuralAnalysis": true
+    },
+    ".agents/skills/timeline-get/SKILL.md": {
+      "filePath": ".agents/skills/timeline-get/SKILL.md",
+      "contentHash": "7b364a97c314ae96d0db188371a22ae1b2a2abbbbb3e4067bce01a0e3516cce6",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 172,
+      "hasStructuralAnalysis": true
+    },
+    ".agents/skills/timeline-list/SKILL.md": {
+      "filePath": ".agents/skills/timeline-list/SKILL.md",
+      "contentHash": "3b0c80af73dd5bb28ee7689fff1c1d87f0be38e663077514867e6332580b5288",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 130,
+      "hasStructuralAnalysis": true
+    },
+    ".agents/skills/timeline-marker-add/SKILL.md": {
+      "filePath": ".agents/skills/timeline-marker-add/SKILL.md",
+      "contentHash": "c3743d1b876c561fc7a19aa1277aeac11889fbe5f1f26b625bb68ad29d3df2a8",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 151,
+      "hasStructuralAnalysis": true
+    },
+    ".agents/skills/timeline-modify/SKILL.md": {
+      "filePath": ".agents/skills/timeline-modify/SKILL.md",
+      "contentHash": "eb82ada039fd7fd5c930b1f3ff151c3de79d1bce5f5f879d1e0d503acd5763f4",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 188,
+      "hasStructuralAnalysis": true
+    },
+    ".agents/skills/timeline-track-add/SKILL.md": {
+      "filePath": ".agents/skills/timeline-track-add/SKILL.md",
+      "contentHash": "96bf440b23fd53221d954a1942dfe22cb74ec0cd398fc02d49ee165544a0b56a",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 138,
+      "hasStructuralAnalysis": true
+    },
+    ".agents/skills/timeline-track-bind/SKILL.md": {
+      "filePath": ".agents/skills/timeline-track-bind/SKILL.md",
+      "contentHash": "63170739e886543cc73c48981d40842139ff30a9408b938e78f2b4f61da1534e",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 211,
+      "hasStructuralAnalysis": true
+    },
+    ".agents/skills/timeline-track-list/SKILL.md": {
+      "filePath": ".agents/skills/timeline-track-list/SKILL.md",
+      "contentHash": "9b0d375198ed8989dc33ce495a5c87e7cfa943dbe1a6bd83e012e8802962ef05",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 222,
+      "hasStructuralAnalysis": true
+    },
+    ".agents/skills/timeline-track-remove/SKILL.md": {
+      "filePath": ".agents/skills/timeline-track-remove/SKILL.md",
+      "contentHash": "6e84a119388d8d4b1bfb4c06f61cceeef0c2e72a63a88b82e6e01e990557b1c9",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 127,
       "hasStructuralAnalysis": true
     },
     ".agents/skills/tool-list/SKILL.md": {
@@ -863,14 +1913,24 @@
       "totalLines": 67,
       "hasStructuralAnalysis": true
     },
-    ".codex/config.toml": {
-      "filePath": ".codex/config.toml",
-      "contentHash": "8b589c58a3a09a0f560ec595701015a7ab9d4cdd3f7a7cf8a0769de67dc85744",
+    ".agents/skills/unity-tool-list/SKILL.md": {
+      "filePath": ".agents/skills/unity-tool-list/SKILL.md",
+      "contentHash": "e1d06c4e5cfc331fdbff4238db8d0b1430c6f79a7f57b08106e99e1eca6986dd",
       "functions": [],
       "classes": [],
       "imports": [],
       "exports": [],
-      "totalLines": 14,
+      "totalLines": 155,
+      "hasStructuralAnalysis": true
+    },
+    ".codex/config.toml": {
+      "filePath": ".codex/config.toml",
+      "contentHash": "3412d35a8f80c33e2616dbb12748c9256e6ce41f98b701c79d820dbab6dec2c5",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 13,
       "hasStructuralAnalysis": true
     },
     ".gitattributes": {
@@ -885,12 +1945,12 @@
     },
     ".ua/.understandignore": {
       "filePath": ".ua/.understandignore",
-      "contentHash": "568d1f144585b19ab582e5121e0ac07805ad4f7558297007ec699eb949165135",
+      "contentHash": "530497f4527e6e534ae56c65abae83084364792d95b987cd2df59bdb40aa720f",
       "functions": [],
       "classes": [],
       "imports": [],
       "exports": [],
-      "totalLines": 98,
+      "totalLines": 101,
       "hasStructuralAnalysis": false
     },
     ".ua/config.json": {
@@ -901,6 +1961,46 @@
       "imports": [],
       "exports": [],
       "totalLines": 5,
+      "hasStructuralAnalysis": true
+    },
+    ".ua/fingerprints.json": {
+      "filePath": ".ua/fingerprints.json",
+      "contentHash": "17c5398e817131b12c4b556b893b9b09d02276ea53fe96e985f1a1980324997e",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 20953,
+      "hasStructuralAnalysis": true
+    },
+    ".ua/intermediate/scan-result.json": {
+      "filePath": ".ua/intermediate/scan-result.json",
+      "contentHash": "db39233ed00e3d334ad86c71c9ac15a166e1d28efeee09e5c49924f2e945f85e",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 11337,
+      "hasStructuralAnalysis": true
+    },
+    ".ua/knowledge-graph.json": {
+      "filePath": ".ua/knowledge-graph.json",
+      "contentHash": "d385f5d45d69b528bc6bdb1e1fe83e7b44ee9bd87e195b97c25db0d5c40f446b",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 30946,
+      "hasStructuralAnalysis": true
+    },
+    ".ua/meta.json": {
+      "filePath": ".ua/meta.json",
+      "contentHash": "bdf7502b8a2adbb8a31b897e8af4b2c7dcf0df99e6ae8f28db7ab90e0f40c546",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 7,
       "hasStructuralAnalysis": true
     },
     ".vsconfig": {
@@ -7825,7 +8925,7 @@
     },
     "Assets/Scenes/SplashScene.unity": {
       "filePath": "Assets/Scenes/SplashScene.unity",
-      "contentHash": "aa8440d727833c25a39f0832251296544142b801f13fb8bd4320530e86c075e2",
+      "contentHash": "b3752f84ac162d4370eddaac7e884dd7f16564c266170735456f7389551fa114",
       "functions": [],
       "classes": [],
       "imports": [],
@@ -19968,26 +21068,6 @@
       "totalLines": 19,
       "hasStructuralAnalysis": false
     },
-    "Assets/Videos/Splash/intro_audio.wav": {
-      "filePath": "Assets/Videos/Splash/intro_audio.wav",
-      "contentHash": "27056a38b4bb83785782d5e0efbc947ba085d30c48b2d276ccd9abbbdc8db8fa",
-      "functions": [],
-      "classes": [],
-      "imports": [],
-      "exports": [],
-      "totalLines": 15475,
-      "hasStructuralAnalysis": false
-    },
-    "Assets/Videos/Splash/intro_audio.wav.meta": {
-      "filePath": "Assets/Videos/Splash/intro_audio.wav.meta",
-      "contentHash": "e110ff7188273aa1c7b85fc80d6c7ab7a77d04560375c14b1086608f57d9ee20",
-      "functions": [],
-      "classes": [],
-      "imports": [],
-      "exports": [],
-      "totalLines": 13,
-      "hasStructuralAnalysis": false
-    },
     "Assets/XR.meta": {
       "filePath": "Assets/XR.meta",
       "contentHash": "843e6ec0ded34960166c89d6485af9f4690da283bfa8e8040b3c86d418412b8b",
@@ -20640,22 +21720,22 @@
     },
     "Packages/manifest.json": {
       "filePath": "Packages/manifest.json",
-      "contentHash": "059b819018af0e413a88cfa388edb06d6391684f49520fecbb74f120bcf34764",
+      "contentHash": "6f2e96cb4e08ea5bb12b1455d889d80c7854338f0fee54b21a8e11bfc3bc1d62",
       "functions": [],
       "classes": [],
       "imports": [],
       "exports": [],
-      "totalLines": 77,
+      "totalLines": 83,
       "hasStructuralAnalysis": true
     },
     "Packages/packages-lock.json": {
       "filePath": "Packages/packages-lock.json",
-      "contentHash": "921071fcce2df079401fd0ceb3c3311e3118f9b95d736a3edc17c3d93faf373f",
+      "contentHash": "44f11f73adcf5f1b6d8e412c9a186070aa4962a8c2b82e889c355991e13aebb0",
       "functions": [],
       "classes": [],
       "imports": [],
       "exports": [],
-      "totalLines": 734,
+      "totalLines": 805,
       "hasStructuralAnalysis": true
     },
     "ProjectSettings/AudioManager.asset": {

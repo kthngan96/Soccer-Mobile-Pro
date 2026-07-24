@@ -1,6 +1,6 @@
 {
   "name": "Soccer-Mobile-Pro",
-  "description": "Dự án game bóng đá dành cho thiết bị di động được xây dựng bằng Unity 2022.3, sử dụng URP, Cinemachine, Input System, ProBuilder và Unity-MCP. Lưu ý: dự án có hơn 100 tệp nguồn; nên giới hạn phạm vi phân tích vào một thư mục con để đạt tốc độ nhanh hơn.",
+  "description": "D? ?n game b?ng ?? di ??ng x?y d?ng b?ng Unity 2022.3 LTS, g?m gameplay tr?n ??u, AI c?u th?, giao di?n, scene v? t?i nguy?n ?a ph??ng ti?n. L?u ?: d? ?n c? h?n 100 t?p ngu?n; n?n gi?i h?n ph?m vi ph?n t?ch v?o m?t th? m?c con ?? x? l? nhanh h?n.",
   "languages": [
     "anim",
     "asset",
@@ -29,492 +29,1121 @@
     "xml"
   ],
   "frameworks": [
-    "Unity 2022.3",
-    "URP",
-    "Cinemachine",
-    "Input System",
-    "ProBuilder",
-    "Unity-MCP"
+    "Unity 2022.3 LTS",
+    "Universal Render Pipeline 14.0.12",
+    "Unity MCP 0.86.1",
+    "Cinemachine 3.1.6",
+    "Input System 1.14.2"
   ],
   "files": [
     {
       "path": ".agents/skills/animation-create/SKILL.md",
       "language": "markdown",
-      "sizeLines": 123,
+      "sizeLines": 133,
       "fileCategory": "docs"
     },
     {
       "path": ".agents/skills/animation-get-data/SKILL.md",
       "language": "markdown",
-      "sizeLines": 235,
+      "sizeLines": 248,
       "fileCategory": "docs"
     },
     {
       "path": ".agents/skills/animation-modify/SKILL.md",
       "language": "markdown",
-      "sizeLines": 278,
+      "sizeLines": 300,
       "fileCategory": "docs"
     },
     {
       "path": ".agents/skills/animator-create/SKILL.md",
       "language": "markdown",
-      "sizeLines": 123,
+      "sizeLines": 133,
       "fileCategory": "docs"
     },
     {
       "path": ".agents/skills/animator-get-data/SKILL.md",
       "language": "markdown",
-      "sizeLines": 327,
+      "sizeLines": 341,
       "fileCategory": "docs"
     },
     {
       "path": ".agents/skills/animator-modify/SKILL.md",
       "language": "markdown",
-      "sizeLines": 264,
+      "sizeLines": 286,
       "fileCategory": "docs"
     },
     {
       "path": ".agents/skills/assets-copy/SKILL.md",
       "language": "markdown",
-      "sizeLines": 143,
+      "sizeLines": 154,
       "fileCategory": "docs"
     },
     {
       "path": ".agents/skills/assets-create-folder/SKILL.md",
       "language": "markdown",
-      "sizeLines": 115,
+      "sizeLines": 127,
       "fileCategory": "docs"
     },
     {
       "path": ".agents/skills/assets-delete/SKILL.md",
       "language": "markdown",
-      "sizeLines": 102,
+      "sizeLines": 112,
       "fileCategory": "docs"
     },
     {
       "path": ".agents/skills/assets-find-built-in/SKILL.md",
       "language": "markdown",
-      "sizeLines": 122,
+      "sizeLines": 134,
       "fileCategory": "docs"
     },
     {
       "path": ".agents/skills/assets-find/SKILL.md",
       "language": "markdown",
-      "sizeLines": 125,
+      "sizeLines": 138,
       "fileCategory": "docs"
     },
     {
       "path": ".agents/skills/assets-get-data/SKILL.md",
       "language": "markdown",
-      "sizeLines": 188,
+      "sizeLines": 194,
       "fileCategory": "docs"
     },
     {
       "path": ".agents/skills/assets-material-create/SKILL.md",
       "language": "markdown",
-      "sizeLines": 110,
+      "sizeLines": 121,
       "fileCategory": "docs"
     },
     {
       "path": ".agents/skills/assets-modify/SKILL.md",
       "language": "markdown",
-      "sizeLines": 195,
+      "sizeLines": 209,
       "fileCategory": "docs"
     },
     {
       "path": ".agents/skills/assets-move/SKILL.md",
       "language": "markdown",
-      "sizeLines": 108,
+      "sizeLines": 119,
       "fileCategory": "docs"
     },
     {
       "path": ".agents/skills/assets-prefab-close/SKILL.md",
       "language": "markdown",
-      "sizeLines": 101,
+      "sizeLines": 111,
       "fileCategory": "docs"
     },
     {
       "path": ".agents/skills/assets-prefab-create/SKILL.md",
       "language": "markdown",
-      "sizeLines": 157,
+      "sizeLines": 170,
       "fileCategory": "docs"
     },
     {
       "path": ".agents/skills/assets-prefab-instantiate/SKILL.md",
       "language": "markdown",
-      "sizeLines": 160,
+      "sizeLines": 169,
       "fileCategory": "docs"
     },
     {
       "path": ".agents/skills/assets-prefab-open/SKILL.md",
       "language": "markdown",
-      "sizeLines": 97,
+      "sizeLines": 107,
       "fileCategory": "docs"
     },
     {
       "path": ".agents/skills/assets-prefab-save/SKILL.md",
       "language": "markdown",
-      "sizeLines": 101,
+      "sizeLines": 107,
       "fileCategory": "docs"
     },
     {
       "path": ".agents/skills/assets-refresh/SKILL.md",
       "language": "markdown",
-      "sizeLines": 69,
+      "sizeLines": 80,
       "fileCategory": "docs"
     },
     {
       "path": ".agents/skills/assets-shader-get-data/SKILL.md",
       "language": "markdown",
-      "sizeLines": 438,
+      "sizeLines": 451,
       "fileCategory": "docs"
     },
     {
       "path": ".agents/skills/assets-shader-list-all/SKILL.md",
       "language": "markdown",
-      "sizeLines": 78,
+      "sizeLines": 84,
+      "fileCategory": "docs"
+    },
+    {
+      "path": ".agents/skills/cinemachine-add-extension/SKILL.md",
+      "language": "markdown",
+      "sizeLines": 216,
+      "fileCategory": "docs"
+    },
+    {
+      "path": ".agents/skills/cinemachine-brain-ensure/SKILL.md",
+      "language": "markdown",
+      "sizeLines": 211,
+      "fileCategory": "docs"
+    },
+    {
+      "path": ".agents/skills/cinemachine-camera-create/SKILL.md",
+      "language": "markdown",
+      "sizeLines": 265,
+      "fileCategory": "docs"
+    },
+    {
+      "path": ".agents/skills/cinemachine-camera-get/SKILL.md",
+      "language": "markdown",
+      "sizeLines": 275,
+      "fileCategory": "docs"
+    },
+    {
+      "path": ".agents/skills/cinemachine-camera-list/SKILL.md",
+      "language": "markdown",
+      "sizeLines": 191,
+      "fileCategory": "docs"
+    },
+    {
+      "path": ".agents/skills/cinemachine-get/SKILL.md",
+      "language": "markdown",
+      "sizeLines": 285,
+      "fileCategory": "docs"
+    },
+    {
+      "path": ".agents/skills/cinemachine-modify/SKILL.md",
+      "language": "markdown",
+      "sizeLines": 297,
+      "fileCategory": "docs"
+    },
+    {
+      "path": ".agents/skills/cinemachine-set-aim/SKILL.md",
+      "language": "markdown",
+      "sizeLines": 242,
+      "fileCategory": "docs"
+    },
+    {
+      "path": ".agents/skills/cinemachine-set-body/SKILL.md",
+      "language": "markdown",
+      "sizeLines": 265,
+      "fileCategory": "docs"
+    },
+    {
+      "path": ".agents/skills/cinemachine-set-default-blend/SKILL.md",
+      "language": "markdown",
+      "sizeLines": 232,
+      "fileCategory": "docs"
+    },
+    {
+      "path": ".agents/skills/cinemachine-set-lens/SKILL.md",
+      "language": "markdown",
+      "sizeLines": 258,
+      "fileCategory": "docs"
+    },
+    {
+      "path": ".agents/skills/cinemachine-set-noise/SKILL.md",
+      "language": "markdown",
+      "sizeLines": 231,
+      "fileCategory": "docs"
+    },
+    {
+      "path": ".agents/skills/cinemachine-set-priority/SKILL.md",
+      "language": "markdown",
+      "sizeLines": 213,
+      "fileCategory": "docs"
+    },
+    {
+      "path": ".agents/skills/cinemachine-set-targets/SKILL.md",
+      "language": "markdown",
+      "sizeLines": 233,
       "fileCategory": "docs"
     },
     {
       "path": ".agents/skills/console-clear-logs/SKILL.md",
       "language": "markdown",
-      "sizeLines": 56,
+      "sizeLines": 62,
       "fileCategory": "docs"
     },
     {
       "path": ".agents/skills/console-get-logs/SKILL.md",
       "language": "markdown",
-      "sizeLines": 134,
+      "sizeLines": 143,
       "fileCategory": "docs"
     },
     {
       "path": ".agents/skills/editor-application-get-state/SKILL.md",
       "language": "markdown",
-      "sizeLines": 119,
+      "sizeLines": 125,
       "fileCategory": "docs"
     },
     {
       "path": ".agents/skills/editor-application-set-state/SKILL.md",
       "language": "markdown",
-      "sizeLines": 124,
+      "sizeLines": 135,
       "fileCategory": "docs"
     },
     {
       "path": ".agents/skills/editor-selection-get/SKILL.md",
       "language": "markdown",
-      "sizeLines": 234,
+      "sizeLines": 247,
       "fileCategory": "docs"
     },
     {
       "path": ".agents/skills/editor-selection-set/SKILL.md",
       "language": "markdown",
-      "sizeLines": 234,
+      "sizeLines": 244,
       "fileCategory": "docs"
     },
     {
       "path": ".agents/skills/gameobject-component-add/SKILL.md",
       "language": "markdown",
-      "sizeLines": 181,
+      "sizeLines": 192,
       "fileCategory": "docs"
     },
     {
       "path": ".agents/skills/gameobject-component-destroy/SKILL.md",
       "language": "markdown",
-      "sizeLines": 188,
+      "sizeLines": 199,
       "fileCategory": "docs"
     },
     {
       "path": ".agents/skills/gameobject-component-get/SKILL.md",
       "language": "markdown",
-      "sizeLines": 322,
+      "sizeLines": 336,
       "fileCategory": "docs"
     },
     {
       "path": ".agents/skills/gameobject-component-list-all/SKILL.md",
       "language": "markdown",
-      "sizeLines": 119,
+      "sizeLines": 131,
       "fileCategory": "docs"
     },
     {
       "path": ".agents/skills/gameobject-component-modify/SKILL.md",
       "language": "markdown",
-      "sizeLines": 307,
+      "sizeLines": 321,
       "fileCategory": "docs"
     },
     {
       "path": ".agents/skills/gameobject-create/SKILL.md",
       "language": "markdown",
-      "sizeLines": 211,
+      "sizeLines": 221,
       "fileCategory": "docs"
     },
     {
       "path": ".agents/skills/gameobject-destroy/SKILL.md",
       "language": "markdown",
-      "sizeLines": 133,
+      "sizeLines": 139,
       "fileCategory": "docs"
     },
     {
       "path": ".agents/skills/gameobject-duplicate/SKILL.md",
       "language": "markdown",
-      "sizeLines": 164,
+      "sizeLines": 174,
       "fileCategory": "docs"
     },
     {
       "path": ".agents/skills/gameobject-find/SKILL.md",
       "language": "markdown",
-      "sizeLines": 399,
+      "sizeLines": 413,
       "fileCategory": "docs"
     },
     {
       "path": ".agents/skills/gameobject-modify/SKILL.md",
       "language": "markdown",
-      "sizeLines": 250,
+      "sizeLines": 256,
       "fileCategory": "docs"
     },
     {
       "path": ".agents/skills/gameobject-set-parent/SKILL.md",
       "language": "markdown",
-      "sizeLines": 130,
+      "sizeLines": 142,
       "fileCategory": "docs"
     },
     {
-      "path": ".agents/skills/object-get-data/SKILL.md",
+      "path": ".agents/skills/inputsystem-action-add/SKILL.md",
       "language": "markdown",
-      "sizeLines": 176,
+      "sizeLines": 175,
       "fileCategory": "docs"
     },
     {
-      "path": ".agents/skills/object-modify/SKILL.md",
-      "language": "markdown",
-      "sizeLines": 261,
-      "fileCategory": "docs"
-    },
-    {
-      "path": ".agents/skills/package-add/SKILL.md",
-      "language": "markdown",
-      "sizeLines": 59,
-      "fileCategory": "docs"
-    },
-    {
-      "path": ".agents/skills/package-list/SKILL.md",
+      "path": ".agents/skills/inputsystem-action-remove/SKILL.md",
       "language": "markdown",
       "sizeLines": 128,
       "fileCategory": "docs"
     },
     {
-      "path": ".agents/skills/package-remove/SKILL.md",
+      "path": ".agents/skills/inputsystem-actionmap-add/SKILL.md",
       "language": "markdown",
-      "sizeLines": 59,
+      "sizeLines": 117,
       "fileCategory": "docs"
     },
     {
-      "path": ".agents/skills/package-search/SKILL.md",
+      "path": ".agents/skills/inputsystem-actionmap-remove/SKILL.md",
       "language": "markdown",
-      "sizeLines": 135,
+      "sizeLines": 117,
       "fileCategory": "docs"
     },
     {
-      "path": ".agents/skills/particle-system-get/SKILL.md",
+      "path": ".agents/skills/inputsystem-asset-create/SKILL.md",
       "language": "markdown",
-      "sizeLines": 518,
+      "sizeLines": 111,
       "fileCategory": "docs"
     },
     {
-      "path": ".agents/skills/particle-system-modify/SKILL.md",
+      "path": ".agents/skills/inputsystem-binding-add/SKILL.md",
       "language": "markdown",
-      "sizeLines": 397,
+      "sizeLines": 162,
       "fileCategory": "docs"
     },
     {
-      "path": ".agents/skills/ping/SKILL.md",
+      "path": ".agents/skills/inputsystem-binding-composite-add/SKILL.md",
       "language": "markdown",
-      "sizeLines": 70,
+      "sizeLines": 185,
       "fileCategory": "docs"
     },
     {
-      "path": ".agents/skills/probuilder-bevel/SKILL.md",
+      "path": ".agents/skills/inputsystem-binding-remove/SKILL.md",
       "language": "markdown",
-      "sizeLines": 170,
+      "sizeLines": 139,
       "fileCategory": "docs"
     },
     {
-      "path": ".agents/skills/probuilder-bridge/SKILL.md",
+      "path": ".agents/skills/inputsystem-binding-set/SKILL.md",
       "language": "markdown",
-      "sizeLines": 188,
+      "sizeLines": 174,
       "fileCategory": "docs"
     },
     {
-      "path": ".agents/skills/probuilder-connect-edges/SKILL.md",
+      "path": ".agents/skills/inputsystem-controlscheme-add/SKILL.md",
       "language": "markdown",
-      "sizeLines": 203,
+      "sizeLines": 147,
       "fileCategory": "docs"
     },
     {
-      "path": ".agents/skills/probuilder-create-poly-shape/SKILL.md",
+      "path": ".agents/skills/inputsystem-get/SKILL.md",
       "language": "markdown",
-      "sizeLines": 268,
+      "sizeLines": 225,
       "fileCategory": "docs"
     },
     {
-      "path": ".agents/skills/probuilder-create-shape/SKILL.md",
+      "path": ".agents/skills/inputsystem-modify/SKILL.md",
       "language": "markdown",
-      "sizeLines": 223,
+      "sizeLines": 166,
       "fileCategory": "docs"
     },
     {
-      "path": ".agents/skills/probuilder-delete-faces/SKILL.md",
+      "path": ".agents/skills/inputsystem-save/SKILL.md",
       "language": "markdown",
-      "sizeLines": 190,
+      "sizeLines": 111,
       "fileCategory": "docs"
     },
     {
-      "path": ".agents/skills/probuilder-extrude/SKILL.md",
+      "path": ".agents/skills/navigation-agent-add/SKILL.md",
       "language": "markdown",
-      "sizeLines": 211,
+      "sizeLines": 274,
       "fileCategory": "docs"
     },
     {
-      "path": ".agents/skills/probuilder-flip-normals/SKILL.md",
+      "path": ".agents/skills/navigation-agent-set-destination/SKILL.md",
       "language": "markdown",
-      "sizeLines": 178,
+      "sizeLines": 278,
       "fileCategory": "docs"
     },
     {
-      "path": ".agents/skills/probuilder-get-mesh-info/SKILL.md",
+      "path": ".agents/skills/navigation-get/SKILL.md",
       "language": "markdown",
-      "sizeLines": 315,
+      "sizeLines": 285,
       "fileCategory": "docs"
     },
     {
-      "path": ".agents/skills/probuilder-merge-objects/SKILL.md",
+      "path": ".agents/skills/navigation-link-add/SKILL.md",
       "language": "markdown",
-      "sizeLines": 221,
+      "sizeLines": 302,
       "fileCategory": "docs"
     },
     {
-      "path": ".agents/skills/probuilder-set-face-material/SKILL.md",
+      "path": ".agents/skills/navigation-list/SKILL.md",
       "language": "markdown",
-      "sizeLines": 202,
+      "sizeLines": 240,
       "fileCategory": "docs"
     },
     {
-      "path": ".agents/skills/probuilder-set-pivot/SKILL.md",
+      "path": ".agents/skills/navigation-modifier-add/SKILL.md",
       "language": "markdown",
-      "sizeLines": 178,
+      "sizeLines": 245,
       "fileCategory": "docs"
     },
     {
-      "path": ".agents/skills/probuilder-subdivide-edges/SKILL.md",
+      "path": ".agents/skills/navigation-modifier-volume-add/SKILL.md",
       "language": "markdown",
-      "sizeLines": 207,
+      "sizeLines": 274,
       "fileCategory": "docs"
     },
     {
-      "path": ".agents/skills/reflection-method-call/SKILL.md",
+      "path": ".agents/skills/navigation-modify/SKILL.md",
+      "language": "markdown",
+      "sizeLines": 297,
+      "fileCategory": "docs"
+    },
+    {
+      "path": ".agents/skills/navigation-set-bake-settings/SKILL.md",
       "language": "markdown",
       "sizeLines": 239,
       "fileCategory": "docs"
     },
     {
+      "path": ".agents/skills/navigation-surface-add/SKILL.md",
+      "language": "markdown",
+      "sizeLines": 284,
+      "fileCategory": "docs"
+    },
+    {
+      "path": ".agents/skills/navigation-surface-bake/SKILL.md",
+      "language": "markdown",
+      "sizeLines": 217,
+      "fileCategory": "docs"
+    },
+    {
+      "path": ".agents/skills/object-get-data/SKILL.md",
+      "language": "markdown",
+      "sizeLines": 182,
+      "fileCategory": "docs"
+    },
+    {
+      "path": ".agents/skills/object-modify/SKILL.md",
+      "language": "markdown",
+      "sizeLines": 277,
+      "fileCategory": "docs"
+    },
+    {
+      "path": ".agents/skills/package-add/SKILL.md",
+      "language": "markdown",
+      "sizeLines": 73,
+      "fileCategory": "docs"
+    },
+    {
+      "path": ".agents/skills/package-list/SKILL.md",
+      "language": "markdown",
+      "sizeLines": 136,
+      "fileCategory": "docs"
+    },
+    {
+      "path": ".agents/skills/package-remove/SKILL.md",
+      "language": "markdown",
+      "sizeLines": 69,
+      "fileCategory": "docs"
+    },
+    {
+      "path": ".agents/skills/package-search/SKILL.md",
+      "language": "markdown",
+      "sizeLines": 147,
+      "fileCategory": "docs"
+    },
+    {
+      "path": ".agents/skills/particle-system-get/SKILL.md",
+      "language": "markdown",
+      "sizeLines": 532,
+      "fileCategory": "docs"
+    },
+    {
+      "path": ".agents/skills/particle-system-modify/SKILL.md",
+      "language": "markdown",
+      "sizeLines": 409,
+      "fileCategory": "docs"
+    },
+    {
+      "path": ".agents/skills/ping/SKILL.md",
+      "language": "markdown",
+      "sizeLines": 80,
+      "fileCategory": "docs"
+    },
+    {
+      "path": ".agents/skills/probuilder-bevel/SKILL.md",
+      "language": "markdown",
+      "sizeLines": 179,
+      "fileCategory": "docs"
+    },
+    {
+      "path": ".agents/skills/probuilder-bridge/SKILL.md",
+      "language": "markdown",
+      "sizeLines": 200,
+      "fileCategory": "docs"
+    },
+    {
+      "path": ".agents/skills/probuilder-connect-edges/SKILL.md",
+      "language": "markdown",
+      "sizeLines": 209,
+      "fileCategory": "docs"
+    },
+    {
+      "path": ".agents/skills/probuilder-create-poly-shape/SKILL.md",
+      "language": "markdown",
+      "sizeLines": 278,
+      "fileCategory": "docs"
+    },
+    {
+      "path": ".agents/skills/probuilder-create-shape/SKILL.md",
+      "language": "markdown",
+      "sizeLines": 236,
+      "fileCategory": "docs"
+    },
+    {
+      "path": ".agents/skills/probuilder-delete-faces/SKILL.md",
+      "language": "markdown",
+      "sizeLines": 200,
+      "fileCategory": "docs"
+    },
+    {
+      "path": ".agents/skills/probuilder-extrude/SKILL.md",
+      "language": "markdown",
+      "sizeLines": 223,
+      "fileCategory": "docs"
+    },
+    {
+      "path": ".agents/skills/probuilder-flip-normals/SKILL.md",
+      "language": "markdown",
+      "sizeLines": 191,
+      "fileCategory": "docs"
+    },
+    {
+      "path": ".agents/skills/probuilder-get-mesh-info/SKILL.md",
+      "language": "markdown",
+      "sizeLines": 323,
+      "fileCategory": "docs"
+    },
+    {
+      "path": ".agents/skills/probuilder-merge-objects/SKILL.md",
+      "language": "markdown",
+      "sizeLines": 231,
+      "fileCategory": "docs"
+    },
+    {
+      "path": ".agents/skills/probuilder-set-face-material/SKILL.md",
+      "language": "markdown",
+      "sizeLines": 213,
+      "fileCategory": "docs"
+    },
+    {
+      "path": ".agents/skills/probuilder-set-pivot/SKILL.md",
+      "language": "markdown",
+      "sizeLines": 189,
+      "fileCategory": "docs"
+    },
+    {
+      "path": ".agents/skills/probuilder-subdivide-edges/SKILL.md",
+      "language": "markdown",
+      "sizeLines": 215,
+      "fileCategory": "docs"
+    },
+    {
+      "path": ".agents/skills/profiler-capture-frame/SKILL.md",
+      "language": "markdown",
+      "sizeLines": 120,
+      "fileCategory": "docs"
+    },
+    {
+      "path": ".agents/skills/profiler-clear-data/SKILL.md",
+      "language": "markdown",
+      "sizeLines": 76,
+      "fileCategory": "docs"
+    },
+    {
+      "path": ".agents/skills/profiler-enable-module/SKILL.md",
+      "language": "markdown",
+      "sizeLines": 89,
+      "fileCategory": "docs"
+    },
+    {
+      "path": ".agents/skills/profiler-get-memory-stats/SKILL.md",
+      "language": "markdown",
+      "sizeLines": 144,
+      "fileCategory": "docs"
+    },
+    {
+      "path": ".agents/skills/profiler-get-rendering-stats/SKILL.md",
+      "language": "markdown",
+      "sizeLines": 120,
+      "fileCategory": "docs"
+    },
+    {
+      "path": ".agents/skills/profiler-get-script-stats/SKILL.md",
+      "language": "markdown",
+      "sizeLines": 128,
+      "fileCategory": "docs"
+    },
+    {
+      "path": ".agents/skills/profiler-get-status/SKILL.md",
+      "language": "markdown",
+      "sizeLines": 119,
+      "fileCategory": "docs"
+    },
+    {
+      "path": ".agents/skills/profiler-list-modules/SKILL.md",
+      "language": "markdown",
+      "sizeLines": 113,
+      "fileCategory": "docs"
+    },
+    {
+      "path": ".agents/skills/profiler-load-data/SKILL.md",
+      "language": "markdown",
+      "sizeLines": 87,
+      "fileCategory": "docs"
+    },
+    {
+      "path": ".agents/skills/profiler-save-data/SKILL.md",
+      "language": "markdown",
+      "sizeLines": 87,
+      "fileCategory": "docs"
+    },
+    {
+      "path": ".agents/skills/profiler-start/SKILL.md",
+      "language": "markdown",
+      "sizeLines": 78,
+      "fileCategory": "docs"
+    },
+    {
+      "path": ".agents/skills/profiler-stop/SKILL.md",
+      "language": "markdown",
+      "sizeLines": 76,
+      "fileCategory": "docs"
+    },
+    {
+      "path": ".agents/skills/reflection-method-call/SKILL.md",
+      "language": "markdown",
+      "sizeLines": 252,
+      "fileCategory": "docs"
+    },
+    {
       "path": ".agents/skills/reflection-method-find/SKILL.md",
       "language": "markdown",
-      "sizeLines": 138,
+      "sizeLines": 149,
       "fileCategory": "docs"
     },
     {
       "path": ".agents/skills/scene-create/SKILL.md",
       "language": "markdown",
-      "sizeLines": 148,
+      "sizeLines": 160,
       "fileCategory": "docs"
     },
     {
       "path": ".agents/skills/scene-get-data/SKILL.md",
       "language": "markdown",
-      "sizeLines": 418,
+      "sizeLines": 431,
       "fileCategory": "docs"
     },
     {
       "path": ".agents/skills/scene-list-opened/SKILL.md",
       "language": "markdown",
-      "sizeLines": 125,
+      "sizeLines": 131,
       "fileCategory": "docs"
     },
     {
       "path": ".agents/skills/scene-open/SKILL.md",
       "language": "markdown",
-      "sizeLines": 168,
+      "sizeLines": 177,
       "fileCategory": "docs"
     },
     {
       "path": ".agents/skills/scene-save/SKILL.md",
       "language": "markdown",
-      "sizeLines": 61,
+      "sizeLines": 72,
       "fileCategory": "docs"
     },
     {
       "path": ".agents/skills/scene-set-active/SKILL.md",
       "language": "markdown",
-      "sizeLines": 158,
+      "sizeLines": 168,
       "fileCategory": "docs"
     },
     {
       "path": ".agents/skills/scene-unload/SKILL.md",
       "language": "markdown",
-      "sizeLines": 116,
+      "sizeLines": 126,
       "fileCategory": "docs"
     },
     {
       "path": ".agents/skills/screenshot-camera/SKILL.md",
       "language": "markdown",
-      "sizeLines": 104,
+      "sizeLines": 115,
       "fileCategory": "docs"
     },
     {
       "path": ".agents/skills/screenshot-game-view/SKILL.md",
       "language": "markdown",
-      "sizeLines": 56,
+      "sizeLines": 62,
       "fileCategory": "docs"
     },
     {
       "path": ".agents/skills/screenshot-isolated/SKILL.md",
       "language": "markdown",
-      "sizeLines": 181,
+      "sizeLines": 201,
       "fileCategory": "docs"
     },
     {
       "path": ".agents/skills/screenshot-scene-view/SKILL.md",
       "language": "markdown",
-      "sizeLines": 61,
+      "sizeLines": 71,
       "fileCategory": "docs"
     },
     {
       "path": ".agents/skills/script-delete/SKILL.md",
       "language": "markdown",
-      "sizeLines": 67,
+      "sizeLines": 78,
       "fileCategory": "docs"
     },
     {
       "path": ".agents/skills/script-execute/SKILL.md",
       "language": "markdown",
-      "sizeLines": 181,
+      "sizeLines": 196,
       "fileCategory": "docs"
     },
     {
       "path": ".agents/skills/script-read/SKILL.md",
       "language": "markdown",
-      "sizeLines": 83,
+      "sizeLines": 95,
       "fileCategory": "docs"
     },
     {
       "path": ".agents/skills/script-update-or-create/SKILL.md",
       "language": "markdown",
-      "sizeLines": 65,
+      "sizeLines": 77,
+      "fileCategory": "docs"
+    },
+    {
+      "path": ".agents/skills/splines-add-knot/SKILL.md",
+      "language": "markdown",
+      "sizeLines": 326,
+      "fileCategory": "docs"
+    },
+    {
+      "path": ".agents/skills/splines-add-spline/SKILL.md",
+      "language": "markdown",
+      "sizeLines": 222,
+      "fileCategory": "docs"
+    },
+    {
+      "path": ".agents/skills/splines-container-create/SKILL.md",
+      "language": "markdown",
+      "sizeLines": 214,
+      "fileCategory": "docs"
+    },
+    {
+      "path": ".agents/skills/splines-evaluate/SKILL.md",
+      "language": "markdown",
+      "sizeLines": 258,
+      "fileCategory": "docs"
+    },
+    {
+      "path": ".agents/skills/splines-get-knots/SKILL.md",
+      "language": "markdown",
+      "sizeLines": 283,
+      "fileCategory": "docs"
+    },
+    {
+      "path": ".agents/skills/splines-get/SKILL.md",
+      "language": "markdown",
+      "sizeLines": 285,
+      "fileCategory": "docs"
+    },
+    {
+      "path": ".agents/skills/splines-insert-knot/SKILL.md",
+      "language": "markdown",
+      "sizeLines": 332,
+      "fileCategory": "docs"
+    },
+    {
+      "path": ".agents/skills/splines-list/SKILL.md",
+      "language": "markdown",
+      "sizeLines": 218,
+      "fileCategory": "docs"
+    },
+    {
+      "path": ".agents/skills/splines-modify/SKILL.md",
+      "language": "markdown",
+      "sizeLines": 297,
+      "fileCategory": "docs"
+    },
+    {
+      "path": ".agents/skills/splines-remove-knot/SKILL.md",
+      "language": "markdown",
+      "sizeLines": 289,
+      "fileCategory": "docs"
+    },
+    {
+      "path": ".agents/skills/splines-set-closed/SKILL.md",
+      "language": "markdown",
+      "sizeLines": 228,
+      "fileCategory": "docs"
+    },
+    {
+      "path": ".agents/skills/splines-set-knot/SKILL.md",
+      "language": "markdown",
+      "sizeLines": 332,
+      "fileCategory": "docs"
+    },
+    {
+      "path": ".agents/skills/splines-set-tangent-mode/SKILL.md",
+      "language": "markdown",
+      "sizeLines": 296,
+      "fileCategory": "docs"
+    },
+    {
+      "path": ".agents/skills/terrain-add-layer/SKILL.md",
+      "language": "markdown",
+      "sizeLines": 234,
+      "fileCategory": "docs"
+    },
+    {
+      "path": ".agents/skills/terrain-create/SKILL.md",
+      "language": "markdown",
+      "sizeLines": 255,
+      "fileCategory": "docs"
+    },
+    {
+      "path": ".agents/skills/terrain-get-component/SKILL.md",
+      "language": "markdown",
+      "sizeLines": 285,
+      "fileCategory": "docs"
+    },
+    {
+      "path": ".agents/skills/terrain-get/SKILL.md",
+      "language": "markdown",
+      "sizeLines": 301,
+      "fileCategory": "docs"
+    },
+    {
+      "path": ".agents/skills/terrain-list/SKILL.md",
+      "language": "markdown",
+      "sizeLines": 216,
+      "fileCategory": "docs"
+    },
+    {
+      "path": ".agents/skills/terrain-modify-component/SKILL.md",
+      "language": "markdown",
+      "sizeLines": 297,
+      "fileCategory": "docs"
+    },
+    {
+      "path": ".agents/skills/terrain-paint-layer/SKILL.md",
+      "language": "markdown",
+      "sizeLines": 261,
+      "fileCategory": "docs"
+    },
+    {
+      "path": ".agents/skills/terrain-place-trees/SKILL.md",
+      "language": "markdown",
+      "sizeLines": 294,
+      "fileCategory": "docs"
+    },
+    {
+      "path": ".agents/skills/terrain-remove-layer/SKILL.md",
+      "language": "markdown",
+      "sizeLines": 213,
+      "fileCategory": "docs"
+    },
+    {
+      "path": ".agents/skills/terrain-sample-heights/SKILL.md",
+      "language": "markdown",
+      "sizeLines": 275,
+      "fileCategory": "docs"
+    },
+    {
+      "path": ".agents/skills/terrain-set-detail-prototypes/SKILL.md",
+      "language": "markdown",
+      "sizeLines": 226,
+      "fileCategory": "docs"
+    },
+    {
+      "path": ".agents/skills/terrain-set-heightmap-resolution/SKILL.md",
+      "language": "markdown",
+      "sizeLines": 213,
+      "fileCategory": "docs"
+    },
+    {
+      "path": ".agents/skills/terrain-set-heights/SKILL.md",
+      "language": "markdown",
+      "sizeLines": 267,
+      "fileCategory": "docs"
+    },
+    {
+      "path": ".agents/skills/terrain-set-neighbors/SKILL.md",
+      "language": "markdown",
+      "sizeLines": 238,
+      "fileCategory": "docs"
+    },
+    {
+      "path": ".agents/skills/terrain-set-size/SKILL.md",
+      "language": "markdown",
+      "sizeLines": 247,
+      "fileCategory": "docs"
+    },
+    {
+      "path": ".agents/skills/terrain-set-tree-prototypes/SKILL.md",
+      "language": "markdown",
+      "sizeLines": 219,
       "fileCategory": "docs"
     },
     {
       "path": ".agents/skills/tests-run/SKILL.md",
       "language": "markdown",
-      "sizeLines": 259,
+      "sizeLines": 279,
+      "fileCategory": "docs"
+    },
+    {
+      "path": ".agents/skills/tilemap-box-fill/SKILL.md",
+      "language": "markdown",
+      "sizeLines": 274,
+      "fileCategory": "docs"
+    },
+    {
+      "path": ".agents/skills/tilemap-clear/SKILL.md",
+      "language": "markdown",
+      "sizeLines": 243,
+      "fileCategory": "docs"
+    },
+    {
+      "path": ".agents/skills/tilemap-create-rule-tile/SKILL.md",
+      "language": "markdown",
+      "sizeLines": 116,
+      "fileCategory": "docs"
+    },
+    {
+      "path": ".agents/skills/tilemap-create-tile-asset/SKILL.md",
+      "language": "markdown",
+      "sizeLines": 203,
+      "fileCategory": "docs"
+    },
+    {
+      "path": ".agents/skills/tilemap-create/SKILL.md",
+      "language": "markdown",
+      "sizeLines": 257,
+      "fileCategory": "docs"
+    },
+    {
+      "path": ".agents/skills/tilemap-get-tile/SKILL.md",
+      "language": "markdown",
+      "sizeLines": 283,
+      "fileCategory": "docs"
+    },
+    {
+      "path": ".agents/skills/tilemap-get/SKILL.md",
+      "language": "markdown",
+      "sizeLines": 285,
+      "fileCategory": "docs"
+    },
+    {
+      "path": ".agents/skills/tilemap-list/SKILL.md",
+      "language": "markdown",
+      "sizeLines": 220,
+      "fileCategory": "docs"
+    },
+    {
+      "path": ".agents/skills/tilemap-modify/SKILL.md",
+      "language": "markdown",
+      "sizeLines": 297,
+      "fileCategory": "docs"
+    },
+    {
+      "path": ".agents/skills/tilemap-set-collider-type/SKILL.md",
+      "language": "markdown",
+      "sizeLines": 250,
+      "fileCategory": "docs"
+    },
+    {
+      "path": ".agents/skills/tilemap-set-orientation/SKILL.md",
+      "language": "markdown",
+      "sizeLines": 284,
+      "fileCategory": "docs"
+    },
+    {
+      "path": ".agents/skills/tilemap-set-tile-flags/SKILL.md",
+      "language": "markdown",
+      "sizeLines": 331,
+      "fileCategory": "docs"
+    },
+    {
+      "path": ".agents/skills/tilemap-set-tile/SKILL.md",
+      "language": "markdown",
+      "sizeLines": 249,
+      "fileCategory": "docs"
+    },
+    {
+      "path": ".agents/skills/timeline-clip-add/SKILL.md",
+      "language": "markdown",
+      "sizeLines": 174,
+      "fileCategory": "docs"
+    },
+    {
+      "path": ".agents/skills/timeline-clip-move/SKILL.md",
+      "language": "markdown",
+      "sizeLines": 165,
+      "fileCategory": "docs"
+    },
+    {
+      "path": ".agents/skills/timeline-clip-set-timing/SKILL.md",
+      "language": "markdown",
+      "sizeLines": 218,
+      "fileCategory": "docs"
+    },
+    {
+      "path": ".agents/skills/timeline-create/SKILL.md",
+      "language": "markdown",
+      "sizeLines": 132,
+      "fileCategory": "docs"
+    },
+    {
+      "path": ".agents/skills/timeline-director-bind/SKILL.md",
+      "language": "markdown",
+      "sizeLines": 231,
+      "fileCategory": "docs"
+    },
+    {
+      "path": ".agents/skills/timeline-get/SKILL.md",
+      "language": "markdown",
+      "sizeLines": 171,
+      "fileCategory": "docs"
+    },
+    {
+      "path": ".agents/skills/timeline-list/SKILL.md",
+      "language": "markdown",
+      "sizeLines": 129,
+      "fileCategory": "docs"
+    },
+    {
+      "path": ".agents/skills/timeline-marker-add/SKILL.md",
+      "language": "markdown",
+      "sizeLines": 150,
+      "fileCategory": "docs"
+    },
+    {
+      "path": ".agents/skills/timeline-modify/SKILL.md",
+      "language": "markdown",
+      "sizeLines": 187,
+      "fileCategory": "docs"
+    },
+    {
+      "path": ".agents/skills/timeline-track-add/SKILL.md",
+      "language": "markdown",
+      "sizeLines": 137,
+      "fileCategory": "docs"
+    },
+    {
+      "path": ".agents/skills/timeline-track-bind/SKILL.md",
+      "language": "markdown",
+      "sizeLines": 210,
+      "fileCategory": "docs"
+    },
+    {
+      "path": ".agents/skills/timeline-track-list/SKILL.md",
+      "language": "markdown",
+      "sizeLines": 221,
+      "fileCategory": "docs"
+    },
+    {
+      "path": ".agents/skills/timeline-track-remove/SKILL.md",
+      "language": "markdown",
+      "sizeLines": 126,
       "fileCategory": "docs"
     },
     {
@@ -526,13 +1155,13 @@
     {
       "path": ".agents/skills/tool-set-enabled-state/SKILL.md",
       "language": "markdown",
-      "sizeLines": 159,
+      "sizeLines": 170,
       "fileCategory": "docs"
     },
     {
       "path": ".agents/skills/type-get-json-schema/SKILL.md",
       "language": "markdown",
-      "sizeLines": 103,
+      "sizeLines": 113,
       "fileCategory": "docs"
     },
     {
@@ -544,19 +1173,25 @@
     {
       "path": ".agents/skills/unity-skill-create/SKILL.md",
       "language": "markdown",
-      "sizeLines": 71,
+      "sizeLines": 206,
       "fileCategory": "docs"
     },
     {
       "path": ".agents/skills/unity-skill-generate/SKILL.md",
       "language": "markdown",
-      "sizeLines": 56,
+      "sizeLines": 66,
+      "fileCategory": "docs"
+    },
+    {
+      "path": ".agents/skills/unity-tool-list/SKILL.md",
+      "language": "markdown",
+      "sizeLines": 154,
       "fileCategory": "docs"
     },
     {
       "path": ".codex/config.toml",
       "language": "toml",
-      "sizeLines": 15,
+      "sizeLines": 12,
       "fileCategory": "config"
     },
     {
@@ -568,13 +1203,37 @@
     {
       "path": ".ua/.understandignore",
       "language": "unknown",
-      "sizeLines": 97,
+      "sizeLines": 100,
       "fileCategory": "code"
     },
     {
       "path": ".ua/config.json",
       "language": "json",
-      "sizeLines": 3,
+      "sizeLines": 4,
+      "fileCategory": "config"
+    },
+    {
+      "path": ".ua/fingerprints.json",
+      "language": "json",
+      "sizeLines": 20952,
+      "fileCategory": "config"
+    },
+    {
+      "path": ".ua/intermediate/scan-result.json",
+      "language": "json",
+      "sizeLines": 11350,
+      "fileCategory": "config"
+    },
+    {
+      "path": ".ua/knowledge-graph.json",
+      "language": "json",
+      "sizeLines": 29278,
+      "fileCategory": "config"
+    },
+    {
+      "path": ".ua/meta.json",
+      "language": "json",
+      "sizeLines": 6,
       "fileCategory": "config"
     },
     {
@@ -8468,18 +9127,6 @@
       "fileCategory": "code"
     },
     {
-      "path": "Assets/Videos/Splash/intro_audio.wav",
-      "language": "wav",
-      "sizeLines": 15474,
-      "fileCategory": "code"
-    },
-    {
-      "path": "Assets/Videos/Splash/intro_audio.wav.meta",
-      "language": "meta",
-      "sizeLines": 12,
-      "fileCategory": "code"
-    },
-    {
       "path": "Assets/XR.meta",
       "language": "meta",
       "sizeLines": 8,
@@ -8872,13 +9519,13 @@
     {
       "path": "Packages/manifest.json",
       "language": "json",
-      "sizeLines": 76,
+      "sizeLines": 82,
       "fileCategory": "config"
     },
     {
       "path": "Packages/packages-lock.json",
       "language": "json",
-      "sizeLines": 723,
+      "sizeLines": 804,
       "fileCategory": "config"
     },
     {
@@ -9068,8 +9715,8 @@
       "fileCategory": "docs"
     }
   ],
-  "totalFiles": 1505,
-  "filteredByIgnore": 0,
+  "totalFiles": 1613,
+  "filteredByIgnore": 5,
   "estimatedComplexity": "very-large",
   "importMap": {
     ".agents/skills/animation-create/SKILL.md": [],
@@ -9095,6 +9742,20 @@
     ".agents/skills/assets-refresh/SKILL.md": [],
     ".agents/skills/assets-shader-get-data/SKILL.md": [],
     ".agents/skills/assets-shader-list-all/SKILL.md": [],
+    ".agents/skills/cinemachine-add-extension/SKILL.md": [],
+    ".agents/skills/cinemachine-brain-ensure/SKILL.md": [],
+    ".agents/skills/cinemachine-camera-create/SKILL.md": [],
+    ".agents/skills/cinemachine-camera-get/SKILL.md": [],
+    ".agents/skills/cinemachine-camera-list/SKILL.md": [],
+    ".agents/skills/cinemachine-get/SKILL.md": [],
+    ".agents/skills/cinemachine-modify/SKILL.md": [],
+    ".agents/skills/cinemachine-set-aim/SKILL.md": [],
+    ".agents/skills/cinemachine-set-body/SKILL.md": [],
+    ".agents/skills/cinemachine-set-default-blend/SKILL.md": [],
+    ".agents/skills/cinemachine-set-lens/SKILL.md": [],
+    ".agents/skills/cinemachine-set-noise/SKILL.md": [],
+    ".agents/skills/cinemachine-set-priority/SKILL.md": [],
+    ".agents/skills/cinemachine-set-targets/SKILL.md": [],
     ".agents/skills/console-clear-logs/SKILL.md": [],
     ".agents/skills/console-get-logs/SKILL.md": [],
     ".agents/skills/editor-application-get-state/SKILL.md": [],
@@ -9112,6 +9773,30 @@
     ".agents/skills/gameobject-find/SKILL.md": [],
     ".agents/skills/gameobject-modify/SKILL.md": [],
     ".agents/skills/gameobject-set-parent/SKILL.md": [],
+    ".agents/skills/inputsystem-action-add/SKILL.md": [],
+    ".agents/skills/inputsystem-action-remove/SKILL.md": [],
+    ".agents/skills/inputsystem-actionmap-add/SKILL.md": [],
+    ".agents/skills/inputsystem-actionmap-remove/SKILL.md": [],
+    ".agents/skills/inputsystem-asset-create/SKILL.md": [],
+    ".agents/skills/inputsystem-binding-add/SKILL.md": [],
+    ".agents/skills/inputsystem-binding-composite-add/SKILL.md": [],
+    ".agents/skills/inputsystem-binding-remove/SKILL.md": [],
+    ".agents/skills/inputsystem-binding-set/SKILL.md": [],
+    ".agents/skills/inputsystem-controlscheme-add/SKILL.md": [],
+    ".agents/skills/inputsystem-get/SKILL.md": [],
+    ".agents/skills/inputsystem-modify/SKILL.md": [],
+    ".agents/skills/inputsystem-save/SKILL.md": [],
+    ".agents/skills/navigation-agent-add/SKILL.md": [],
+    ".agents/skills/navigation-agent-set-destination/SKILL.md": [],
+    ".agents/skills/navigation-get/SKILL.md": [],
+    ".agents/skills/navigation-link-add/SKILL.md": [],
+    ".agents/skills/navigation-list/SKILL.md": [],
+    ".agents/skills/navigation-modifier-add/SKILL.md": [],
+    ".agents/skills/navigation-modifier-volume-add/SKILL.md": [],
+    ".agents/skills/navigation-modify/SKILL.md": [],
+    ".agents/skills/navigation-set-bake-settings/SKILL.md": [],
+    ".agents/skills/navigation-surface-add/SKILL.md": [],
+    ".agents/skills/navigation-surface-bake/SKILL.md": [],
     ".agents/skills/object-get-data/SKILL.md": [],
     ".agents/skills/object-modify/SKILL.md": [],
     ".agents/skills/package-add/SKILL.md": [],
@@ -9134,6 +9819,18 @@
     ".agents/skills/probuilder-set-face-material/SKILL.md": [],
     ".agents/skills/probuilder-set-pivot/SKILL.md": [],
     ".agents/skills/probuilder-subdivide-edges/SKILL.md": [],
+    ".agents/skills/profiler-capture-frame/SKILL.md": [],
+    ".agents/skills/profiler-clear-data/SKILL.md": [],
+    ".agents/skills/profiler-enable-module/SKILL.md": [],
+    ".agents/skills/profiler-get-memory-stats/SKILL.md": [],
+    ".agents/skills/profiler-get-rendering-stats/SKILL.md": [],
+    ".agents/skills/profiler-get-script-stats/SKILL.md": [],
+    ".agents/skills/profiler-get-status/SKILL.md": [],
+    ".agents/skills/profiler-list-modules/SKILL.md": [],
+    ".agents/skills/profiler-load-data/SKILL.md": [],
+    ".agents/skills/profiler-save-data/SKILL.md": [],
+    ".agents/skills/profiler-start/SKILL.md": [],
+    ".agents/skills/profiler-stop/SKILL.md": [],
     ".agents/skills/reflection-method-call/SKILL.md": [],
     ".agents/skills/reflection-method-find/SKILL.md": [],
     ".agents/skills/scene-create/SKILL.md": [],
@@ -9151,17 +9848,77 @@
     ".agents/skills/script-execute/SKILL.md": [],
     ".agents/skills/script-read/SKILL.md": [],
     ".agents/skills/script-update-or-create/SKILL.md": [],
+    ".agents/skills/splines-add-knot/SKILL.md": [],
+    ".agents/skills/splines-add-spline/SKILL.md": [],
+    ".agents/skills/splines-container-create/SKILL.md": [],
+    ".agents/skills/splines-evaluate/SKILL.md": [],
+    ".agents/skills/splines-get-knots/SKILL.md": [],
+    ".agents/skills/splines-get/SKILL.md": [],
+    ".agents/skills/splines-insert-knot/SKILL.md": [],
+    ".agents/skills/splines-list/SKILL.md": [],
+    ".agents/skills/splines-modify/SKILL.md": [],
+    ".agents/skills/splines-remove-knot/SKILL.md": [],
+    ".agents/skills/splines-set-closed/SKILL.md": [],
+    ".agents/skills/splines-set-knot/SKILL.md": [],
+    ".agents/skills/splines-set-tangent-mode/SKILL.md": [],
+    ".agents/skills/terrain-add-layer/SKILL.md": [],
+    ".agents/skills/terrain-create/SKILL.md": [],
+    ".agents/skills/terrain-get-component/SKILL.md": [],
+    ".agents/skills/terrain-get/SKILL.md": [],
+    ".agents/skills/terrain-list/SKILL.md": [],
+    ".agents/skills/terrain-modify-component/SKILL.md": [],
+    ".agents/skills/terrain-paint-layer/SKILL.md": [],
+    ".agents/skills/terrain-place-trees/SKILL.md": [],
+    ".agents/skills/terrain-remove-layer/SKILL.md": [],
+    ".agents/skills/terrain-sample-heights/SKILL.md": [],
+    ".agents/skills/terrain-set-detail-prototypes/SKILL.md": [],
+    ".agents/skills/terrain-set-heightmap-resolution/SKILL.md": [],
+    ".agents/skills/terrain-set-heights/SKILL.md": [],
+    ".agents/skills/terrain-set-neighbors/SKILL.md": [],
+    ".agents/skills/terrain-set-size/SKILL.md": [],
+    ".agents/skills/terrain-set-tree-prototypes/SKILL.md": [],
     ".agents/skills/tests-run/SKILL.md": [],
+    ".agents/skills/tilemap-box-fill/SKILL.md": [],
+    ".agents/skills/tilemap-clear/SKILL.md": [],
+    ".agents/skills/tilemap-create-rule-tile/SKILL.md": [],
+    ".agents/skills/tilemap-create-tile-asset/SKILL.md": [],
+    ".agents/skills/tilemap-create/SKILL.md": [],
+    ".agents/skills/tilemap-get-tile/SKILL.md": [],
+    ".agents/skills/tilemap-get/SKILL.md": [],
+    ".agents/skills/tilemap-list/SKILL.md": [],
+    ".agents/skills/tilemap-modify/SKILL.md": [],
+    ".agents/skills/tilemap-set-collider-type/SKILL.md": [],
+    ".agents/skills/tilemap-set-orientation/SKILL.md": [],
+    ".agents/skills/tilemap-set-tile-flags/SKILL.md": [],
+    ".agents/skills/tilemap-set-tile/SKILL.md": [],
+    ".agents/skills/timeline-clip-add/SKILL.md": [],
+    ".agents/skills/timeline-clip-move/SKILL.md": [],
+    ".agents/skills/timeline-clip-set-timing/SKILL.md": [],
+    ".agents/skills/timeline-create/SKILL.md": [],
+    ".agents/skills/timeline-director-bind/SKILL.md": [],
+    ".agents/skills/timeline-get/SKILL.md": [],
+    ".agents/skills/timeline-list/SKILL.md": [],
+    ".agents/skills/timeline-marker-add/SKILL.md": [],
+    ".agents/skills/timeline-modify/SKILL.md": [],
+    ".agents/skills/timeline-track-add/SKILL.md": [],
+    ".agents/skills/timeline-track-bind/SKILL.md": [],
+    ".agents/skills/timeline-track-list/SKILL.md": [],
+    ".agents/skills/timeline-track-remove/SKILL.md": [],
     ".agents/skills/tool-list/SKILL.md": [],
     ".agents/skills/tool-set-enabled-state/SKILL.md": [],
     ".agents/skills/type-get-json-schema/SKILL.md": [],
     ".agents/skills/unity-initial-setup/SKILL.md": [],
     ".agents/skills/unity-skill-create/SKILL.md": [],
     ".agents/skills/unity-skill-generate/SKILL.md": [],
+    ".agents/skills/unity-tool-list/SKILL.md": [],
     ".codex/config.toml": [],
     ".gitattributes": [],
     ".ua/.understandignore": [],
     ".ua/config.json": [],
+    ".ua/fingerprints.json": [],
+    ".ua/intermediate/scan-result.json": [],
+    ".ua/knowledge-graph.json": [],
+    ".ua/meta.json": [],
     ".vsconfig": [],
     "Assets/AddressableAssetsData.meta": [],
     "Assets/AddressableAssetsData/AddressableAssetSettings.asset": [],
@@ -10477,8 +11234,6 @@
     "Assets/Videos/Splash.meta": [],
     "Assets/Videos/Splash/easports-intro.mp4.meta": [],
     "Assets/Videos/Splash/intro.mp4.meta": [],
-    "Assets/Videos/Splash/intro_audio.wav": [],
-    "Assets/Videos/Splash/intro_audio.wav.meta": [],
     "Assets/XR.meta": [],
     "Assets/XR/XRGeneralSettingsPerBuildTarget.asset": [],
     "Assets/XR/XRGeneralSettingsPerBuildTarget.asset.meta": [],
