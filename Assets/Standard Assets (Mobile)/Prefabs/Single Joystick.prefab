@@ -1,0 +1,102 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &100000
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 400000}
+  - component: {fileID: 13100000}
+  - component: {fileID: 11400000}
+  - component: {fileID: 783565631}
+  m_Layer: 0
+  m_Name: Single Joystick
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &400000
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 100000}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 0, y: 0, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!131 &13100000
+GUITexture:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 100000}
+  m_Enabled: 1
+  m_Texture: {fileID: 2800000, guid: fdcde05f3a426c74ab9c76adfb1dbdec, type: 3}
+  m_Color: {r: 0.5019608, g: 0.5019608, b: 0.5019608, a: 0.5019608}
+  m_PixelInset:
+    serializedVersion: 2
+    x: 0
+    y: 0
+    width: 80
+    height: 80
+  m_LeftBorder: 0
+  m_RightBorder: 0
+  m_TopBorder: 0
+  m_BottomBorder: 0
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 100000}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2bf573b77ec5e4b6a94a0e08efb916b5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  touchPad: 0
+  touchZone:
+    serializedVersion: 2
+    x: 0
+    y: 0
+    width: 0
+    height: 0
+  deadZone: {x: 0, y: 0}
+  normalize: 0
+  position: {x: 0, y: 0}
+  tapCount: 0
+  defaultRect:
+    serializedVersion: 2
+    x: 0
+    y: 0
+    width: 0
+    height: 0
+--- !u!114 &783565631
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 100000}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c6ee45d08142fc14fb15f62f17507744, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  joystickTexture:
+  - {fileID: 2800000, guid: fdcde05f3a426c74ab9c76adfb1dbdec, type: 3}
+  - {fileID: 2800000, guid: 4a413c5de6b32dd49a441989923036cf, type: 3}
+  - {fileID: 2800000, guid: 540dac5875977334a8fc10cc93d686cd, type: 3}
+  - {fileID: 2800000, guid: a342670a59c5ded4588f04c682329190, type: 3}
+  backgroundTexture: {fileID: 0}

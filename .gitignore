@@ -1,0 +1,53 @@
+# Unity generated folders
+/[Ll]ibrary/
+/[Tt]emp/
+/[Oo]bj/
+/[Bb]uild/
+/[Bb]uilds/
+/[Ll]ogs/
+/[Uu]ser[Ss]ettings/
+
+# IDE generated files
+.vs/
+.vscode/
+.idea/
+__pycache__/
+*.py[cod]
+*.csproj
+*.sln
+*.suo
+*.user
+*.userprefs
+*.pidb
+*.booproj
+*.svd
+*.pdb
+*.mdb
+*.opendb
+*.VC.db
+
+# Unity crash and profiler artifacts
+sysinfo.txt
+*.stackdump
+*.trace
+*.log
+
+# Unity cache files
+*.pidb.meta
+*.pdb.meta
+*.mdb.meta
+
+# Build artifacts
+*.apk
+*.aab
+*.unitypackage
+*.app
+*.exe
+*.x86
+*.x86_64
+*.so
+
+# OS files
+.DS_Store
+Thumbs.db
+desktop.ini

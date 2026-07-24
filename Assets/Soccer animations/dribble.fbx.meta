@@ -1,0 +1,601 @@
+fileFormatVersion: 2
+guid: a5c3fa9a1991545459c2d2acf627d44d
+ModelImporter:
+  serializedVersion: 16
+  fileIDToRecycleName:
+    100000: //RootNode
+    100002: Head
+    100004: HeadTop_End
+    100006: Hips
+    100008: Jaw
+    100010: JawEND
+    100012: LeftArm
+    100014: LeftCheek
+    100016: LeftEye
+    100018: LeftEyelidLower
+    100020: LeftEyelidUpper
+    100022: LeftFoot
+    100024: LeftFootToeBase_End
+    100026: LeftForeArm
+    100028: LeftHand
+    100030: LeftHandIndex1
+    100032: LeftHandIndex2
+    100034: LeftHandIndex3
+    100036: LeftHandIndex4
+    100038: LeftHandMiddle1
+    100040: LeftHandMiddle2
+    100042: LeftHandMiddle3
+    100044: LeftHandMiddle4
+    100046: LeftHandPinky1
+    100048: LeftHandPinky2
+    100050: LeftHandPinky3
+    100052: LeftHandPinky4
+    100054: LeftHandRing1
+    100056: LeftHandRing2
+    100058: LeftHandRing3
+    100060: LeftHandRing4
+    100062: LeftHandThumb1
+    100064: LeftHandThumb2
+    100066: LeftHandThumb3
+    100068: LeftHandThumb4
+    100070: LeftInnerBrow
+    100072: LeftIOuterBrow
+    100074: LeftLeg
+    100076: LeftLipCorner
+    100078: LeftLipLower
+    100080: LeftLipUpper
+    100082: LeftNostril
+    100084: LeftShoulder
+    100086: LeftToeBase
+    100088: LeftUpLeg
+    100090: mixamo_null_node_workaround
+    100092: Neck
+    100094: Neck1
+    100096: RightArm
+    100098: RightCheek
+    100100: RightEye
+    100102: RightEyelidLower
+    100104: RightEyelidUpper
+    100106: RightFoot
+    100108: RightFootToeBase_End
+    100110: RightForeArm
+    100112: RightHand
+    100114: RightHandIndex1
+    100116: RightHandIndex2
+    100118: RightHandIndex3
+    100120: RightHandIndex4
+    100122: RightHandMiddle1
+    100124: RightHandMiddle2
+    100126: RightHandMiddle3
+    100128: RightHandMiddle4
+    100130: RightHandPinky1
+    100132: RightHandPinky2
+    100134: RightHandPinky3
+    100136: RightHandPinky4
+    100138: RightHandRing1
+    100140: RightHandRing2
+    100142: RightHandRing3
+    100144: RightHandRing4
+    100146: RightHandThumb1
+    100148: RightHandThumb2
+    100150: RightHandThumb3
+    100152: RightHandThumb4
+    100154: RightInnerBrow
+    100156: RightIOuterBrow
+    100158: RightLeg
+    100160: RightLipCorner
+    100162: RightLipLower
+    100164: RightLipUpper
+    100166: RightNostril
+    100168: RightShoulder
+    100170: RightToeBase
+    100172: RightUpLeg
+    100174: Spine
+    100176: Spine1
+    100178: Spine2
+    100180: TongueBack
+    100182: TongueTip
+    400000: //RootNode
+    400002: Head
+    400004: HeadTop_End
+    400006: Hips
+    400008: Jaw
+    400010: JawEND
+    400012: LeftArm
+    400014: LeftCheek
+    400016: LeftEye
+    400018: LeftEyelidLower
+    400020: LeftEyelidUpper
+    400022: LeftFoot
+    400024: LeftFootToeBase_End
+    400026: LeftForeArm
+    400028: LeftHand
+    400030: LeftHandIndex1
+    400032: LeftHandIndex2
+    400034: LeftHandIndex3
+    400036: LeftHandIndex4
+    400038: LeftHandMiddle1
+    400040: LeftHandMiddle2
+    400042: LeftHandMiddle3
+    400044: LeftHandMiddle4
+    400046: LeftHandPinky1
+    400048: LeftHandPinky2
+    400050: LeftHandPinky3
+    400052: LeftHandPinky4
+    400054: LeftHandRing1
+    400056: LeftHandRing2
+    400058: LeftHandRing3
+    400060: LeftHandRing4
+    400062: LeftHandThumb1
+    400064: LeftHandThumb2
+    400066: LeftHandThumb3
+    400068: LeftHandThumb4
+    400070: LeftInnerBrow
+    400072: LeftIOuterBrow
+    400074: LeftLeg
+    400076: LeftLipCorner
+    400078: LeftLipLower
+    400080: LeftLipUpper
+    400082: LeftNostril
+    400084: LeftShoulder
+    400086: LeftToeBase
+    400088: LeftUpLeg
+    400090: mixamo_null_node_workaround
+    400092: Neck
+    400094: Neck1
+    400096: RightArm
+    400098: RightCheek
+    400100: RightEye
+    400102: RightEyelidLower
+    400104: RightEyelidUpper
+    400106: RightFoot
+    400108: RightFootToeBase_End
+    400110: RightForeArm
+    400112: RightHand
+    400114: RightHandIndex1
+    400116: RightHandIndex2
+    400118: RightHandIndex3
+    400120: RightHandIndex4
+    400122: RightHandMiddle1
+    400124: RightHandMiddle2
+    400126: RightHandMiddle3
+    400128: RightHandMiddle4
+    400130: RightHandPinky1
+    400132: RightHandPinky2
+    400134: RightHandPinky3
+    400136: RightHandPinky4
+    400138: RightHandRing1
+    400140: RightHandRing2
+    400142: RightHandRing3
+    400144: RightHandRing4
+    400146: RightHandThumb1
+    400148: RightHandThumb2
+    400150: RightHandThumb3
+    400152: RightHandThumb4
+    400154: RightInnerBrow
+    400156: RightIOuterBrow
+    400158: RightLeg
+    400160: RightLipCorner
+    400162: RightLipLower
+    400164: RightLipUpper
+    400166: RightNostril
+    400168: RightShoulder
+    400170: RightToeBase
+    400172: RightUpLeg
+    400174: Spine
+    400176: Spine1
+    400178: Spine2
+    400180: TongueBack
+    400182: TongueTip
+    7400000: zgamesvn
+    7400002: zgamesvn //// Hips
+    7400004: zgamesvn //// mixamo_null_node_workaround
+    7400006: zgamesvn //// LeftUpLeg
+    7400008: zgamesvn //// LeftLeg
+    7400010: zgamesvn //// LeftFoot
+    7400012: zgamesvn //// LeftToeBase
+    7400014: zgamesvn //// RightUpLeg
+    7400016: zgamesvn //// RightLeg
+    7400018: zgamesvn //// RightFoot
+    7400020: zgamesvn //// RightToeBase
+    7400022: zgamesvn //// Spine
+    7400024: zgamesvn //// Spine1
+    7400026: zgamesvn //// Spine2
+    7400028: zgamesvn //// LeftShoulder
+    7400030: zgamesvn //// LeftArm
+    7400032: zgamesvn //// LeftForeArm
+    7400034: zgamesvn //// LeftHand
+    7400036: zgamesvn //// LeftHandIndex1
+    7400038: zgamesvn //// LeftHandIndex2
+    7400040: zgamesvn //// LeftHandIndex3
+    7400042: zgamesvn //// LeftHandMiddle1
+    7400044: zgamesvn //// LeftHandMiddle2
+    7400046: zgamesvn //// LeftHandMiddle3
+    7400048: zgamesvn //// LeftHandPinky1
+    7400050: zgamesvn //// LeftHandPinky2
+    7400052: zgamesvn //// LeftHandPinky3
+    7400054: zgamesvn //// LeftHandRing1
+    7400056: zgamesvn //// LeftHandRing2
+    7400058: zgamesvn //// LeftHandRing3
+    7400060: zgamesvn //// LeftHandThumb1
+    7400062: zgamesvn //// LeftHandThumb2
+    7400064: zgamesvn //// LeftHandThumb3
+    7400066: zgamesvn //// Neck
+    7400068: zgamesvn //// Neck1
+    7400070: zgamesvn //// Head
+    7400072: zgamesvn //// Jaw
+    7400074: zgamesvn //// RightShoulder
+    7400076: zgamesvn //// RightArm
+    7400078: zgamesvn //// RightForeArm
+    7400080: zgamesvn //// RightHand
+    7400082: zgamesvn //// RightHandIndex1
+    7400084: zgamesvn //// RightHandIndex2
+    7400086: zgamesvn //// RightHandIndex3
+    7400088: zgamesvn //// RightHandMiddle1
+    7400090: zgamesvn //// RightHandMiddle2
+    7400092: zgamesvn //// RightHandMiddle3
+    7400094: zgamesvn //// RightHandPinky1
+    7400096: zgamesvn //// RightHandPinky2
+    7400098: zgamesvn //// RightHandPinky3
+    7400100: zgamesvn //// RightHandRing1
+    7400102: zgamesvn //// RightHandRing2
+    7400104: zgamesvn //// RightHandRing3
+    7400106: zgamesvn //// RightHandThumb1
+    7400108: zgamesvn //// RightHandThumb2
+    7400110: zgamesvn //// RightHandThumb3
+    9500000: //RootNode
+    11100000: //RootNode
+    11100002: Head
+    11100004: HeadTop_End
+    11100006: Hips
+    11100008: Jaw
+    11100010: JawEND
+    11100012: LeftArm
+    11100014: LeftCheek
+    11100016: LeftEye
+    11100018: LeftEyelidLower
+    11100020: LeftEyelidUpper
+    11100022: LeftFoot
+    11100024: LeftFootToeBase_End
+    11100026: LeftForeArm
+    11100028: LeftHand
+    11100030: LeftHandIndex1
+    11100032: LeftHandIndex2
+    11100034: LeftHandIndex3
+    11100036: LeftHandIndex4
+    11100038: LeftHandMiddle1
+    11100040: LeftHandMiddle2
+    11100042: LeftHandMiddle3
+    11100044: LeftHandMiddle4
+    11100046: LeftHandPinky1
+    11100048: LeftHandPinky2
+    11100050: LeftHandPinky3
+    11100052: LeftHandPinky4
+    11100054: LeftHandRing1
+    11100056: LeftHandRing2
+    11100058: LeftHandRing3
+    11100060: LeftHandRing4
+    11100062: LeftHandThumb1
+    11100064: LeftHandThumb2
+    11100066: LeftHandThumb3
+    11100068: LeftHandThumb4
+    11100070: LeftInnerBrow
+    11100072: LeftIOuterBrow
+    11100074: LeftLeg
+    11100076: LeftLipCorner
+    11100078: LeftLipLower
+    11100080: LeftLipUpper
+    11100082: LeftNostril
+    11100084: LeftShoulder
+    11100086: LeftToeBase
+    11100088: LeftUpLeg
+    11100090: mixamo_null_node_workaround
+    11100092: Neck
+    11100094: Neck1
+    11100096: RightArm
+    11100098: RightCheek
+    11100100: RightEye
+    11100102: RightEyelidLower
+    11100104: RightEyelidUpper
+    11100106: RightFoot
+    11100108: RightFootToeBase_End
+    11100110: RightForeArm
+    11100112: RightHand
+    11100114: RightHandIndex1
+    11100116: RightHandIndex2
+    11100118: RightHandIndex3
+    11100120: RightHandIndex4
+    11100122: RightHandMiddle1
+    11100124: RightHandMiddle2
+    11100126: RightHandMiddle3
+    11100128: RightHandMiddle4
+    11100130: RightHandPinky1
+    11100132: RightHandPinky2
+    11100134: RightHandPinky3
+    11100136: RightHandPinky4
+    11100138: RightHandRing1
+    11100140: RightHandRing2
+    11100142: RightHandRing3
+    11100144: RightHandRing4
+    11100146: RightHandThumb1
+    11100148: RightHandThumb2
+    11100150: RightHandThumb3
+    11100152: RightHandThumb4
+    11100154: RightInnerBrow
+    11100156: RightIOuterBrow
+    11100158: RightLeg
+    11100160: RightLipCorner
+    11100162: RightLipLower
+    11100164: RightLipUpper
+    11100166: RightNostril
+    11100168: RightShoulder
+    11100170: RightToeBase
+    11100172: RightUpLeg
+    11100174: Spine
+    11100176: Spine1
+    11100178: Spine2
+    11100180: TongueBack
+    11100182: TongueTip
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    optimizeGameObjects: 0
+    animationCompression: 3
+    animationRotationError: .5
+    animationPositionError: .5
+    animationScaleError: .5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: zgamesvn
+      takeName: zgamesvn
+      firstFrame: 0
+      lastFrame: 52
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 1
+      loopBlend: 1
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Hips
+        weight: 1
+      - path: Hips/LeftUpLeg
+        weight: 1
+      - path: Hips/LeftUpLeg/LeftLeg
+        weight: 1
+      - path: Hips/LeftUpLeg/LeftLeg/LeftFoot
+        weight: 1
+      - path: Hips/LeftUpLeg/LeftLeg/LeftFoot/LeftToeBase
+        weight: 1
+      - path: Hips/LeftUpLeg/LeftLeg/LeftFoot/LeftToeBase/LeftFootToeBase_End
+        weight: 0
+      - path: Hips/RightUpLeg
+        weight: 1
+      - path: Hips/RightUpLeg/RightLeg
+        weight: 1
+      - path: Hips/RightUpLeg/RightLeg/RightFoot
+        weight: 1
+      - path: Hips/RightUpLeg/RightLeg/RightFoot/RightToeBase
+        weight: 1
+      - path: Hips/RightUpLeg/RightLeg/RightFoot/RightToeBase/RightFootToeBase_End
+        weight: 0
+      - path: Hips/Spine
+        weight: 1
+      - path: Hips/Spine/Spine1
+        weight: 1
+      - path: Hips/Spine/Spine1/Spine2
+        weight: 1
+      - path: Hips/Spine/Spine1/Spine2/LeftShoulder
+        weight: 1
+      - path: Hips/Spine/Spine1/Spine2/LeftShoulder/LeftArm
+        weight: 1
+      - path: Hips/Spine/Spine1/Spine2/LeftShoulder/LeftArm/LeftForeArm
+        weight: 1
+      - path: Hips/Spine/Spine1/Spine2/LeftShoulder/LeftArm/LeftForeArm/LeftHand
+        weight: 1
+      - path: Hips/Spine/Spine1/Spine2/LeftShoulder/LeftArm/LeftForeArm/LeftHand/LeftHandIndex1
+        weight: 1
+      - path: Hips/Spine/Spine1/Spine2/LeftShoulder/LeftArm/LeftForeArm/LeftHand/LeftHandIndex1/LeftHandIndex2
+        weight: 1
+      - path: Hips/Spine/Spine1/Spine2/LeftShoulder/LeftArm/LeftForeArm/LeftHand/LeftHandIndex1/LeftHandIndex2/LeftHandIndex3
+        weight: 1
+      - path: Hips/Spine/Spine1/Spine2/LeftShoulder/LeftArm/LeftForeArm/LeftHand/LeftHandIndex1/LeftHandIndex2/LeftHandIndex3/LeftHandIndex4
+        weight: 0
+      - path: Hips/Spine/Spine1/Spine2/LeftShoulder/LeftArm/LeftForeArm/LeftHand/LeftHandMiddle1
+        weight: 1
+      - path: Hips/Spine/Spine1/Spine2/LeftShoulder/LeftArm/LeftForeArm/LeftHand/LeftHandMiddle1/LeftHandMiddle2
+        weight: 1
+      - path: Hips/Spine/Spine1/Spine2/LeftShoulder/LeftArm/LeftForeArm/LeftHand/LeftHandMiddle1/LeftHandMiddle2/LeftHandMiddle3
+        weight: 1
+      - path: Hips/Spine/Spine1/Spine2/LeftShoulder/LeftArm/LeftForeArm/LeftHand/LeftHandMiddle1/LeftHandMiddle2/LeftHandMiddle3/LeftHandMiddle4
+        weight: 0
+      - path: Hips/Spine/Spine1/Spine2/LeftShoulder/LeftArm/LeftForeArm/LeftHand/LeftHandPinky1
+        weight: 1
+      - path: Hips/Spine/Spine1/Spine2/LeftShoulder/LeftArm/LeftForeArm/LeftHand/LeftHandPinky1/LeftHandPinky2
+        weight: 1
+      - path: Hips/Spine/Spine1/Spine2/LeftShoulder/LeftArm/LeftForeArm/LeftHand/LeftHandPinky1/LeftHandPinky2/LeftHandPinky3
+        weight: 1
+      - path: Hips/Spine/Spine1/Spine2/LeftShoulder/LeftArm/LeftForeArm/LeftHand/LeftHandPinky1/LeftHandPinky2/LeftHandPinky3/LeftHandPinky4
+        weight: 0
+      - path: Hips/Spine/Spine1/Spine2/LeftShoulder/LeftArm/LeftForeArm/LeftHand/LeftHandRing1
+        weight: 1
+      - path: Hips/Spine/Spine1/Spine2/LeftShoulder/LeftArm/LeftForeArm/LeftHand/LeftHandRing1/LeftHandRing2
+        weight: 1
+      - path: Hips/Spine/Spine1/Spine2/LeftShoulder/LeftArm/LeftForeArm/LeftHand/LeftHandRing1/LeftHandRing2/LeftHandRing3
+        weight: 1
+      - path: Hips/Spine/Spine1/Spine2/LeftShoulder/LeftArm/LeftForeArm/LeftHand/LeftHandRing1/LeftHandRing2/LeftHandRing3/LeftHandRing4
+        weight: 0
+      - path: Hips/Spine/Spine1/Spine2/LeftShoulder/LeftArm/LeftForeArm/LeftHand/LeftHandThumb1
+        weight: 1
+      - path: Hips/Spine/Spine1/Spine2/LeftShoulder/LeftArm/LeftForeArm/LeftHand/LeftHandThumb1/LeftHandThumb2
+        weight: 1
+      - path: Hips/Spine/Spine1/Spine2/LeftShoulder/LeftArm/LeftForeArm/LeftHand/LeftHandThumb1/LeftHandThumb2/LeftHandThumb3
+        weight: 1
+      - path: Hips/Spine/Spine1/Spine2/LeftShoulder/LeftArm/LeftForeArm/LeftHand/LeftHandThumb1/LeftHandThumb2/LeftHandThumb3/LeftHandThumb4
+        weight: 0
+      - path: Hips/Spine/Spine1/Spine2/Neck
+        weight: 1
+      - path: Hips/Spine/Spine1/Spine2/Neck/Neck1
+        weight: 1
+      - path: Hips/Spine/Spine1/Spine2/Neck/Neck1/Head
+        weight: 1
+      - path: Hips/Spine/Spine1/Spine2/Neck/Neck1/Head/HeadTop_End
+        weight: 0
+      - path: Hips/Spine/Spine1/Spine2/Neck/Neck1/Head/Jaw
+        weight: 1
+      - path: Hips/Spine/Spine1/Spine2/Neck/Neck1/Head/Jaw/JawEND
+        weight: 0
+      - path: Hips/Spine/Spine1/Spine2/Neck/Neck1/Head/Jaw/LeftLipCorner
+        weight: 0
+      - path: Hips/Spine/Spine1/Spine2/Neck/Neck1/Head/Jaw/LeftLipLower
+        weight: 0
+      - path: Hips/Spine/Spine1/Spine2/Neck/Neck1/Head/Jaw/RightLipCorner
+        weight: 0
+      - path: Hips/Spine/Spine1/Spine2/Neck/Neck1/Head/Jaw/RightLipLower
+        weight: 0
+      - path: Hips/Spine/Spine1/Spine2/Neck/Neck1/Head/Jaw/TongueBack
+        weight: 0
+      - path: Hips/Spine/Spine1/Spine2/Neck/Neck1/Head/Jaw/TongueTip
+        weight: 0
+      - path: Hips/Spine/Spine1/Spine2/Neck/Neck1/Head/LeftCheek
+        weight: 0
+      - path: Hips/Spine/Spine1/Spine2/Neck/Neck1/Head/LeftEye
+        weight: 1
+      - path: Hips/Spine/Spine1/Spine2/Neck/Neck1/Head/LeftEyelidLower
+        weight: 0
+      - path: Hips/Spine/Spine1/Spine2/Neck/Neck1/Head/LeftEyelidUpper
+        weight: 0
+      - path: Hips/Spine/Spine1/Spine2/Neck/Neck1/Head/LeftInnerBrow
+        weight: 0
+      - path: Hips/Spine/Spine1/Spine2/Neck/Neck1/Head/LeftIOuterBrow
+        weight: 0
+      - path: Hips/Spine/Spine1/Spine2/Neck/Neck1/Head/LeftLipUpper
+        weight: 0
+      - path: Hips/Spine/Spine1/Spine2/Neck/Neck1/Head/LeftNostril
+        weight: 0
+      - path: Hips/Spine/Spine1/Spine2/Neck/Neck1/Head/RightCheek
+        weight: 0
+      - path: Hips/Spine/Spine1/Spine2/Neck/Neck1/Head/RightEye
+        weight: 1
+      - path: Hips/Spine/Spine1/Spine2/Neck/Neck1/Head/RightEyelidLower
+        weight: 0
+      - path: Hips/Spine/Spine1/Spine2/Neck/Neck1/Head/RightEyelidUpper
+        weight: 0
+      - path: Hips/Spine/Spine1/Spine2/Neck/Neck1/Head/RightInnerBrow
+        weight: 0
+      - path: Hips/Spine/Spine1/Spine2/Neck/Neck1/Head/RightIOuterBrow
+        weight: 0
+      - path: Hips/Spine/Spine1/Spine2/Neck/Neck1/Head/RightLipUpper
+        weight: 0
+      - path: Hips/Spine/Spine1/Spine2/Neck/Neck1/Head/RightNostril
+        weight: 0
+      - path: Hips/Spine/Spine1/Spine2/RightShoulder
+        weight: 1
+      - path: Hips/Spine/Spine1/Spine2/RightShoulder/RightArm
+        weight: 1
+      - path: Hips/Spine/Spine1/Spine2/RightShoulder/RightArm/RightForeArm
+        weight: 1
+      - path: Hips/Spine/Spine1/Spine2/RightShoulder/RightArm/RightForeArm/RightHand
+        weight: 1
+      - path: Hips/Spine/Spine1/Spine2/RightShoulder/RightArm/RightForeArm/RightHand/RightHandIndex1
+        weight: 1
+      - path: Hips/Spine/Spine1/Spine2/RightShoulder/RightArm/RightForeArm/RightHand/RightHandIndex1/RightHandIndex2
+        weight: 1
+      - path: Hips/Spine/Spine1/Spine2/RightShoulder/RightArm/RightForeArm/RightHand/RightHandIndex1/RightHandIndex2/RightHandIndex3
+        weight: 1
+      - path: Hips/Spine/Spine1/Spine2/RightShoulder/RightArm/RightForeArm/RightHand/RightHandIndex1/RightHandIndex2/RightHandIndex3/RightHandIndex4
+        weight: 0
+      - path: Hips/Spine/Spine1/Spine2/RightShoulder/RightArm/RightForeArm/RightHand/RightHandMiddle1
+        weight: 1
+      - path: Hips/Spine/Spine1/Spine2/RightShoulder/RightArm/RightForeArm/RightHand/RightHandMiddle1/RightHandMiddle2
+        weight: 1
+      - path: Hips/Spine/Spine1/Spine2/RightShoulder/RightArm/RightForeArm/RightHand/RightHandMiddle1/RightHandMiddle2/RightHandMiddle3
+        weight: 1
+      - path: Hips/Spine/Spine1/Spine2/RightShoulder/RightArm/RightForeArm/RightHand/RightHandMiddle1/RightHandMiddle2/RightHandMiddle3/RightHandMiddle4
+        weight: 0
+      - path: Hips/Spine/Spine1/Spine2/RightShoulder/RightArm/RightForeArm/RightHand/RightHandPinky1
+        weight: 1
+      - path: Hips/Spine/Spine1/Spine2/RightShoulder/RightArm/RightForeArm/RightHand/RightHandPinky1/RightHandPinky2
+        weight: 1
+      - path: Hips/Spine/Spine1/Spine2/RightShoulder/RightArm/RightForeArm/RightHand/RightHandPinky1/RightHandPinky2/RightHandPinky3
+        weight: 1
+      - path: Hips/Spine/Spine1/Spine2/RightShoulder/RightArm/RightForeArm/RightHand/RightHandPinky1/RightHandPinky2/RightHandPinky3/RightHandPinky4
+        weight: 0
+      - path: Hips/Spine/Spine1/Spine2/RightShoulder/RightArm/RightForeArm/RightHand/RightHandRing1
+        weight: 1
+      - path: Hips/Spine/Spine1/Spine2/RightShoulder/RightArm/RightForeArm/RightHand/RightHandRing1/RightHandRing2
+        weight: 1
+      - path: Hips/Spine/Spine1/Spine2/RightShoulder/RightArm/RightForeArm/RightHand/RightHandRing1/RightHandRing2/RightHandRing3
+        weight: 1
+      - path: Hips/Spine/Spine1/Spine2/RightShoulder/RightArm/RightForeArm/RightHand/RightHandRing1/RightHandRing2/RightHandRing3/RightHandRing4
+        weight: 0
+      - path: Hips/Spine/Spine1/Spine2/RightShoulder/RightArm/RightForeArm/RightHand/RightHandThumb1
+        weight: 1
+      - path: Hips/Spine/Spine1/Spine2/RightShoulder/RightArm/RightForeArm/RightHand/RightHandThumb1/RightHandThumb2
+        weight: 1
+      - path: Hips/Spine/Spine1/Spine2/RightShoulder/RightArm/RightForeArm/RightHand/RightHandThumb1/RightHandThumb2/RightHandThumb3
+        weight: 1
+      - path: Hips/Spine/Spine1/Spine2/RightShoulder/RightArm/RightForeArm/RightHand/RightHandThumb1/RightHandThumb2/RightHandThumb3/RightHandThumb4
+        weight: 0
+      - path: mixamo_null_node_workaround
+        weight: 0
+      maskType: 0
+      maskSource: {instanceID: 0}
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: .00999999978
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+  tangentSpace:
+    normalSmoothAngle: 60
+    splitTangentsAcrossUV: 1
+    normalImportMode: 1
+    tangentImportMode: 1
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: .5
+    foreArmTwist: .5
+    upperLegTwist: .5
+    legTwist: .5
+    armStretch: .0500000007
+    legStretch: .0500000007
+    feetSpacing: 0
+    rootMotionBoneName: Hips
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  additionalBone: 0
+  userData: 
