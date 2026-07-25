@@ -109,7 +109,7 @@ public class Goal_Script : MonoBehaviour {
 					
 						Vector3 finalLocal = sourceLocal + (dirLocal/(distance+0.1f));
 						arrayVertices[i] = finalLocal; 
-						other.GetComponent<Rigidbody>().drag = 3.0f;
+						other.GetComponent<Rigidbody>().linearDamping = 3.0f;
 		
 					
 						Debug.DrawLine(/* other.transform.position,*/ red.transform.TransformPoint( finalLocal ) ,red.transform.TransformPoint( finalLocal ) + new Vector3(0,0.1f,0),  color );

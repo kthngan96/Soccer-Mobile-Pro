@@ -31,7 +31,7 @@ public class BallScript : MonoBehaviour
 //	}
 	public void PlaceOnInitialPositon()
 	{
-		GetComponent<Rigidbody>().velocity = Vector3.zero;
+		GetComponent<Rigidbody>().linearVelocity = Vector3.zero;
 		GetComponent<Rigidbody>().angularVelocity = Vector3.zero;
 
 		isKicked = false;
@@ -50,10 +50,10 @@ public class BallScript : MonoBehaviour
 	// Update is called once per frame
 	void Update()
 	{
-		if(GetComponent<Rigidbody>().velocity.magnitude > 20f)
+		if(GetComponent<Rigidbody>().linearVelocity.magnitude > 20f)
 		{
-			Vector3 vel = GetComponent<Rigidbody>().velocity.normalized;
-			GetComponent<Rigidbody>().velocity = vel * 20f;
+			Vector3 vel = GetComponent<Rigidbody>().linearVelocity.normalized;
+			GetComponent<Rigidbody>().linearVelocity = vel * 20f;
 		}
 
 		if(ownerPlayer != null)
@@ -91,7 +91,7 @@ public class BallScript : MonoBehaviour
 
 		if(ownerPlayer == null && Time.time - lastTime > 1f)
 		{
-			GetComponent<Rigidbody>().velocity = Vector3.zero;
+			GetComponent<Rigidbody>().linearVelocity = Vector3.zero;
 			GetComponent<Rigidbody>().Sleep();
 			GetComponent<Rigidbody>().angularVelocity = Vector3.zero;
 			ownerPlayer = owner;
@@ -109,7 +109,7 @@ public class BallScript : MonoBehaviour
 
 		if(Time.time - lastTime > 2f)
 		{
-			GetComponent<Rigidbody>().velocity = Vector3.zero;
+			GetComponent<Rigidbody>().linearVelocity = Vector3.zero;
 			GetComponent<Rigidbody>().angularVelocity = Vector3.zero;
 			ownerPlayer = owner;
 

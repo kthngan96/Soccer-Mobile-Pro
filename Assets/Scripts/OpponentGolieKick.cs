@@ -29,7 +29,7 @@ public class OpponentGolieKick : MonoBehaviour
 			if(GetComponent<Animation>()["reposo"].enabled == false)
 				GetComponent<Animation>().Play("reposo", PlayMode.StopAll);
 
-			FootBall.GetComponent<Rigidbody>().velocity = Vector3.zero;
+			FootBall.GetComponent<Rigidbody>().linearVelocity = Vector3.zero;
 			FootBall.GetComponent<Rigidbody>().angularVelocity = Vector3.zero;
 			FootBall.transform.position = ballPosition;
 

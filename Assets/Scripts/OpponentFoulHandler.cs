@@ -175,7 +175,7 @@ public class OpponentFoulHandler : MonoBehaviour
 		yield return new WaitForSeconds(0.56f);
 
 		FootBall.GetComponent<BallScript> ().SetFree();
-		FootBall.GetComponent<Rigidbody>().velocity = transform.forward * 15f;//(new Vector3(player2.position.x,FootBall.transform.position.y,player2.position.z) - FootBall.transform.position).normalized * 15; 
+		FootBall.GetComponent<Rigidbody>().linearVelocity = transform.forward * 15f;//(new Vector3(player2.position.x,FootBall.transform.position.y,player2.position.z) - FootBall.transform.position).normalized * 15;
 		
 		GameManager.SharedObject ().PlayerMadeFoul = false;
 		GameManager.SharedObject ().OpponentMadeFoul = false;

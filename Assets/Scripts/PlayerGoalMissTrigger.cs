@@ -20,7 +20,7 @@ public class PlayerGoalMissTrigger : MonoBehaviour
 			Golie.GetComponent<PlayerGolieKick>().enabled = true;
 			
 			other.gameObject.GetComponent<Rigidbody>().angularVelocity = Vector3.zero;
-			other.gameObject.GetComponent<Rigidbody>().velocity = Vector3.zero;
+			other.gameObject.GetComponent<Rigidbody>().linearVelocity = Vector3.zero;
 		}
 	}
 }

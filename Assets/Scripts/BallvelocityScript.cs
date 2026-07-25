@@ -28,7 +28,7 @@ public class BallvelocityScript : MonoBehaviour {
 
 		}
 		else
-		if (GetComponent<Rigidbody>().velocity.magnitude > 5)
+		if (GetComponent<Rigidbody>().linearVelocity.magnitude > 5)
 		{
 			if(camDistance<30)
 				camDistance += Time.deltaTime*7;

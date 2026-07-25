@@ -33,7 +33,7 @@ public class OCornerTriggerController : MonoBehaviour
 				GameManager.SharedObject().foulPosition = new Vector3(55f, 0f, 37.3f);
 			
 			other.gameObject.GetComponent<Rigidbody>().angularVelocity = Vector3.zero;
-			other.gameObject.GetComponent<Rigidbody>().velocity = Vector3.zero;
+			other.gameObject.GetComponent<Rigidbody>().linearVelocity = Vector3.zero;
 			
 			other.gameObject.transform.position = GameManager.SharedObject().foulPosition;
 		}

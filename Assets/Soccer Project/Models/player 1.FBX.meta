@@ -3,7 +3,7 @@ guid: 7df1bbe6d4712824babd279f312c580a
 labels:
 - Character
 ModelImporter:
-  serializedVersion: 22200
+  serializedVersion: 24000
   internalIDToNameTable:
   - first:
       1: 100000
@@ -215,6 +215,7 @@ ModelImporter:
     materialName: 0
     materialSearch: 1
     materialLocation: 0
+    searchTexturesGlobally: 1
   animations:
     legacyGenerateAnimations: 4
     bakeSimulation: 0
@@ -222,8 +223,6 @@ ModelImporter:
     optimizeGameObjects: 0
     removeConstantScaleCurves: 0
     motionNodeName: 
-    rigImportErrors: 
-    rigImportWarnings: 
     animationImportErrors: 
     animationImportWarnings: 
     animationRetargetingWarnings: 
@@ -283,32 +282,7 @@ ModelImporter:
     legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 1
     blendShapeNormalImportMode: 1
     normalSmoothingSource: 0
-  referencedClips:
-  - 67c557e37305bc04f9f1810067d6303f
-  - b696b5b67fe1b492db72b19f9afb80d7
-  - 495ea9597363dc540a5a66e26835cbd6
-  - ea6fa3050ea01704089c9f5afd290550
-  - 36b921862032b46fc94838dd75b116be
-  - e8421c55b2c9c6243bbaf10a674dfa4c
-  - 15c767711db1f474b9a73374726218ad
-  - 8393b97223b4b5749945c680c46c8686
-  - b02628fe2528079438af7d2fc1e12f70
-  - f06aeb8b9cfce482f84b85abc912f38e
-  - dfc6b009d06084112a91d72ca3a0fd00
-  - 41d123552fdf94d9d90a24b62d8609cd
-  - 78ff41003cf6d4dfaa5dc7230c5d127e
-  - 425191128aecb402ea9d355cff733d29
-  - e7fad45ce83ccf74cbc1029b72defe24
-  - 3e97d95da27306246a576ba1c74c0683
-  - 31e8c0e1f527843d0bc810c3e05822f9
-  - e2f9b08718ffa2d49b9064717e9b9286
-  - d0afa60575bf545ceb250efb036054a9
-  - 11194d92b0afc26449872fd19decbc3e
-  - fb2e778529f656541986d55c3b221864
-  - eba4d2e9edda58342b247b61dc830d9e
-  - 7a593cd440805a742bac0d72aa63bfdc
-  - a32b00d999245bd40b411444934e5e03
-  - 8411d581524d75049a9380e53631c0d7
+  referencedClips: []
   importAnimation: 1
   humanDescription:
     serializedVersion: 3
