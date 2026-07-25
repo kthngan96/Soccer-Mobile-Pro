@@ -20,6 +20,18 @@ Run the following methods with Unity in batch mode:
 - `UpgradeValidation.BuildAndroid`
 - `UpgradeValidation.BuildIOS`
 
+### Play Mode scene smoke test
+
+Before a Play Mode validation, open the project in Unity, confirm the editor is
+signed in, clear the Console, and wait for script compilation to finish. Then
+run the `SoccerMobile.Tests.PlayMode.LegacyGuiRuntimeRendererPlayModeTests`
+fixture in the Unity Test Runner. It loads every scene under `Assets` for 30
+seconds and fails on every runtime Warning, Error, Exception, or Assert.
+
+The fixture temporarily adds the three non-build scenes to the test scene list
+and restores `EditorBuildSettings` after the run, so the release build order is
+not changed. Run the fixture twice before accepting a change.
+
 Build output defaults to `Builds/UpgradeValidation`. Set `UPGRADE_BUILD_ROOT`
 to use a different output directory.
 

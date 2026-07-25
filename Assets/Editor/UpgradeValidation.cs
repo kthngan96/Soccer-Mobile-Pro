@@ -16,27 +16,41 @@ internal static class UpgradeValidation
         .Select(scene => scene.path)
         .ToArray();
 
+    private static readonly string[] AllProjectScenes = AssetDatabase.FindAssets("t:Scene")
+        .Select(AssetDatabase.GUIDToAssetPath)
+        .Where(path => path.StartsWith("Assets/", StringComparison.Ordinal))
+        .OrderBy(path => path, StringComparer.Ordinal)
+        .ToArray();
+
     public static void ValidateScenes()
     {
-        if (EnabledScenes.Length == 0)
-            throw new InvalidOperationException("No enabled scenes are configured in Build Settings.");
+        if (AllProjectScenes.Length == 0)
+            throw new InvalidOperationException("No project scenes were found under Assets.");
 
         var missingScriptCount = 0;
-        foreach (var scenePath in EnabledScenes)
+        var originalSetup = EditorSceneManager.GetSceneManagerSetup();
+        try
         {
-            var scene = EditorSceneManager.OpenScene(scenePath, OpenSceneMode.Single);
-            foreach (var root in scene.GetRootGameObjects())
+            foreach (var scenePath in AllProjectScenes)
             {
-                foreach (var transform in root.GetComponentsInChildren<Transform>(true))
-                    missingScriptCount += GameObjectUtility.GetMonoBehavioursWithMissingScriptCount(transform.gameObject);
+                var scene = EditorSceneManager.OpenScene(scenePath, OpenSceneMode.Single);
+                foreach (var root in scene.GetRootGameObjects())
+                {
+                    foreach (var transform in root.GetComponentsInChildren<Transform>(true))
+                        missingScriptCount += GameObjectUtility.GetMonoBehavioursWithMissingScriptCount(transform.gameObject);
+                }
             }
+        }
+        finally
+        {
+            EditorSceneManager.RestoreSceneManagerSetup(originalSetup);
         }
 
         if (missingScriptCount != 0)
             throw new InvalidOperationException(
                 $"Scene validation found {missingScriptCount} missing MonoBehaviour reference(s).");
 
-        Debug.Log($"Upgrade validation opened {EnabledScenes.Length} scenes with no missing scripts.");
+        Debug.Log($"Upgrade validation opened {AllProjectScenes.Length} scenes with no missing scripts.");
     }
 
     public static void BuildAddressables()

@@ -62,6 +62,12 @@ public class AudioManager : MonoBehaviour
 		SceneManager.LoadScene("MainMenu");
 	}
 
+	void OnDestroy()
+	{
+		if (au == this)
+			au = null;
+	}
+
 	public static void Save()
 	{
 		if(isMusicOn)
