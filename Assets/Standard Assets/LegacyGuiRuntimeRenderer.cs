@@ -1,5 +1,6 @@
 using System;
 using UnityEngine;
+using UnityEngine.Rendering;
 using UnityEngine.SceneManagement;
 
 [ExecuteAlways]
@@ -12,6 +13,7 @@ public class LegacyGuiRuntimeRenderer : MonoBehaviour
     private static LegacyGuiRuntimeRenderer instance;
     private RenderTexture legacy3DGuiTexture;
     private Material legacy3DGuiMaterial;
+    private Camera legacy3DGuiCamera;
 
     public static bool IsRenderingThroughRuntime
     {
@@ -106,6 +108,12 @@ public class LegacyGuiRuntimeRenderer : MonoBehaviour
             DestroyUnityObject(legacy3DGuiMaterial);
             legacy3DGuiMaterial = null;
         }
+
+        if (legacy3DGuiCamera != null)
+        {
+            DestroyUnityObject(legacy3DGuiCamera.gameObject);
+            legacy3DGuiCamera = null;
+        }
     }
 
     private void HandleSceneLoaded(Scene scene, LoadSceneMode mode)
@@ -120,7 +128,7 @@ public class LegacyGuiRuntimeRenderer : MonoBehaviour
             return;
         }
 
-        GUITexture[] textures = UnityEngine.Object.FindObjectsOfType<GUITexture>();
+        GUITexture[] textures = UnityEngine.Object.FindObjectsByType<GUITexture>();
         Array.Sort(textures, CompareLegacyGuiComponents);
 
         string sceneName = SceneManager.GetActiveScene().name;
@@ -128,7 +136,7 @@ public class LegacyGuiRuntimeRenderer : MonoBehaviour
         if (kickOffScene)
         {
             DrawLegacyTextures(textures, true);
-            DrawLegacy3DGuiOverlay(sceneName);
+            DrawLegacy3DGuiOverlay();
             DrawLegacyTextures(textures, false);
         }
         else
@@ -136,14 +144,26 @@ public class LegacyGuiRuntimeRenderer : MonoBehaviour
             DrawLegacyTextures(textures, null);
         }
 
-        GUIText[] texts = UnityEngine.Object.FindObjectsOfType<GUIText>();
+        GUIText[] texts = UnityEngine.Object.FindObjectsByType<GUIText>();
         Array.Sort(texts, CompareLegacyGuiComponents);
         DrawLegacyTexts(texts);
 
         if (!kickOffScene)
         {
-            DrawLegacy3DGuiOverlay(sceneName);
+            DrawLegacy3DGuiOverlay();
         }
+    }
+
+    private void LateUpdate()
+    {
+        string sceneName = SceneManager.GetActiveScene().name;
+        if (!RequiresLegacy3DGuiOverlay(sceneName))
+        {
+            SetLegacy3DGuiCameraEnabled(false);
+            return;
+        }
+
+        ConfigureLegacy3DGuiOverlayCamera();
     }
 
     private static void DrawLegacyTextures(GUITexture[] textures, bool? drawKickOffBackgroundOnly)
@@ -180,13 +200,17 @@ public class LegacyGuiRuntimeRenderer : MonoBehaviour
         return legacyTexture != null && legacyTexture.gameObject != null && string.Equals(legacyTexture.gameObject.name, "Background", StringComparison.Ordinal);
     }
 
-    private static Camera FindLegacy3DGuiCamera()
+    private Camera FindLegacy3DGuiSourceCamera()
     {
         Camera[] cameras = Camera.allCameras;
         for (int i = 0; i < cameras.Length; i++)
         {
             Camera camera = cameras[i];
-            if (camera != null && camera.isActiveAndEnabled && (camera.cullingMask & Legacy3DGuiLayerMask) != 0)
+            if (camera != null &&
+                camera != legacy3DGuiCamera &&
+                camera.isActiveAndEnabled &&
+                camera.targetTexture == null &&
+                (camera.cullingMask & Legacy3DGuiLayerMask) != 0)
             {
                 return camera;
             }
@@ -195,39 +219,67 @@ public class LegacyGuiRuntimeRenderer : MonoBehaviour
         return null;
     }
 
-    private void DrawLegacy3DGuiOverlay(string sceneName)
+    private static bool RequiresLegacy3DGuiOverlay(string sceneName)
     {
-        if (!string.Equals(sceneName, "GameSelectionScene", StringComparison.Ordinal) &&
-            !string.Equals(sceneName, "KickOffScene", StringComparison.Ordinal))
+        return string.Equals(sceneName, "GameSelectionScene", StringComparison.Ordinal) ||
+               string.Equals(sceneName, "KickOffScene", StringComparison.Ordinal);
+    }
+
+    private void ConfigureLegacy3DGuiOverlayCamera()
+    {
+        if (SystemInfo.graphicsDeviceType == GraphicsDeviceType.Null)
         {
+            SetLegacy3DGuiCameraEnabled(false);
             return;
         }
 
-        Camera camera = FindLegacy3DGuiCamera();
-        if (camera == null)
+        Camera sourceCamera = FindLegacy3DGuiSourceCamera();
+        if (sourceCamera == null)
         {
+            SetLegacy3DGuiCameraEnabled(false);
             return;
         }
 
         EnsureLegacy3DGuiResources();
+        if (legacy3DGuiTexture == null || legacy3DGuiMaterial == null || !legacy3DGuiTexture.IsCreated())
+        {
+            SetLegacy3DGuiCameraEnabled(false);
+            return;
+        }
+
+        if (legacy3DGuiCamera == null)
+        {
+            GameObject cameraObject = new GameObject("Legacy3DGuiOverlayCamera");
+            cameraObject.hideFlags = HideFlags.HideAndDontSave;
+            cameraObject.transform.SetParent(transform, false);
+            legacy3DGuiCamera = cameraObject.AddComponent<Camera>();
+        }
+
+        legacy3DGuiCamera.CopyFrom(sourceCamera);
+        legacy3DGuiCamera.cullingMask = Legacy3DGuiLayerMask;
+        legacy3DGuiCamera.clearFlags = CameraClearFlags.SolidColor;
+        legacy3DGuiCamera.targetTexture = legacy3DGuiTexture;
+        legacy3DGuiCamera.depth = sourceCamera.depth + 0.01f;
+        legacy3DGuiCamera.enabled = true;
+        legacy3DGuiMaterial.SetColor("_KeyColor", sourceCamera.backgroundColor);
+    }
+
+    private void SetLegacy3DGuiCameraEnabled(bool enabled)
+    {
+        if (legacy3DGuiCamera != null)
+        {
+            legacy3DGuiCamera.enabled = enabled;
+        }
+
+    }
+
+    private void DrawLegacy3DGuiOverlay()
+    {
         if (legacy3DGuiTexture == null || legacy3DGuiMaterial == null)
         {
             return;
         }
 
-        RenderTexture previousTarget = camera.targetTexture;
-        CameraClearFlags previousClearFlags = camera.clearFlags;
-        Color previousBackgroundColor = camera.backgroundColor;
-
-        camera.targetTexture = legacy3DGuiTexture;
-        camera.clearFlags = CameraClearFlags.SolidColor;
-        camera.backgroundColor = previousBackgroundColor;
-        camera.Render();
-        camera.targetTexture = previousTarget;
-        camera.clearFlags = previousClearFlags;
-        camera.backgroundColor = previousBackgroundColor;
-
-        legacy3DGuiMaterial.SetColor("_KeyColor", previousBackgroundColor);
         Graphics.DrawTexture(new Rect(0f, 0f, Screen.width, Screen.height), legacy3DGuiTexture, legacy3DGuiMaterial);
     }
 
@@ -245,9 +297,15 @@ public class LegacyGuiRuntimeRenderer : MonoBehaviour
 
             legacy3DGuiTexture = new RenderTexture(width, height, 24, RenderTextureFormat.ARGB32)
             {
-                name = "Legacy3DGuiOverlay"
+                name = "Legacy3DGuiOverlay",
+                hideFlags = HideFlags.HideAndDontSave
             };
             legacy3DGuiTexture.Create();
+
+            if (legacy3DGuiCamera != null)
+            {
+                legacy3DGuiCamera.targetTexture = legacy3DGuiTexture;
+            }
         }
 
         if (legacy3DGuiMaterial == null)

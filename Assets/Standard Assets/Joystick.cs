@@ -107,7 +107,7 @@ public class Joystick : MonoBehaviour
     {
         if (!enumeratedJoysticks)
         {
-            joysticks = (Joystick[])FindObjectsOfType(typeof(Joystick));
+            joysticks = (Joystick[])FindObjectsByType(typeof(Joystick));
             enumeratedJoysticks = true;
         }
 

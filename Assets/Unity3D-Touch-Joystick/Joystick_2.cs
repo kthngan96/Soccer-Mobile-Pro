@@ -138,7 +138,7 @@ public class Joystick_2 : MonoBehaviour
         if (!enumeratedJoysticks)
         {
             // Collect all joysticks in the game, so we can relay finger latching messages
-            joysticks = (Joystick_2[])FindObjectsOfType(typeof(Joystick_2));
+            joysticks = (Joystick_2[])FindObjectsByType(typeof(Joystick_2));
             enumeratedJoysticks = true;
         }
 

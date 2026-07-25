@@ -75,7 +75,12 @@ internal static class UpgradeValidation
             scenes = EnabledScenes,
             target = target,
             locationPathName = location,
-            options = BuildOptions.None
+            options = string.Equals(
+                Environment.GetEnvironmentVariable("UPGRADE_DEVELOPMENT_BUILD"),
+                "1",
+                StringComparison.Ordinal)
+                ? BuildOptions.Development
+                : BuildOptions.None
         });
 
         if (report.summary.result != BuildResult.Succeeded)

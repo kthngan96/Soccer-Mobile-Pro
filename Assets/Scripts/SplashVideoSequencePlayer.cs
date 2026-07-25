@@ -214,7 +214,7 @@ public sealed class SplashVideoSequencePlayer : MonoBehaviour
 
     private void DisableLegacySplashTextures()
     {
-        GUITexture[] legacyTextures = FindObjectsOfType<GUITexture>(true);
+        GUITexture[] legacyTextures = FindObjectsByType<GUITexture>(FindObjectsInactive.Include);
         foreach (GUITexture legacyTexture in legacyTextures)
         {
             if (legacyTexture != null && legacyTexture.gameObject.scene == gameObject.scene)
@@ -226,7 +226,7 @@ public sealed class SplashVideoSequencePlayer : MonoBehaviour
 
     private void RemoveSplashAudioManagers()
     {
-        AudioManager[] managers = FindObjectsOfType<AudioManager>(true);
+        AudioManager[] managers = FindObjectsByType<AudioManager>(FindObjectsInactive.Include);
         foreach (AudioManager manager in managers)
         {
             if (manager != null && manager.gameObject.scene == gameObject.scene)
@@ -238,7 +238,7 @@ public sealed class SplashVideoSequencePlayer : MonoBehaviour
 
     private void EnsureAudioListener()
     {
-        AudioListener[] listeners = FindObjectsOfType<AudioListener>(true);
+        AudioListener[] listeners = FindObjectsByType<AudioListener>(FindObjectsInactive.Include);
         foreach (AudioListener listener in listeners)
         {
             if (listener != null
