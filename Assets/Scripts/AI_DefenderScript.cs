@@ -20,6 +20,13 @@ public class AI_DefenderScript : MonoBehaviour
     static bool Position2Available = true;
     static bool Position3Available = true;
 
+    internal static void ResetPositionAvailability()
+    {
+        Position1Available = true;
+        Position2Available = true;
+        Position3Available = true;
+    }
+
     private int zOffset = 0;
     private int xOffset = 0;
 

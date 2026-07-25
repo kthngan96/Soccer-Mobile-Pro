@@ -22,7 +22,7 @@ public class InitGame : MonoBehaviour
 	}
 	void Awake()
 	{
-
+		ResetMatchSceneState();
 		halfComplete=false;
 		matchcomplete = false;
 		Player.noControls = false;
@@ -45,6 +45,13 @@ public class InitGame : MonoBehaviour
 		gm.IsGameReady = false;
 		gm.PlayerMadeFoul = false;
 		gm.OpponentMadeFoul = false;
+		gm.PlayerGotCornerKick = false;
+		gm.OpponentGotCornerKick = false;
+		gm.PlayerMissedGoal = false;
+		gm.OpponentMissedGoal = false;
+		gm.ShowHalfTimeDialog = false;
+		gm.ShowMatchEndDialog = false;
+		gm.foulPosition = Vector3.zero;
 
 		if(gm.IsFirstHalf)
 		{
@@ -67,6 +74,17 @@ public class InitGame : MonoBehaviour
 		AudioManager.StopBackgroundMusic();
 
 	
+	}
+
+	private static void ResetMatchSceneState()
+	{
+		Time.timeScale = 1f;
+		AudioListener.volume = 1f;
+		PauseController.isPaused = false;
+		Player.noControls = false;
+		AI_Striker.ResetPositionAvailability();
+		AI_MidfielderScript.ResetPositionAvailability();
+		AI_DefenderScript.ResetPositionAvailability();
 	}
 	
 	void Update()

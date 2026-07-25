@@ -70,7 +70,7 @@ public class ButtonAction : MonoBehaviour
 
                 break;
 		case Buttons.Play:
-			SceneManager.LoadScene("GameSelectionScene");
+			LoadSceneWithReset("GameSelectionScene");
 			break;
 
 		case Buttons.MoreGames:
@@ -85,7 +85,7 @@ public class ButtonAction : MonoBehaviour
 			GameManager.SharedObject().isQuickMatch = true;
 			GameManager.SharedObject().IsFirstHalf = true;
 			PlayerPosition.PlayerTurn = true;
-			SceneManager.LoadScene("1stTeamSelection");
+			LoadSceneWithReset("1stTeamSelection");
 			break;
 
 		case Buttons.InternationalCup:
@@ -94,9 +94,9 @@ public class ButtonAction : MonoBehaviour
 			PlayerPosition.PlayerTurn = true;
 
 			if(MatchesSceneController.HasPendingCup())
-				SceneManager.LoadScene("MatchesScene");
+				LoadSceneWithReset("MatchesScene");
 			else
-				SceneManager.LoadScene("1stTeamSelection");
+				LoadSceneWithReset("1stTeamSelection");
 			break;
 
 		case Buttons.Back:
@@ -105,15 +105,15 @@ public class ButtonAction : MonoBehaviour
 
 		case Buttons.Next:
 			if(SceneManager.GetActiveScene().name == "1stTeamSelection" && GameManager.SharedObject().isQuickMatch)
-				SceneManager.LoadScene("2ndTeamSelection");
+				LoadSceneWithReset("2ndTeamSelection");
 			else if(SceneManager.GetActiveScene().name == "1stTeamSelection" && !GameManager.SharedObject().isQuickMatch)
-				SceneManager.LoadScene("GroupsScene");
+				LoadSceneWithReset("GroupsScene");
 			else if(SceneManager.GetActiveScene().name == "GroupsScene" && !GameManager.SharedObject().isQuickMatch)
-				SceneManager.LoadScene("MatchesScene");
+				LoadSceneWithReset("MatchesScene");
 			else if(SceneManager.GetActiveScene().name == "MatchesScene" && !GameManager.SharedObject().isQuickMatch)
-				SceneManager.LoadScene("KickOffScene");
+				LoadSceneWithReset("KickOffScene");
 			else if(SceneManager.GetActiveScene().name == "2ndTeamSelection")
-				SceneManager.LoadScene("KickOffScene");
+				LoadSceneWithReset("KickOffScene");
 			break;
 
 		case Buttons.PrevTeam:
@@ -132,7 +132,7 @@ public class ButtonAction : MonoBehaviour
 
 		case Buttons.KickOff:
 			PlayerPrefs.Save();
-			SceneManager.LoadScene("MatchScene");
+			LoadSceneWithReset("MatchScene");
 			break;
 
 		case Buttons.MainMenu:
@@ -146,20 +146,20 @@ public class ButtonAction : MonoBehaviour
 			PlayerPosition.PlayerTurn = !PlayerPosition.PlayerTurn;
 			if(SceneManager.GetActiveScene().name == "FinalCeleberation")
 			{
-				SceneManager.LoadScene("MainMenu");
+				LoadSceneWithReset("MainMenu");
 			}
 			else if(GameManager.SharedObject().isQuickMatch == false && PlayerPrefs.GetInt("matchNumber")>7)
 			{
 				PlayerPrefs.SetInt("HasPendingCup",0);
-				SceneManager.LoadScene("FinalCeleberation");
+				LoadSceneWithReset("FinalCeleberation");
 			}
 			else if(GameManager.SharedObject().isQuickMatch == false && PlayerPrefs.GetInt("matchNumber")<7)
 			{
-				SceneManager.LoadScene("MatchesScene");
+				LoadSceneWithReset("MatchesScene");
 			}
 			else
 			{
-				SceneManager.LoadScene("MainMenu");
+				LoadSceneWithReset("MainMenu");
 			}
 
 			//if(GameManager.SharedObject().isQuickMatch)	SceneManager.LoadScene("MainMenu");
@@ -173,9 +173,9 @@ public class ButtonAction : MonoBehaviour
 			GameManager.SharedObject().GameTime = 0;
 			GameManager.SharedObject().IsFirstHalf = false;
 			if(GameManager.SharedObject().isQuickMatch)
-				SceneManager.LoadScene("MatchScene");
+				LoadSceneWithReset("MatchScene");
 			else
-				SceneManager.LoadScene("KickOffScene");
+				LoadSceneWithReset("KickOffScene");
 			break;
 
 		case Buttons.Replay:
@@ -185,7 +185,7 @@ public class ButtonAction : MonoBehaviour
 			GameManager.SharedObject().ShowMatchEndDialog = false;
 			GameManager.SharedObject().playerTeamGoals = 0;
 			GameManager.SharedObject().opponentTeamGoals = 0;
-			SceneManager.LoadScene("MatchScene");
+			LoadSceneWithReset("MatchScene");
 			if(AudioManager.isSFXOn)
 				AudioListener.volume=1;
 			break;
@@ -210,24 +210,33 @@ public class ButtonAction : MonoBehaviour
 	{
 		if(SceneManager.GetActiveScene().name == "GameSelectionScene")
 		{
-			SceneManager.LoadScene("MainMenu");
+			LoadSceneWithReset("MainMenu");
 		}
 		else if(SceneManager.GetActiveScene().name == "1stTeamSelection")
-			SceneManager.LoadScene("GameSelectionScene");
+			LoadSceneWithReset("GameSelectionScene");
 		else if(SceneManager.GetActiveScene().name == "2ndTeamSelection")
-			SceneManager.LoadScene("1stTeamSelection");
+			LoadSceneWithReset("1stTeamSelection");
 		else if(SceneManager.GetActiveScene().name == "MatchesScene" && MatchesSceneController.HasPendingCup())
-			SceneManager.LoadScene("GameSelectionScene");
+			LoadSceneWithReset("GameSelectionScene");
 		
 		else if(SceneManager.GetActiveScene().name == "KickOffScene" && !GameManager.SharedObject().isQuickMatch && MatchesSceneController.HasPendingCup())
-			SceneManager.LoadScene("MatchesScene");
+			LoadSceneWithReset("MatchesScene");
 		else if(SceneManager.GetActiveScene().name == "KickOffScene" && !GameManager.SharedObject().isQuickMatch && !MatchesSceneController.HasPendingCup())
-			SceneManager.LoadScene("1stTeamSelection");
+			LoadSceneWithReset("1stTeamSelection");
 		
 		else if(SceneManager.GetActiveScene().name == "KickOffScene" && GameManager.SharedObject().isQuickMatch)
-			SceneManager.LoadScene("2ndTeamSelection");
+			LoadSceneWithReset("2ndTeamSelection");
 		else if(SceneManager.GetActiveScene().name == "GroupsScene" && !GameManager.SharedObject().isQuickMatch)
-			SceneManager.LoadScene("1stTeamSelection");
+			LoadSceneWithReset("1stTeamSelection");
+	}
+
+	private static void LoadSceneWithReset(string sceneName)
+	{
+		Time.timeScale = 1f;
+		AudioListener.volume = 1f;
+		PauseController.isPaused = false;
+		Player.noControls = false;
+		SceneManager.LoadScene(sceneName);
 	}
 
 	private void UpdateLegacyPointerInput()

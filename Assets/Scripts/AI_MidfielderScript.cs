@@ -19,6 +19,14 @@ public class AI_MidfielderScript : MonoBehaviour
 	static bool Position3Available = true;
 	static bool Position4Available = true;
 
+	internal static void ResetPositionAvailability()
+	{
+		Position1Available = true;
+		Position2Available = true;
+		Position3Available = true;
+		Position4Available = true;
+	}
+
 	private int zOffset = 0;
 	private int xOffset = 0;
 
@@ -73,7 +81,7 @@ public class AI_MidfielderScript : MonoBehaviour
 		{
 			xOffset = -5;
 			zOffset = 15;
-			Position3Available = false;
+			Position4Available = false;
 		}
 
 		GameObject[] playersT = GameObject.FindGameObjectsWithTag("AIMidfiielder");

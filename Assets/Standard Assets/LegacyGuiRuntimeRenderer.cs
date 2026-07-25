@@ -15,6 +15,8 @@ public class LegacyGuiRuntimeRenderer : MonoBehaviour
     private Material legacy3DGuiMaterial;
     private Camera legacy3DGuiCamera;
 
+    internal static bool DrewLegacy3DGuiOverlayLastRepaint { get; private set; }
+
     public static bool IsRenderingThroughRuntime
     {
         get { return instance != null && instance.isActiveAndEnabled; }
@@ -118,6 +120,7 @@ public class LegacyGuiRuntimeRenderer : MonoBehaviour
 
     private void HandleSceneLoaded(Scene scene, LoadSceneMode mode)
     {
+        DrewLegacy3DGuiOverlayLastRepaint = false;
         EnsureInstance();
     }
 
@@ -127,6 +130,8 @@ public class LegacyGuiRuntimeRenderer : MonoBehaviour
         {
             return;
         }
+
+        DrewLegacy3DGuiOverlayLastRepaint = false;
 
         GUITexture[] textures = UnityEngine.Object.FindObjectsByType<GUITexture>();
         Array.Sort(textures, CompareLegacyGuiComponents);
@@ -148,7 +153,7 @@ public class LegacyGuiRuntimeRenderer : MonoBehaviour
         Array.Sort(texts, CompareLegacyGuiComponents);
         DrawLegacyTexts(texts);
 
-        if (!kickOffScene)
+        if (!kickOffScene && RequiresLegacy3DGuiOverlay(sceneName))
         {
             DrawLegacy3DGuiOverlay();
         }
@@ -275,6 +280,8 @@ public class LegacyGuiRuntimeRenderer : MonoBehaviour
 
     private void DrawLegacy3DGuiOverlay()
     {
+        DrewLegacy3DGuiOverlayLastRepaint = true;
+
         if (legacy3DGuiTexture == null || legacy3DGuiMaterial == null)
         {
             return;
