@@ -72,7 +72,7 @@ Read the /unity-initial-setup skill for detailed installation instructions.
       "type": "object",
       "properties": {
         "instanceID": {
-          "type": "integer",
+          "$ref": "#/$defs/UnityEngine.EntityId",
           "description": "instanceID of the UnityEngine.Object. If it is '0' and 'path', 'name', 'assetPath' and 'assetGuid' is not provided, empty or null, then it will be used as 'null'. Priority: 1 (Recommended)"
         },
         "path": {
@@ -100,6 +100,10 @@ Read the /unity-initial-setup skill for detailed installation instructions.
         "instanceID"
       ],
       "description": "Find GameObject in opened Prefab or in the active Scene."
+    },
+    "UnityEngine.EntityId": {
+      "type": "string",
+      "pattern": "^[0-9]+$"
     },
     "System.Type": {
       "type": "string"
@@ -131,6 +135,10 @@ Read the /unity-initial-setup skill for detailed installation instructions.
     }
   },
   "$defs": {
+    "UnityEngine.EntityId": {
+      "type": "string",
+      "pattern": "^[0-9]+$"
+    },
     "System.Collections.Generic.List(com.IvanMurzak.Unity.MCP.Editor.API.Tool_ProBuilder-SourceObjectInfo)": {
       "type": "array",
       "items": {
@@ -167,7 +175,7 @@ Read the /unity-initial-setup skill for detailed installation instructions.
           "type": "string"
         },
         "instanceId": {
-          "type": "integer"
+          "$ref": "#/$defs/UnityEngine.EntityId"
         }
       },
       "required": [
@@ -187,7 +195,7 @@ Read the /unity-initial-setup skill for detailed installation instructions.
           "type": "string"
         },
         "targetInstanceId": {
-          "type": "integer"
+          "$ref": "#/$defs/UnityEngine.EntityId"
         },
         "objectsDeleted": {
           "type": "integer"
