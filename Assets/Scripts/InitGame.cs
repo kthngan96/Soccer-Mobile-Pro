@@ -184,7 +184,8 @@ public class InitGame : MonoBehaviour
 						currentMatch += 1;
 						if(currentMatch > 7)
 						{
-							PlayerPrefs.SetString("message","Congratulation!\nYou won the International Cup.");
+							PlayerPrefs.SetInt("lost",0);
+							PlayerPrefs.SetString("message","Congratulations!\nYou won the International Cup.");
 							PlayerPrefs.Save();
 							SceneManager.LoadScene("FinalCeleberation");
 						}
@@ -194,7 +195,7 @@ public class InitGame : MonoBehaviour
 
 					if(GameManager.SharedObject().playerTeamGoals <= GameManager.SharedObject().opponentTeamGoals && currentMatch > 3)
 					{
-						PlayerPrefs.SetString("message","Sorry!\nYou loose the International Cup.");
+						PlayerPrefs.SetString("message","Sorry!\nYou lost the International Cup.");
 						PlayerPrefs.SetInt("lost",1);
 						PlayerPrefs.Save();
 

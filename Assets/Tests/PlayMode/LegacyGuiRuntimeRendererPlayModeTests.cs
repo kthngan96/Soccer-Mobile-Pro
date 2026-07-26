@@ -529,6 +529,34 @@ namespace SoccerMobile.Tests.PlayMode
             string buttonName,
             string expectedSceneName)
         {
+            if (SceneManager.GetActiveScene().name == "FinalCeleberation" &&
+                buttonName == "MainMenu")
+            {
+                Type celebrationType = FindType("FinalCelebrationController");
+                Assert.IsNotNull(
+                    celebrationType,
+                    "FinalCelebrationController type was not found.");
+                MonoBehaviour celebration = UnityEngine.Object
+                    .FindObjectsByType<MonoBehaviour>(FindObjectsInactive.Include)
+                    .FirstOrDefault(behaviour =>
+                        behaviour != null &&
+                        behaviour.GetType() == celebrationType);
+                Assert.IsNotNull(
+                    celebration,
+                    "FinalCelebrationController was not found in FinalCeleberation.");
+
+                MethodInfo returnMethod = celebrationType.GetMethod(
+                    "ReturnToMainMenu",
+                    BindingFlags.Public | BindingFlags.Instance);
+                Assert.IsNotNull(
+                    returnMethod,
+                    "FinalCelebrationController.ReturnToMainMenu was not found.");
+                returnMethod.Invoke(celebration, null);
+
+                yield return WaitForActiveScene(expectedSceneName);
+                yield break;
+            }
+
             Type componentType = FindType("ButtonAction");
             Assert.IsNotNull(componentType, "ButtonAction type was not found.");
 
